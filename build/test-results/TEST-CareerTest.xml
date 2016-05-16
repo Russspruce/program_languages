@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CareerTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2016-05-16T21:02:14" hostname="epicodus-54.local" time="0.279">
+<testsuite name="CareerTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2016-05-16T21:09:34" hostname="epicodus-54.local" time="0.246">
   <properties/>
-  <testcase name="save_savesObjectIntoDatabase_true" classname="CareerTest" time="0.174"/>
-  <testcase name="Career_instantiatesCorrectly_True" classname="CareerTest" time="0.005"/>
-  <testcase name="equals_returnsTrueIfTitlesAretheSame_true" classname="CareerTest" time="0.007"/>
-  <testcase name="all_emptyAtFirst_0" classname="CareerTest" time="0.01"/>
-  <testcase name="delete_deletesCareer_true" classname="CareerTest" time="0.023"/>
-  <testcase name="save_assignsIdToObject_int" classname="CareerTest" time="0.016"/>
-  <testcase name="getTitle_careerInstantiatesWithTitle_String" classname="CareerTest" time="0.007"/>
+  <testcase name="save_savesObjectIntoDatabase_true" classname="CareerTest" time="0.136"/>
+  <testcase name="Career_instantiatesCorrectly_True" classname="CareerTest" time="0.006"/>
+  <testcase name="equals_returnsTrueIfTitlesAretheSame_true" classname="CareerTest" time="0.008"/>
+  <testcase name="all_emptyAtFirst_0" classname="CareerTest" time="0.011"/>
+  <testcase name="delete_deletesCareer_true" classname="CareerTest" time="0.024"/>
+  <testcase name="save_assignsIdToObject_int" classname="CareerTest" time="0.018"/>
+  <testcase name="getTitle_careerInstantiatesWithTitle_String" classname="CareerTest" time="0.006"/>
   <testcase name="update_updatesCareerTitle_true" classname="CareerTest" time="0.02"/>
   <testcase name="find_findsCareerInDatabase_true" classname="CareerTest" time="0.016"/>
   <system-out><![CDATA[]]></system-out>
