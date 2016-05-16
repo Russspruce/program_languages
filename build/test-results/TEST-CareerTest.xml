@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CareerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-05-16T17:31:26" hostname="epicodus-39.local" time="0.083">
+  <properties/>
+  <testcase name="Career_instantiatesCorrectly_True" classname="CareerTest" time="0.083"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
