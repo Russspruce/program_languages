@@ -1,0 +1,15 @@
+<h1>All Programs</h1>
+
+#if ($deleted)
+<h3 class="animated flash success">Program successfully deleted</h3>
+#end
+
+#foreach ($program in $programs)
+  <a href="/program/$program.getId()">$program.getName()</a>
+  <br>
+#end
+<br>
+
+<hr>
+
+<a class="bottomNav" href="/">Home</a>

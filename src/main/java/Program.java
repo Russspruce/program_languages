@@ -104,4 +104,13 @@ public class Program {
         .executeAndFetch(Program.class);
     }
   }
+
+  public List<Language> getLanguages() {
+    try(Connection con = DB.sql2o.open()) {
+      String joinQuery = "SELECT languages.* FROM programs JOIN languages_programs ON (programs.id = languages_programs.program_id) JOIN languages ON (languages_programs.language_id = languages.id) WHERE programs.id = :id;";
+      return con.createQuery(joinQuery)
+        .addParameter("id" , this.id)
+        .executeAndFetch(Language.class);
+    }
+  }
 }

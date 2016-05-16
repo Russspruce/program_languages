@@ -1,0 +1,16 @@
+<h1>Edit Languages for $type.getName()</h1>
+
+<form action="/associate/types/$type.getId()" method="post">
+  #foreach ($language in $languages)
+    #if ($type.getLanguages().contains($language))
+      <input type="checkbox" name="languages" value="$language.getId()" checked>$language.getName()<br>
+    #else
+    <input type="checkbox" name="languages" value="$language.getId()">$language.getName()<br>
+    #end
+  #end
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
+<br>
+
+<hr>
+<a class="bottomNav" href="/">Home</a>

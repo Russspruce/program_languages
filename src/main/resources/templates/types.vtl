@@ -1,0 +1,15 @@
+<h1>All Types</h1>
+
+#if ($deleted)
+<h3 class="animated flash success">Type successfully deleted</h3>
+#end
+
+#foreach ($type in $types)
+  <a href="/type/$type.getId()">$type.getName()</a>
+  <br>
+#end
+<br>
+
+<hr>
+
+<a class="bottomNav" href="/">Home</a>

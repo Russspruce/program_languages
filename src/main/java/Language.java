@@ -113,10 +113,10 @@ public class Language {
 
   public void addType(Type newType) {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO languages_programs (language_id, program_id) VALUES (:language_id, :program_id);";
+      String sql = "INSERT INTO languages_types (language_id, type_id) VALUES (:language_id, :type_id);";
       con.createQuery(sql)
         .addParameter("language_id", this.id)
-        .addParameter("program_id", newType.getId())
+        .addParameter("type_id", newType.getId())
         .executeUpdate();
     }
   }
@@ -127,6 +127,53 @@ public class Language {
       return con.createQuery(joinQuery)
         .addParameter("id" , this.id)
         .executeAndFetch(Program.class);
+    }
+  }
+
+  public List<Type> getTypes() {
+    try(Connection con = DB.sql2o.open()) {
+      String joinQuery = "SELECT types.* FROM languages JOIN languages_types ON (languages.id = languages_types.language_id) JOIN types ON (languages_types.type_id = types.id) WHERE languages.id = :id;";
+      return con.createQuery(joinQuery)
+        .addParameter("id" , this.id)
+        .executeAndFetch(Type.class);
+    }
+  }
+
+  public void removeProgram(int programId) {
+    try(Connection con = DB.sql2o.open()) {
+      String removeQuery = "DELETE FROM languages_programs WHERE program_id=:program_id AND language_id=:language_id;";
+      con.createQuery(removeQuery)
+        .addParameter("program_id", programId)
+        .addParameter("language_id", this.id)
+        .executeUpdate();
+    }
+  }
+
+  public void removeAllPrograms() {
+    try(Connection con = DB.sql2o.open()) {
+      String deleteJoin = "DELETE FROM languages_programs WHERE language_id=:id;";
+      con.createQuery(deleteJoin)
+        .addParameter("id", id)
+        .executeUpdate();
+    }
+  }
+
+  public void removeType(int typeId) {
+    try(Connection con = DB.sql2o.open()) {
+      String removeQuery = "DELETE FROM languages_types WHERE type_id=:type_id AND language_id=:language_id;";
+      con.createQuery(removeQuery)
+        .addParameter("type_id", typeId)
+        .addParameter("language_id", this.id)
+        .executeUpdate();
+    }
+  }
+
+  public void removeAllTypes() {
+    try(Connection con = DB.sql2o.open()) {
+      String deleteJoin = "DELETE FROM languages_types WHERE language_id=:id;";
+      con.createQuery(deleteJoin)
+        .addParameter("id", id)
+        .executeUpdate();
     }
   }
 

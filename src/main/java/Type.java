@@ -88,12 +88,51 @@ public class Type {
         .executeUpdate();
     }
   }
+
   public static List<Type> search(String searchQuery) {
     try(Connection con = DB.sql2o.open()) {
       String search = "SELECT * FROM types WHERE lower(name) LIKE :searchQuery;";
       return con.createQuery(search)
         .addParameter("searchQuery", "%" + searchQuery.toLowerCase() + "%")
         .executeAndFetch(Type.class);
+    }
+  }
+
+  public List<Language> getLanguages() {
+    try(Connection con = DB.sql2o.open()) {
+      String joinQuery = "SELECT languages.* FROM types JOIN languages_types ON (types.id = languages_types.type_id) JOIN languages ON (languages_types.language_id = languages.id) WHERE types.id = :id;";
+      return con.createQuery(joinQuery)
+        .addParameter("id" , this.id)
+        .executeAndFetch(Language.class);
+    }
+  }
+
+  public void removeLanguage(int typeId) {
+    try(Connection con = DB.sql2o.open()) {
+      String removeQuery = "DELETE FROM languages_types WHERE type_id=:type_id AND language_id=:language_id;";
+      con.createQuery(removeQuery)
+        .addParameter("type_id", typeId)
+        .addParameter("language_id", this.id)
+        .executeUpdate();
+    }
+  }
+
+  public void removeAllLanguages() {
+    try(Connection con = DB.sql2o.open()) {
+      String deleteJoin = "DELETE FROM languages_types WHERE language_id=:id;";
+      con.createQuery(deleteJoin)
+        .addParameter("id", id)
+        .executeUpdate();
+    }
+  }
+
+  public void addLanguage(Language newLanguage) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "INSERT INTO languages_types (language_id, type_id) VALUES (:language_id, :type_id);";
+      con.createQuery(sql)
+        .addParameter("type_id", this.id)
+        .addParameter("language_id", newLanguage.getId())
+        .executeUpdate();
     }
   }
 }

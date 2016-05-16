@@ -78,4 +78,15 @@ public class TypeTest {
     assertTrue(testSearch.get(0).equals(testType3));
     assertEquals(testSearch.size(), 2);
   }
+
+  @Test
+  public void addLanguage_joinsTypeAndLanguage_true() {
+    Language testLanguage = new Language("Name 1", "x", "y", "date", "http://java.com");
+    testLanguage.save();
+    Type testType = new Type("Name 1", "Description");
+    testType.save();
+    testType.addLanguage(testLanguage);
+    Language joinedLanguage = testType.getLanguages().get(0);
+    assertTrue(testLanguage.equals(joinedLanguage));
+    }
 }

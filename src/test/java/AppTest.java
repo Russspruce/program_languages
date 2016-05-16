@@ -64,4 +64,14 @@ public class AppTest extends FluentTest{
     submit("#submitProgram");
     assertThat(pageSource()).contains("Please be sure");
   }
+
+  @Test
+  public void editType() {
+    Type testType = new Type ("Name 1", "Description");
+    testType.save();
+    goTo("http://localhost:4567/type/" + testType.getId() + "/edit");
+    fill("#name").with("Name 2");
+    submit(".btn-success");
+    assertThat(pageSource()).contains("Name 2");
+  }
 }

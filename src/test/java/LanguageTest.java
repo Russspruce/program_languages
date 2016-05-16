@@ -94,4 +94,31 @@ public class LanguageTest {
       assertTrue(testProgram.equals(joinedProgram));
       assertEquals(2, testLanguage.getPrograms().size());
     }
+
+    @Test
+    public void getTypes_returnsAllAssociatedTypes_int() {
+      Language testLanguage = new Language("Name 1", "x", "y", "date", "http://java.com");
+      testLanguage.save();
+      Type testType = new Type("Name 2", "Description");
+      testType.save();
+      testLanguage.addType(testType);
+      Type testType2 = new Type("Name 3", "Description");
+      testType2.save();
+      testLanguage.addType(testType2);
+      Type joinedType = testLanguage.getTypes().get(0);
+      assertTrue(testType.equals(joinedType));
+      assertEquals(2, testLanguage.getTypes().size());
+    }
+
+    @Test
+    public void removeProgram_removesProgramAssociation_true() {
+      Language testLanguage = new Language("Name 1", "x", "y", "date", "http://java.com");
+      testLanguage.save();
+      Program testProgram = new Program("Name 2", "Description", "http://www.google.com");
+      testProgram.save();
+      testLanguage.addProgram(testProgram);
+      testLanguage.removeProgram(testProgram.getId());
+      assertEquals(0, testLanguage.getPrograms().size());
+  }
+
 }
