@@ -5,11 +5,13 @@ import org.sql2o.*;
 public class Program {
   private String name;
   private String description;
+  private String url;
   private int id;
 
-  public Program (String name, String description) {
+  public Program (String name, String description, String url) {
     this.name = name;
     this.description = description;
+    this.url = url;
   }
 
   public String getName() {
@@ -18,6 +20,10 @@ public class Program {
 
   public String getDescription() {
     return description;
+  }
+
+  public String getUrl() {
+    return url;
   }
 
   public int getId() {
@@ -40,16 +46,17 @@ public class Program {
       Program newProgram = (Program) otherProgram;
       return newProgram.getName().equals(this.name) &&
         newProgram.getDescription().equals(this.description) &&
+        newProgram.getUrl().equals(this.url) &&
         newProgram.getId() == this.id;
     }
   }
 
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO programs (name, description) VALUES (:name, :description);";
+      String sql = "INSERT INTO programs (name, description, url) VALUES (:name, :description, :url);";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("name", this.name)
-        .addParameter("description", this.description)
+        .addParameter("description", this.description)        .addParameter("url", this.url)
         .executeUpdate()
         .getKey();
     }
@@ -78,12 +85,13 @@ public class Program {
     }
   }
 
-  public void update(String newName, String newDescription) {
+  public void update(String newName, String newDescription, String newUrl) {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "UPDATE programs SET name = :newName, description = :newDescription WHERE id = :id;";
+      String sql = "UPDATE programs SET name = :newName, description = :newDescription, url = :newUrl WHERE id = :id;";
       con.createQuery(sql)
         .addParameter("newName", newName)
         .addParameter("newDescription", newDescription)
+        .addParameter("newUrl", newUrl)
         .addParameter("id", id)
         .executeUpdate();
     }
