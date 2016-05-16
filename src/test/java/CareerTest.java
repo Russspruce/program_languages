@@ -55,6 +55,11 @@ public class CareerTest {
     assertTrue(myCareer.equals(savedCareer));
   }
 
-
-
+  @Test
+  public void update_updatesCareerName_true() {
+    Career myCareer = new Career("Career1");
+    myCareer.save();
+    myCareer.update("Career2");
+    assertEquals("Career2", Career.find(myCareer.getId()).getName());
+  }
 }
