@@ -1,0 +1,21 @@
+import org.sql2o.*;
+import org.junit.*;
+import static org.junit.Assert.*;
+import java.util.Arrays;
+
+public class LanguageTest {
+
+  @Rule
+public DatabaseRule database = new DatabaseRule();
+
+
+  @Test
+  public void Language_instantiatesCorrectly_true() {
+    Language testLanguage = new Language("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995");
+    assertEquals(true, testLanguage instanceof Language);
+  }
+  @Test
+  public void getName_languageInstantiatesWithName_String() {
+  Language testLanguage = new Language("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995");
+    assertEquals("Java", testLanguage.getName());
+  }
