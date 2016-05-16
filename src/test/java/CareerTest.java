@@ -62,4 +62,13 @@ public class CareerTest {
     myCareer.update("Career2");
     assertEquals("Career2", Career.find(myCareer.getId()).getName());
   }
+
+  @Test
+  public void delete_deletesCareer_true() {
+    Career myCareer = new Career("Career1");
+    myCareer.save();
+    int myCareerId = myCareer.getId();
+    myCareer.delete();
+    assertEquals(null, Career.find(myCareerId));
+  }
 }

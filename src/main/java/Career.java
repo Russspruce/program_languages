@@ -3,15 +3,21 @@ import java.util.ArrayList;
 import org.sql2o.*;
 
 public class Career {
-  private String name;
+  private String title;
+  private String description;
   private int id;
 
-  public Career(String name) {
-    this.name = name;
+  public Career(String title, String description) {
+    this.title = title;
+    this.description = description
   }
 
-  public String getName() {
-    return name;
+  public String getTitle() {
+    return title;
+  }
+
+  public String getDescription() {
+    return title;
   }
 
   public int getId() {
@@ -19,7 +25,7 @@ public class Career {
   }
 
   public static List<Career> all() {
-    String sql = "SELECT id, name FROM careers";
+    String sql = "SELECT id, title, description FROM careers";
     try(Connection con = DB.sql2o.open()) {
       return con.createQuery(sql).executeAndFetch(Career.class);
     }
@@ -31,16 +37,18 @@ public class Career {
       return false;
     } else {
       Career newCareer = (Career) otherCareer;
-      return this.getName().equals(newCareer.getName()) &&
+      return this.getTitle().equals(newCareer.getTitle()) &&
+             this.getDescription().equals(newCareer.getDescription()) &&
              this.getId() == newCareer.getId();
     }
   }
 
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO careers(name) VALUES (:name)";
+      String sql = "INSERT INTO careers(title, description) VALUES (:title, :description)";
       this.id = (int) con.createQuery(sql, true)
-        .addParameter("name", this.name)
+        .addParameter("title", this.title)
+        .addParameter("description", this.description)
         .executeUpdate()
         .getKey();
     }
@@ -56,11 +64,12 @@ public class Career {
     }
   }
 
-  public void update(String newName) {
+  public void update(String newTitle, String newDescription) {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "UPDATE careers SET name = :name WHERE id = :id";
+      String sql = "UPDATE careers SET title = :title, description = :description WHERE id = :id";
       con.createQuery(sql)
-        .addParameter("name", newName)
+        .addParameter("title", newTitle)
+        .addParameter("description", newDescription)
         .addParameter("id", this.id)
         .executeUpdate();
     }
@@ -68,22 +77,22 @@ public class Career {
 
 // <------------------ EDIT DELETE() FOR CORRECT TABLES --------------------->
 
-  // public void delete() {
-  //   try(Connection con = DB.sql2o.open()) {
-  //     String deleteQuery = "DELETE FROM careers WHERE id = :id;";
-  //       con.createQuery(deleteQuery)
-  //         .addParameter("id", this.getId())
-  //         .executeUpdate();
-  //
-  //     String joinDeleteQuery = "DELETE FROM careers_programs WHERE career_id = :careerId";
-  //       con.createQuery(joinDeleteQuery)
-  //         .addParameter("careerId", this.getId())
-  //         .executeUpdate();
-  //
-  //     String joinDeleteQuery = "DELETE FROM careers_laguages_ WHERE career_id = :careerId";
-  //       con.createQuery(joinDeleteQuery)
-  //         .addParameter("careerId", this.getId())
-  //         .executeUpdate();
-  //   }
-  // }
+  public void delete() {
+    try(Connection con = DB.sql2o.open()) {
+      String deleteQuery = "DELETE FROM careers WHERE id = :id;";
+        con.createQuery(deleteQuery)
+          .addParameter("id", this.getId())
+          .executeUpdate();
+
+      String joinDeleteQuery = "DELETE FROM careers_programs WHERE career_id = :careerId";
+        con.createQuery(joinDeleteQuery)
+          .addParameter("careerId", this.getId())
+          .executeUpdate();
+
+      String joinDeleteQuery = "DELETE FROM careers_laguages_ WHERE career_id = :careerId";
+        con.createQuery(joinDeleteQuery)
+          .addParameter("careerId", this.getId())
+          .executeUpdate();
+    }
+  }
 }

@@ -1,0 +1,2 @@
+CREATE DATABASE program_languages;
+CREATE TABLE careers (id int PRIMARY KEY, title varchar, description varchar)
