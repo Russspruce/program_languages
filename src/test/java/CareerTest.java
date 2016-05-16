@@ -39,8 +39,21 @@ public class CareerTest {
     assertTrue(Career.all().get(0).equals(myCareer));
   }
 
+  @Test
+  public void save_assignsIdToObject_int() {
+    Career myCareer = new Career("CareerName");
+    myCareer.save();
+    Career savedCareer = Career.all().get(0);
+    assertEquals(myCareer.getId(), savedCareer.getId());
+  }
 
-
+  @Test
+  public void find_findsCareerInDatabase_true() {
+    Career myCareer = new Career("CareerName");
+    myCareer.save();
+    Career savedCareer = Career.find(myCareer.getId());
+    assertTrue(myCareer.equals(savedCareer));
+  }
 
 
 

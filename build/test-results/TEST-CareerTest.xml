@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CareerTest" tests="5" skipped="0" failures="1" errors="0" timestamp="2016-05-16T18:38:31" hostname="epicodus-39.local" time="0.147">
+<testsuite name="CareerTest" tests="5" skipped="0" failures="1" errors="0" timestamp="2016-05-16T18:58:37" hostname="epicodus-39.local" time="0.142">
   <properties/>
-  <testcase name="save_savesObjectIntoDatabase_true" classname="CareerTest" time="0.088">
+  <testcase name="Career_instantiatesCorrectly_True" classname="CareerTest" time="0.077"/>
+  <testcase name="all_emptyAtFirst_0" classname="CareerTest" time="0.029"/>
+  <testcase name="save_assignsIdToObject_int" classname="CareerTest" time="0.021">
     <failure message="org.sql2o.Sql2oException: Error in executeUpdate, ERROR: null value in column &quot;id&quot; violates not-null constraint&#10;  Detail: Failing row contains (null, CareerName)." type="org.sql2o.Sql2oException">org.sql2o.Sql2oException: Error in executeUpdate, ERROR: null value in column &quot;id&quot; violates not-null constraint
   Detail: Failing row contains (null, CareerName).
 	at org.sql2o.Query.executeUpdate(Query.java:527)
 	at Career.save(Career.java:44)
-	at CareerTest.save_savesObjectIntoDatabase_true(CareerTest.java:38)
+	at CareerTest.save_assignsIdToObject_int(CareerTest.java:45)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -64,9 +66,7 @@ Caused by: org.postgresql.util.PSQLException: ERROR: null value in column &quot;
 	... 47 more
 </failure>
   </testcase>
-  <testcase name="Career_instantiatesCorrectly_True" classname="CareerTest" time="0.005"/>
-  <testcase name="all_emptyAtFirst_0" classname="CareerTest" time="0.045"/>
-  <testcase name="equals_returnsTrueIfNamesAretheSame_true" classname="CareerTest" time="0.005"/>
+  <testcase name="equals_returnsTrueIfNamesAretheSame_true" classname="CareerTest" time="0.01"/>
   <testcase name="getName_careerInstantiatesWithName_String" classname="CareerTest" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[[Test worker] WARN org.sql2o.Connection - Could not roll back transaction. message: {}
@@ -76,7 +76,7 @@ org.postgresql.util.PSQLException: Cannot rollback when autoCommit is enabled.
 	at org.sql2o.Connection.onException(Connection.java:56)
 	at org.sql2o.Query.executeUpdate(Query.java:526)
 	at Career.save(Career.java:44)
-	at CareerTest.save_savesObjectIntoDatabase_true(CareerTest.java:38)
+	at CareerTest.save_assignsIdToObject_int(CareerTest.java:45)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
