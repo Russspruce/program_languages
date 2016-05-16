@@ -20,8 +20,8 @@ public class CareerTest {
     assertEquals("CareerName", myCareer.getName());
   }
 
-  // @Test
-  // public void all_emptyAtFirst_0() {
-  //   assertEquals(0, Band.all().size());
-  // }
+  @Test
+  public void all_emptyAtFirst_0() {
+    assertEquals(0, Career.all().size());
+  }
 }
