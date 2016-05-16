@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class LanguageTest {
 
   @Rule
-public DatabaseRule database = new DatabaseRule();
+  public DatabaseRule database = new DatabaseRule();
 
 
   @Test
@@ -16,13 +16,13 @@ public DatabaseRule database = new DatabaseRule();
   }
   @Test
   public void getName_languageInstantiatesWithName_String() {
-  Language testLanguage = new Language("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
+    Language testLanguage = new Language("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
     assertEquals("Java", testLanguage.getName());
   }
 
   @Test
   public void getDescription_languageInstantiatesWithDescription_String() {
-  Language testLanguage = new Language("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
+    Language testLanguage = new Language("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
     assertEquals("Example text goes here for now", testLanguage.getDescription());
   }
 
@@ -39,14 +39,14 @@ public DatabaseRule database = new DatabaseRule();
 
   @Test
   public void save_savesObjectIntoDatabase_true() {
-  Language testLanguage = new Language("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
+    Language testLanguage = new Language("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
     testLanguage.save();
     assertTrue(Language.all().get(0).equals(testLanguage));
   }
 
   @Test
   public void save_assignsIdToObject_int() {
-  Language testLanguage = new Language("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
+    Language testLanguage = new Language("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
     testLanguage.save();
     Language savedLanguage = Language.all().get(0);
     assertEquals(testLanguage.getId(), savedLanguage.getId());
@@ -54,20 +54,44 @@ public DatabaseRule database = new DatabaseRule();
 
   @Test
   public void find_findLanguageInDatabase_true() {
-  Language testLanguage = new Language("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
+    Language testLanguage = new Language("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
     testLanguage.save();
     Language savedLanguage = Language.find(testLanguage.getId());
     assertTrue(testLanguage.equals(savedLanguage));
   }
 
-
   @Test
   public void delete_deletesLanguage_true() {
-  Language testLanguage = new Language("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
+    Language testLanguage = new Language("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
     testLanguage.save();
     int testLanguageId = testLanguage.getId();
     testLanguage.delete();
     assertEquals(null, Language.find(testLanguageId));
   }
 
+  @Test
+  public void addProgram_joinsLanguageAndProgram_true() {
+    Language testLanguage = new Language("Name 1", "x", "y", "date", "http://java.com");
+    testLanguage.save();
+    Program testProgram = new Program("Name 1", "Description", "http://www.google.com");
+    testProgram.save();
+    testLanguage.addProgram(testProgram);
+    Program joinedProgram = testLanguage.getPrograms().get(0);
+    assertTrue(testProgram.equals(joinedProgram));
+    }
+
+    @Test
+    public void getPrograms_returnsAllAssociatedPrograms_int() {
+      Language testLanguage = new Language("Name 1", "x", "y", "date", "http://java.com");
+      testLanguage.save();
+      Program testProgram = new Program("Name 2", "Description", "http://www.google.com");
+      testProgram.save();
+      testLanguage.addProgram(testProgram);
+      Program testProgram2 = new Program("Name 3", "Description", "http://www.google.com");
+      testProgram2.save();
+      testLanguage.addProgram(testProgram2);
+      Program joinedProgram = testLanguage.getPrograms().get(0);
+      assertTrue(testProgram.equals(joinedProgram));
+      assertEquals(2, testLanguage.getPrograms().size());
+    }
 }

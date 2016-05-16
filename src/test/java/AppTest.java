@@ -31,4 +31,37 @@ public class AppTest extends FluentTest{
   //  goTo("http://localhost:4567/");
   //  assertThat(pageSource()).contains("");
   // }
+
+  @Test
+  public void typeAddForm() {
+    goTo("http://localHost:4567/type/add");
+    fill("#name").with("Name 1");
+    fill("#description").with("Description");
+    submit("#submitType");
+    assertThat(pageSource()).contains("Name 1");
+  }
+
+  @Test
+  public void addTypeFormError() {
+    goTo("http://localhost:4567/type/add");
+    submit("#submitType");
+    assertThat(pageSource()).contains("Please be sure");
+  }
+
+  @Test
+  public void programAddForm() {
+    goTo("http://localHost:4567/program/add");
+    fill("#name").with("Name 1");
+    fill("#description").with("Description");
+    fill("#url").with("http://www.google.com");
+    submit("#submitType");
+    assertThat(pageSource()).contains("Name 1");
+  }
+
+  @Test
+  public void addProgramFormError() {
+    goTo("http://localhost:4567/program/add");
+    submit("#submitProgram");
+    assertThat(pageSource()).contains("Please be sure");
+  }
 }

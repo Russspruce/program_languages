@@ -1,0 +1,25 @@
+<h1>$type.getName()</h1>
+
+#if ($new)
+  <h4 class="success animated flash">Type successfully added</h4>
+#end
+
+#if ($update)
+  <h4 class="success animated flash">Type successfully updated</h4>
+#end
+
+<h3>Languages:</h3>
+#foreach ($language in $languages)
+  <a href="/language/$language.getId()">$language.getName()</a>
+  <br>
+#end
+
+<hr>
+<a class="edit" href="/associate/venues/$type.getId()">Edit Languages for $type.getName()</a>
+<br>
+
+<a class="edit" href="/type/$type.getId()/edit">Edit or Delete $type.getName()</a>
+<br>
+
+<hr>
+<a class="bottomNav" href="/">Home</a>

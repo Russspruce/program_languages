@@ -101,6 +101,33 @@ public class Language {
     }
   }
 
+  public void addProgram(Program newProgram) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "INSERT INTO languages_programs (language_id, program_id) VALUES (:language_id, :program_id);";
+      con.createQuery(sql)
+        .addParameter("language_id", this.id)
+        .addParameter("program_id", newProgram.getId())
+        .executeUpdate();
+    }
+  }
 
+  public void addType(Type newType) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "INSERT INTO languages_programs (language_id, program_id) VALUES (:language_id, :program_id);";
+      con.createQuery(sql)
+        .addParameter("language_id", this.id)
+        .addParameter("program_id", newType.getId())
+        .executeUpdate();
+    }
+  }
+
+  public List<Program> getPrograms() {
+    try(Connection con = DB.sql2o.open()) {
+      String joinQuery = "SELECT programs.* FROM languages JOIN languages_programs ON (languages.id = languages_programs.language_id) JOIN programs ON (languages_programs.program_id = programs.id) WHERE languages.id = :id;";
+      return con.createQuery(joinQuery)
+        .addParameter("id" , this.id)
+        .executeAndFetch(Program.class);
+    }
+  }
 
 }
