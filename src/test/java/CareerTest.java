@@ -32,6 +32,12 @@ public class CareerTest {
     assertTrue(firstCareer.equals(secondCareer));
   }
 
+  @Test
+  public void save_savesObjectIntoDatabase_true() {
+    Career myCareer = new Career("CareerName");
+    myCareer.save();
+    assertTrue(Career.all().get(0).equals(myCareer));
+  }
 
 
 
