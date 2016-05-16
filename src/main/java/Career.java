@@ -10,9 +10,9 @@ public class Career {
     this.name = name;
   }
 
-  // public String getName() {
-  //   return name;
-  // }
+  public String getName() {
+    return name;
+  }
 
   // public static List<Career> all() {
   //   String sql = "SELECT id, name FROM careers";

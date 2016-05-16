@@ -14,11 +14,11 @@ public class CareerTest {
     assertEquals(true, myCareer instanceof Career);
   }
 
-  // @Test
-  // public void getName_careerInstantiatesWithName_String() {
-  //   Career myCareer = new Career("CareerName");
-  //   assertEquals("CareerName", myCareer.getName());
-  // }
+  @Test
+  public void getName_careerInstantiatesWithName_String() {
+    Career myCareer = new Career("CareerName");
+    assertEquals("CareerName", myCareer.getName());
+  }
 
   // @Test
   // public void all_emptyAtFirst_0() {
