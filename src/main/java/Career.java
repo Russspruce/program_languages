@@ -17,7 +17,7 @@ public class Career {
   }
 
   public String getDescription() {
-    return title;
+    return description;
   }
 
   public int getId() {
