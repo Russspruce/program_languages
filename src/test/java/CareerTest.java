@@ -24,4 +24,18 @@ public class CareerTest {
   public void all_emptyAtFirst_0() {
     assertEquals(0, Career.all().size());
   }
+
+  @Test
+  public void equals_returnsTrueIfNamesAretheSame_true() {
+    Career firstCareer = new Career("CareerName");
+    Career secondCareer = new Career("CareerName");
+    assertTrue(firstCareer.equals(secondCareer));
+  }
+
+
+
+
+
+
+
 }

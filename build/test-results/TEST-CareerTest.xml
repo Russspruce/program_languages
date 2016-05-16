@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CareerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-05-16T17:36:57" hostname="epicodus-39.local" time="0.121">
+<testsuite name="CareerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-05-16T17:42:01" hostname="epicodus-39.local" time="0.12">
   <properties/>
-  <testcase name="Career_instantiatesCorrectly_True" classname="CareerTest" time="0.076"/>
-  <testcase name="all_emptyAtFirst_0" classname="CareerTest" time="0.041"/>
-  <testcase name="getName_careerInstantiatesWithName_String" classname="CareerTest" time="0.004"/>
+  <testcase name="Career_instantiatesCorrectly_True" classname="CareerTest" time="0.08"/>
+  <testcase name="all_emptyAtFirst_0" classname="CareerTest" time="0.028"/>
+  <testcase name="equals_returnsTrueIfNamesAretheSame_true" classname="CareerTest" time="0.005"/>
+  <testcase name="getName_careerInstantiatesWithName_String" classname="CareerTest" time="0.006"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
