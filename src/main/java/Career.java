@@ -46,15 +46,15 @@ public class Career {
     }
   }
 
-  public static Career fint(int id) {
-    try(Connection con = DB.sql2o.open()) {
-      String sql = "SELECT * FROM careers where id=:id";
-      Career career = con.createQuery(sql)
-        .addParameter("id", id)
-        .executeAndFetchFirst(Career.class);
-      return career;
-    }
-  }
+  // public static Career fint(int id) {
+  //   try(Connection con = DB.sql2o.open()) {
+  //     String sql = "SELECT * FROM careers where id=:id";
+  //     Career career = con.createQuery(sql)
+  //       .addParameter("id", id)
+  //       .executeAndFetchFirst(Career.class);
+  //     return career;
+  //   }
+  // }
 
 
 }
