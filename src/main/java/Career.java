@@ -75,24 +75,21 @@ public class Career {
     }
   }
 
-// <------------------ EDIT DELETE() FOR CORRECT TABLES --------------------->
-
   public void delete() {
     try(Connection con = DB.sql2o.open()) {
       String deleteQuery = "DELETE FROM careers WHERE id = :id;";
         con.createQuery(deleteQuery)
           .addParameter("id", this.getId())
           .executeUpdate();
+    }
+  }
 
-      // String joinDeleteQuery = "DELETE FROM careers_programs WHERE career_id = :careerId";
-      //   con.createQuery(joinDeleteQuery)
-      //     .addParameter("careerId", this.getId())
-      //     .executeUpdate();
-
-      // String joinDeleteQuery2 = "DELETE FROM careers_languages WHERE career_id = :careerId";
-      //   con.createQuery(joinDeleteQuery2)
-      //     .addParameter("careerId", this.getId())
-      //     .executeUpdate();
+  public static List<Career> search(String searchQuery) {
+  try(Connection con = DB.sql2o.open()) {
+    String search = "SELECT * FROM careers WHERE lower(title) LIKE :searchQuery;";
+    return con.createQuery(search)
+      .addParameter("searchQuery", "%" + searchQuery.toLowerCase() + "%")
+      .executeAndFetch(Career.class);
     }
   }
 }
