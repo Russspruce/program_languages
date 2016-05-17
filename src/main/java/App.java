@@ -18,7 +18,7 @@ public class App {
 
     get("/career-form", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      model.put("career", Career.getTitle())
+      model.put("career", Career.getTitle());
       model.put("template", "templates/career-form.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());

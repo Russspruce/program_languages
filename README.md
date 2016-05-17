@@ -1,8 +1,8 @@
-# _{Application Name}_
+# Programming Languages Database
 
-#### _{Brief description of application}, {Date of current version}_
+#### _A database of programming languages, their uses, and the careers they allow. 15/18/2016_
 
-#### By _**{List of contributors}**_
+#### By _**Andrew, Kyle, Ian, John**_
 
 ## Description
 
@@ -10,13 +10,21 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+1. Download ZIP folder
+2. Extract ZIP folder
+3. Install Git Bash, JDK, Gradle, PSQL
+4. Paste into your CLI:
+```
+  PSQL
+  CREATE DATABASE program_languages;
+  \c program_languages;
+  CREATE TABLE careers (id int PRIMARY KEY, title varchar, description varchar);
+  CREATE TABLE languages (id int PRIMARY KEY, title varchar, description varchar);
+  CREATE DATABASE program_languages_test WITH TEMPLATE program_languages;
+```
+5. In Git Bash, navigate to
+6. Type "gradle run"
+7. Go to localhost:4567 in your web browser
 
 ## Known Bugs
 
@@ -24,14 +32,25 @@ _{Are there issues that have not yet been resolved that you want to let users kn
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+John -
+Ian Lesikar - ilesikar@gmail.com
+Kyle -
+Andrew -
+
+_Contact any of us if you have and questions_
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+* [Atom](https://atom.io/)
+* [Sublime Text](https://www.sublimetext.com/)
+* [Bootstrap](http://getbootstrap.com/)
+* [Spark Framework](http://sparkjava.com/)
+* [Java SE JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+* [Gradle](https://gradle.org/)
+* [Apache Velocity](https://velocity.apache.org/engine/releases/velocity-1.5/index.html)
+* [Dillinger](http://dillinger.io/)
+* [PSQL](http://www.postgresql.org/)
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
-
-Copyright (c) 2015 **_{List of contributors or company name}_**
+The MIT License (MIT) Copyright (c) 2016 Epicodus
