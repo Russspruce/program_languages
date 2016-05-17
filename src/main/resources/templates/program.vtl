@@ -8,6 +8,13 @@
   <h4 class="success animated flash">Program successfully updated</h4>
 #end
 
+<h3>URL: <a href="$program.getUrl()">$program.getUrl()</a></h3>
+<br>
+
+<h3>Description:</h3>
+<p>$program.getDescription()</p>
+<br>
+
 <h3>Languages:</h3>
 #foreach ($language in $languages)
   <a href="/language/$language.getId()">$language.getName()</a>
@@ -15,7 +22,7 @@
 #end
 
 <hr>
-<a class="edit" href="/associate/venues/$program.getId()">Edit Languages for $program.getName()</a>
+<a class="edit" href="/associate/programs/$program.getId()">Edit Languages for $program.getName()</a>
 <br>
 
 <a class="edit" href="/program/$program.getId()/edit">Edit or Delete $program.getName()</a>

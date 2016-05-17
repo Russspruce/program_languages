@@ -1,5 +1,7 @@
 import java.util.Map;
 import java.util.HashMap;
+import java.util.List;
+
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
@@ -86,6 +88,16 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/program/:id", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      int programId = Integer.parseInt(request.params(":id"));
+      Program program = Program.find(programId);
+      model.put("program", program);
+      model.put("languages", program.getLanguages());
+      model.put("template", "templates/program.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
     get("/associate/types/:id", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Type type = Type.find(Integer.parseInt(request.params(":id")));
@@ -111,14 +123,39 @@ public class App {
       return null;
     });
 
-    get("/type/list", (request, response) -> {
+    get("/associate/programs/:id", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Program program = Program.find(Integer.parseInt(request.params(":id")));
+
+      model.put("program", program);
+      model.put("languages", Language.all());
+      model.put("template", "templates/associate-programs.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/associate/programs/:id", (request, response) -> {
+      int programId = Integer.parseInt(request.params(":id"));
+      Program program = Program.find(programId);
+
+      program.removeAllLanguages();
+      String[] languageIds = request.queryParamsValues("languages");
+      if (languageIds != null){
+        for (String languageId : languageIds) {
+          program.addLanguage(Language.find(Integer.parseInt(languageId)));
+        }
+      }
+      response.redirect("/program/" + programId);
+      return null;
+    });
+
+    get("/types", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("types", Type.all());
       model.put("template", "templates/types.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("/program/list", (request, response) -> {
+    get("/programs", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("programs", Program.all());
       model.put("template", "templates/programs.vtl");
@@ -131,7 +168,7 @@ public class App {
       Type type = Type.find(typeId);
       model.put("type", type);
       model.put("description", type.getDescription());
-      model.put("template", "templates/edit-type.vtl");
+      model.put("template", "templates/type-edit.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
@@ -145,7 +182,7 @@ public class App {
       if(name.equals("")) {
         model.put("formError", true);
         model.put("description", description);
-        model.put("template", "templates/type-add.vtl");
+        model.put("template", "templates/type-edit.vtl");
       } else {
         type.update(name, description);
         type = Type.find(typeId);
@@ -156,6 +193,69 @@ public class App {
         model.put("template", "templates/type.vtl");
       }
 
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/program/:id/edit", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      int programId = Integer.parseInt(request.params(":id"));
+      Program program = Program.find(programId);
+      model.put("program", program);
+      model.put("description", program.getDescription());
+      model.put("template", "templates/program-edit.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/program/:id/edit", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      int programId = Integer.parseInt(request.params(":id"));
+      Program program = Program.find(programId);
+      String name = request.queryParams("name").trim();
+      String description = request.queryParams("description");
+      String url = request.queryParams("url");
+
+      if(name.equals("")) {
+        model.put("formError", true);
+        model.put("description", description);
+        model.put("template", "templates/program-edit.vtl");
+      } else {
+        program.update(name, description, url);
+        program = Program.find(programId);
+
+        model.put("program", program);
+        model.put("languages", program.getLanguages());
+        model.put("update", true);
+        model.put("template", "templates/program.vtl");
+      }
+
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/type/:id/delete", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+
+      int typeId = Integer.parseInt(request.params(":id"));
+      Type type = Type.find(typeId);
+
+      type.delete();
+
+      model.put("types", Type.all());
+      model.put("deleted", true);
+      model.put("template", "templates/types.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/program/:id/delete", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+
+      int programId = Integer.parseInt(request.params(":id"));
+      Program program = Program.find(programId);
+
+      program.delete();
+
+      model.put("programs", Program.all());
+      model.put("deleted", true);
+      model.put("template", "templates/programs.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 

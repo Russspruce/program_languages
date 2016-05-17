@@ -4,15 +4,18 @@
 <h3 class="animated flash error">Please be sure to enter a Type</h3>
 #end
 
-<form action="/type/add" method="post">
+<form action="/type/$type.getId()/edit" method="post">
   <label for="name">Type</label>
-  <input type="text" id="name" name="name">
+  <input type="text" id="name" name="name" value="$type.getName()">
 
   <label for="description">Description</label>
  <textarea rows="4" name="description" id="description">$description</textarea>
 
   <button id="submitType" type="submit" class="btn btn-success">Submit</button>
 </form>
+<br>
+
+<a href="/type/$type.getId()/delete" class="btn btn-danger">Delete $type.getName()</a>
 <br>
 
 <hr>

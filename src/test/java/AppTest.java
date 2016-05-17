@@ -66,12 +66,72 @@ public class AppTest extends FluentTest{
   }
 
   @Test
+  public void associateLanguageWithType() {
+    Type testType = new Type ("Name 1", "Description");
+    testType.save();
+    Language testLanguage = new Language("Name 2", "x", "y", "date", "http://java.com");
+    testLanguage.save();
+    Language testLanguage2 = new Language("Name 3", "x", "y", "date", "http://java.com");
+    testLanguage2.save();
+    goTo("http://localhost:4567/associate/types/" + testType.getId());
+    click("#languages");
+    submit(".btn");
+    assertThat(pageSource()).contains("Name 3");
+  }
+
+  @Test
+  public void associateLanguageWithProgram() {
+    Program testProgram = new Program ("Name 1", "Description", "url");
+    testProgram.save();
+    Language testLanguage = new Language("Name 2", "x", "y", "date", "http://java.com");
+    testLanguage.save();
+    Language testLanguage2 = new Language("Name 3", "x", "y", "date", "http://java.com");
+    testLanguage2.save();
+    goTo("http://localhost:4567/associate/programs/" + testProgram.getId());
+    click("#languages");
+    submit(".btn");
+    assertThat(pageSource()).contains("Name 3");
+  }
+
+  @Test
   public void editType() {
     Type testType = new Type ("Name 1", "Description");
     testType.save();
     goTo("http://localhost:4567/type/" + testType.getId() + "/edit");
     fill("#name").with("Name 2");
+    fill("#description").with("Description 2");
     submit(".btn-success");
     assertThat(pageSource()).contains("Name 2");
   }
+
+  @Test
+  public void editProgram() {
+    Program testProgram = new Program ("Name 1", "Description", "url");
+    testProgram.save();
+    goTo("http://localhost:4567/program/" + testProgram.getId() + "/edit");
+    fill("#name").with("Name 2");
+    fill("#description").with("Description 2");
+    fill("#url").with("url2");
+    submit(".btn-success");
+    assertThat(pageSource()).contains("Name 2");
+  }
+
+  @Test
+  public void deleteProgram() {
+    Program testProgram = new Program ("Name 1", "Description", "url");
+    testProgram.save();
+    goTo("http://localhost:4567/program/" + testProgram.getId() + "/edit");
+    click(".btn-danger");
+    assertThat(pageSource()).doesNotContain("Name 1");
+  }
+
+  @Test
+  public void deleteType() {
+    Type testType = new Type ("Name 1", "Description");
+    testType.save();
+    goTo("http://localhost:4567/type/" + testType.getId() + "/edit");
+    click(".btn-danger");
+    assertThat(pageSource()).doesNotContain("Name 1");
+  }
+
 }

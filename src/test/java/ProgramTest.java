@@ -78,4 +78,42 @@ public class ProgramTest {
     assertTrue(testSearch.get(0).equals(testProgram3));
     assertEquals(testSearch.size(), 2);
   }
+
+  @Test
+  public void addLanguage_joinsProgramAndLanguage_true() {
+    Language testLanguage = new Language("Name 1", "x", "y", "date", "http://java.com");
+    testLanguage.save();
+    Program testProgram = new Program("Name 1", "Description", "http://www.google.com");
+    testProgram.save();
+    testProgram.addLanguage(testLanguage);
+    Language joinedLanguage = testProgram.getLanguages().get(0);
+    assertTrue(testLanguage.equals(joinedLanguage));
+    }
+
+  @Test
+  public void getLanguages_returnsAllAssociatedLanguages_int() {
+    Program testProgram = new Program("Name 1", "Description", "http://www.google.com");
+    testProgram.save();
+    Language testLanguage = new Language("Name 2", "x", "y", "date", "http://java.com");
+    testLanguage.save();
+    testProgram.addLanguage(testLanguage);
+    Language testLanguage2 = new Language("Name 3", "x", "y", "date", "http://java.com");
+    testLanguage2.save();
+    testProgram.addLanguage(testLanguage2);
+    Language joinedLanguage = testProgram.getLanguages().get(0);
+    assertTrue(testLanguage.equals(joinedLanguage));
+    assertEquals(2, testProgram.getLanguages().size());
+  }
+
+  @Test
+  public void removeLanguage_removesLanguageAssociation_true() {
+    Program testProgram = new Program("Name 1", "Description", "http://www.google.com");
+    testProgram.save();
+    Language testLanguage = new Language("Name 2", "x", "y", "date", "http://java.com");
+    testLanguage.save();
+    testProgram.addLanguage(testLanguage);
+    testProgram.removeLanguage(testLanguage.getId());
+    assertEquals(0, testProgram.getLanguages().size());
+  }
+
 }

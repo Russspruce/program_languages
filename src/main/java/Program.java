@@ -96,6 +96,7 @@ public class Program {
         .executeUpdate();
     }
   }
+
   public static List<Program> search(String searchQuery) {
     try(Connection con = DB.sql2o.open()) {
       String search = "SELECT * FROM programs WHERE lower(name) LIKE :searchQuery;";
@@ -111,6 +112,35 @@ public class Program {
       return con.createQuery(joinQuery)
         .addParameter("id" , this.id)
         .executeAndFetch(Language.class);
+    }
+  }
+
+  public void addLanguage(Language newLanguage) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "INSERT INTO languages_programs (language_id, program_id) VALUES (:language_id, :program_id);";
+      con.createQuery(sql)
+        .addParameter("program_id", this.id)
+        .addParameter("language_id", newLanguage.getId())
+        .executeUpdate();
+    }
+  }
+
+  public void removeLanguage(int languageId) {
+    try(Connection con = DB.sql2o.open()) {
+      String removeQuery = "DELETE FROM languages_programs WHERE program_id=:program_id AND language_id=:language_id;";
+      con.createQuery(removeQuery)
+      .addParameter("program_id", this.id)
+      .addParameter("language_id", languageId)
+      .executeUpdate();
+    }
+  }
+
+  public void removeAllLanguages() {
+    try(Connection con = DB.sql2o.open()) {
+      String deleteJoin = "DELETE FROM languages_programs WHERE program_id=:id;";
+      con.createQuery(deleteJoin)
+      .addParameter("id", id)
+      .executeUpdate();
     }
   }
 }

@@ -55,11 +55,12 @@ public class Language {
       return false;
     } else {
       Language newLanguage = (Language) otherLanguage;
-      return this.getId() == newLanguage.getId()  && this.getName().equals(newLanguage.getName()) &&
-      this.getDescription().equals(newLanguage.getDescription()) &&
-      this.getExample().equals(newLanguage.getExample()) &&
-      this.getDate().equals(newLanguage.getDate()) &&
-      this.getUrl().equals(newLanguage.getUrl());
+      return newLanguage.getId() ==  this.id &&
+        newLanguage.getName().equals(this.name) &&
+        newLanguage.getDescription().equals(this.description) &&
+        newLanguage.getExample().equals(this.example) &&
+        newLanguage.getDate().equals(this.date) &&
+        newLanguage.getUrl().equals(this.url);
   }
 }
 
