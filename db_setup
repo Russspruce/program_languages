@@ -1,5 +1,5 @@
 CREATE DATABASE program_languages;
 \c program_languages;
-CREATE TABLE careers (id int PRIMARY KEY, title varchar, description varchar);
-CREATE TABLE languages (id int PRIMARY KEY, title varchar, description varchar);
+CREATE TABLE careers (id serial PRIMARY KEY, title varchar, description varchar);
+CREATE TABLE languages (id serial PRIMARY KEY, title varchar, description varchar);
 CREATE DATABASE program_languages_test WITH TEMPLATE program_languages;

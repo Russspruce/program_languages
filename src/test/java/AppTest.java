@@ -34,8 +34,13 @@ public class AppTest extends FluentTest{
 
   @Test
   public void careerFormLoads() {
-    goTo("http://localhost:4567/career-form")
+    goTo("http://localhost:4567/career-form");
     assertThat(pageSource()).contains("Career Form");
   }
 
+  @Test
+  public void careerForm() {
+    goTo("http://localhost:4567/career-form");
+    assertThat(pageSource()).contains("Career Form");
+  }
 }
