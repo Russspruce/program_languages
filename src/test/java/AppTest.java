@@ -17,18 +17,36 @@ public class AppTest extends FluentTest{
 
   @Override
   public WebDriver getDefaultDriver() {
-   return webDriver;
- }
+    return webDriver;
+  }
 
- @ClassRule
- public static ServerRule server = new ServerRule();
+  @ClassRule
+  public static ServerRule server = new ServerRule();
 
- @Rule
-public DatabaseRule database = new DatabaseRule();
+  @Rule
+  public DatabaseRule database = new DatabaseRule();
 
-  // @Test
-  // public void rootTest() {
-  //  goTo("http://localhost:4567/");
-  //  assertThat(pageSource()).contains("");
-  // }
+  @Test
+  public void rootTest() {
+    goTo("http://localhost:4567/");
+    assertThat(pageSource()).contains("Program Language Database");
+  }
+
+  @Test
+  public void allLanguagesPageIsDisplayed() {
+    goTo("http://localhost:4567/");
+    click("a", withText("Add Language"));
+    assertThat(pageSource().contains("Add Language"));
+  }
+
+  @Test
+  public void individualLanguagePageIsDisplayed() {
+    Language testLanguage = new Language("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
+    testLanguage.save();
+    String url = String.format("http://localhost:4567/languages/%d", testLanguage.getId());
+    goTo(url);
+    assertThat(pageSource()).contains("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
+  }
+
+  
 }

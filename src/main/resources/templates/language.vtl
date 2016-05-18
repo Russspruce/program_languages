@@ -6,7 +6,24 @@
 <br>
 <h2>$language.getDate()</h2>
 <br>
-<h2>$language.getUrl()</h2>
+<h2>$language.getWebpage()</h2>
+<br>
+
+<h2>Related Careers</h2>
+
+
+<form action="/add_careers" method="post">
+  <input id="language_id" type="hidden" name="language_id" value="$language.getId()">
+  <label for="career_id">Language required for Career:</label>
+  <select id="career_id" class="" name="career_id" type="text">
+    #foreach($career in $allCareer)
+      <option value="$career.getId()">$career.get<put method here>()</option> //need to connect to career
+    #end
+  </select>
+  <button type="submit" class="btn btn-success">Connect Career</button>
+</form>
+
+<br>
 
 <form action="/languages/$language.getId()/delete">
   <button type="submit" class="btn btn-danger">Remove Language</button>

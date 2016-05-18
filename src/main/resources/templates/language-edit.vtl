@@ -1,0 +1,21 @@
+<h1>language.getName()</h1>
+<br>
+<form action="/languages/$language.getId()/edit" method="post">
+  <input id="description" name="description" type="hidden" value="$language.getId()">
+  <label for="description">Update Description:</label>
+  <textarea rows="6" cols="50" type="text" id="description" name="description">$language.getDescription()</textarea>
+  <br>
+  <input id="example" name="example" type="hidden" value="$language.getId()">
+  <label for="example">Update Example:</label>
+  <textarea rows="6" cols="50" type="text" id="example" name="example">$language.getExample()</textarea>
+  <br>
+  <input id="date" name="date" class="form-control" type="date">$language.getDate()</input>
+  <br>
+  <input id="webpage" name="webpage" class="form-control" type="text">$language.getWebpage()</input>
+  <br>
+  <button type="submit" class="btn btn-info">Update $language.getName()</button>
+</form>
+
+
+
+<p><a href="/venues">Go back</a></p>
