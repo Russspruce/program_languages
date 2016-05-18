@@ -1,6 +1,7 @@
 import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
+import java.util.ArrayList;
 
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
@@ -379,5 +380,179 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/language/add", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+
+      model.put("description", "");
+      model.put("example", "");
+      model.put("date", "");
+      model.put("webpage", "");
+      model.put("template", "templates/language-add.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/language/add", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      String name = request.queryParams("name").trim();
+      String description = request.queryParams("description");
+      String example = request.queryParams("example");
+      String date = request.queryParams("date");
+      String webpage = request.queryParams("webpage");
+
+      if(name.equals("")) {
+        model.put("formError", true);
+        model.put("description", description);
+        model.put("example", example);
+        model.put("date", date);
+        model.put("webpage", webpage);
+        model.put("template", "templates/language-add.vtl");
+      } else {
+        Language newLanguage = new Language(name, description, example, date, webpage);
+        newLanguage.save();
+
+        model.put("language", newLanguage);
+        model.put("new", true);
+        model.put("template", "templates/language.vtl");
+      }
+
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/language/:id", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      int languageId = Integer.parseInt(request.params(":id"));
+      Language language = Language.find(languageId);
+      model.put("language", language);
+      model.put("template", "templates/language.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/languages", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("languages", Language.all());
+      model.put("template", "templates/languages.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("language/:id/edit", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      Language language = Language.find(Integer.parseInt(request.params("id")));
+      model.put("language", language);
+      model.put("template", "templates/language-edit.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/language/:id/edit", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      int languageId = Integer.parseInt(request.params(":id"));
+      Language language = Language.find(languageId);
+      String name = request.queryParams("name").trim();
+      String description = request.queryParams("description");
+      String example = request.queryParams("example");
+      String date = request.queryParams("date");
+      String webpage = request.queryParams("webpage");
+
+      if(name.equals("")) {
+        model.put("formError", true);
+        model.put("template", "templates/language-edit.vtl");
+      } else {
+        language.update(name, description, example, date, webpage);
+        language = Language.find(languageId);
+
+        model.put("language", language);
+        model.put("update", true);
+        model.put("template", "templates/language.vtl");
+      }
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/language/:id/delete", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+
+      int languageId = Integer.parseInt(request.params(":id"));
+      Language language = Language.find(languageId);
+
+      language.delete();
+
+      model.put("languages", Language.all());
+      model.put("deleted", true);
+      model.put("template", "templates/languages.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/associate/language/careers/:id", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Language language = Language.find(Integer.parseInt(request.params(":id")));
+
+      model.put("language", language);
+      model.put("careers", Career.all());
+      model.put("template", "templates/associate-language-careers.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/associate/language/careers/:id", (request, response) -> {
+      int languageId = Integer.parseInt(request.params(":id"));
+      Language language = Language.find(languageId);
+
+      language.removeAllCareers();
+      String[] careerIds = request.queryParamsValues("careers");
+      if (careerIds != null){
+        for (String careerId : careerIds) {
+          language.addCareer(Career.find(Integer.parseInt(careerId)));
+        }
+      }
+      response.redirect("/language/" + languageId);
+      return null;
+    });
+
+    get("/associate/language/types/:id", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Language language = Language.find(Integer.parseInt(request.params(":id")));
+
+      model.put("language", language);
+      model.put("types", Type.all());
+      model.put("template", "templates/associate-language-types.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/associate/language/types/:id", (request, response) -> {
+      int languageId = Integer.parseInt(request.params(":id"));
+      Language language = Language.find(languageId);
+
+      language.removeAllTypes();
+      String[] typeIds = request.queryParamsValues("types");
+      if (typeIds != null){
+        for (String typeId : typeIds) {
+          language.addType(Type.find(Integer.parseInt(typeId)));
+        }
+      }
+      response.redirect("/language/" + languageId);
+      return null;
+    });
+
+    get("/associate/language/programs/:id", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Language language = Language.find(Integer.parseInt(request.params(":id")));
+
+      model.put("language", language);
+      model.put("programs", Program.all());
+      model.put("template", "templates/associate-language-programs.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/associate/language/programs/:id", (request, response) -> {
+      int languageId = Integer.parseInt(request.params(":id"));
+      Language language = Language.find(languageId);
+
+      language.removeAllPrograms();
+      String[] programIds = request.queryParamsValues("programs");
+      if (programIds != null){
+        for (String programId : programIds) {
+          language.addProgram(Program.find(Integer.parseInt(programId)));
+        }
+      }
+      response.redirect("/language/" + languageId);
+      return null;
+    });
   }
 }

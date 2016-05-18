@@ -1,0 +1,16 @@
+<h1>Edit Careers for $language.getName()</h1>
+
+<form action="/associate/language/careers/$language.getId()" method="post">
+  #foreach ($career in $careers)
+    #if ($language.getCareers().contains($career))
+      <input type="checkbox" id="careers" name="careers" value="$career.getId()" checked>$career.getTitle()<br>
+    #else
+    <input type="checkbox" id="careers" name="careers" value="$career.getId()">$career.getTitle()<br>
+    #end
+  #end
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
+<br>
+
+<hr>
+<a class="bottomNav" href="/">Home</a>

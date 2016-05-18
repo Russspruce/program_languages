@@ -1,0 +1,27 @@
+<h1>language.getName()</h1>
+<br>
+#if ($formError)
+<h3 class="animated flash error">Please be sure to enter a Language Name</h3>
+#end
+<form action="/language/$language.getId()/edit" method="post">
+  <input id="name" name="name" class="form-control" type="name">$language.getName()</input>
+  <br>
+  <label for="description">Update Description:</label>
+  <textarea rows="6" cols="50" type="text" id="description" name="description">$language.getDescription()</textarea>
+  <br>
+  <input id="example" name="example" type="hidden" value="$language.getId()">
+  <label for="example">Update Example:</label>
+  <textarea rows="6" cols="50" type="text" id="example" name="example">$language.getExample()</textarea>
+  <br>
+  <input id="date" name="date" class="form-control" type="date">$language.getDate()</input>
+  <br>
+  <input id="webpage" name="webpage" class="form-control" type="text">$language.getWebpage()</input>
+  <br>
+  <button type="submit" class="btn btn-success">Update $language.getName()</button>
+</form>
+<br>
+<a href="/language/$language.getId()/delete" class="btn btn-danger">Delete $language.getName()</a>
+
+<hr>
+
+<p><a href="/">Home</a></p>

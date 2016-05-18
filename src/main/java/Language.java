@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.ArrayList;
 import org.sql2o.*;
 import java.util.Arrays;
 
@@ -8,14 +9,14 @@ public class Language {
   private String description;
   private String example;
   private String date;
-  private String url;
+  private String webpage;
 
-  public Language(String name, String description, String example, String date, String url) {
+  public Language(String name, String description, String example, String date, String webpage) {
     this.name = name;
     this.description = description;
     this.example = example;
     this.date = date;
-    this.url = url;
+    this.webpage = webpage;
   }
 
   public int getId() {
@@ -38,12 +39,12 @@ public class Language {
     return date;
   }
 
-  private String getUrl() {
-    return url;
+  public String getWebpage() {
+    return webpage;
   }
 
   public static List<Language> all() {
-    String sql = "SELECT id, name, description, example, date, url FROM languages";
+    String sql = "SELECT id, name, description, example, date, webpage FROM languages";
     try(Connection con = DB.sql2o.open()) {
       return con.createQuery(sql).executeAndFetch(Language.class);
     }
@@ -55,24 +56,25 @@ public class Language {
       return false;
     } else {
       Language newLanguage = (Language) otherLanguage;
-      return newLanguage.getId() ==  this.id &&
-        newLanguage.getName().equals(this.name) &&
-        newLanguage.getDescription().equals(this.description) &&
-        newLanguage.getExample().equals(this.example) &&
-        newLanguage.getDate().equals(this.date) &&
-        newLanguage.getUrl().equals(this.url);
+
+      return this.getId() == newLanguage.getId()  && this.getName().equals(newLanguage.getName()) &&
+      this.getDescription().equals(newLanguage.getDescription()) &&
+      this.getExample().equals(newLanguage.getExample()) &&
+      this.getDate().equals(newLanguage.getDate()) &&
+      this.getWebpage().equals(newLanguage.getWebpage());
   }
 }
 
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO languages(name, description, example, date, url) VALUES (:name, :description, :example, :date, :url)";
+
+      String sql = "INSERT INTO languages(name, description, example, date, webpage) VALUES (:name, :description, :example, :date, :webpage)";
       this.id = (int) con.createQuery(sql, true)
       .addParameter("name", this.name)
       .addParameter("description", this.description)
       .addParameter("example", this.example)
       .addParameter("date", this.date)
-      .addParameter("url", this.url)
+      .addParameter("webpage", this.webpage)
       .executeUpdate()
       .getKey();
     }
@@ -85,10 +87,20 @@ public class Language {
       .addParameter("id", this.getId())
       .executeUpdate();
 
-      // String joinDeleteQuery = "DELETE FROM languages_careers WHERE language_id = :language_id";
-      // con.createQuery(joinDeleteQuery)
-      // .addParameter("language_id", this.getId())
-      // .executeUpdate();
+      String joinDeleteQuery = "DELETE FROM languages_careers WHERE language_id = :language_id";
+      con.createQuery(joinDeleteQuery)
+      .addParameter("language_id", this.getId())
+      .executeUpdate();
+
+      String joinDeleteQuery2 = "DELETE FROM languages_programs WHERE language_id = :language_id";
+      con.createQuery(joinDeleteQuery2)
+      .addParameter("language_id", this.getId())
+      .executeUpdate();
+
+      String joinDeleteQuery3 = "DELETE FROM languages_types WHERE language_id = :language_id";
+      con.createQuery(joinDeleteQuery3)
+      .addParameter("language_id", this.getId())
+      .executeUpdate();
     }
   }
 
@@ -118,6 +130,29 @@ public class Language {
       con.createQuery(sql)
         .addParameter("language_id", this.id)
         .addParameter("type_id", newType.getId())
+        .executeUpdate();
+    }
+  }
+
+  public static List<Language> search(String searchQuery) {
+    try(Connection con = DB.sql2o.open()) {
+      String search = "SELECT * FROM languagess WHERE lower(name) LIKE :searchQuery;";
+      return con.createQuery(search)
+        .addParameter("searchQuery", "%" + searchQuery.toLowerCase() + "%")
+        .executeAndFetch(Language.class);
+    }
+  }
+
+  public void update(String name, String description, String example, String date, String webpage) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE languages SET name = :name, description = :description, example = :example, date = :date, webpage = :webpage WHERE id = :id;";
+      con.createQuery(sql)
+        .addParameter("name", name)
+        .addParameter("description", description)
+        .addParameter("example", example)
+        .addParameter("date", date)
+        .addParameter("webpage", webpage)
+        .addParameter("id", id)
         .executeUpdate();
     }
   }
@@ -175,6 +210,45 @@ public class Language {
       con.createQuery(deleteJoin)
         .addParameter("id", id)
         .executeUpdate();
+    }
+  }
+
+  public void removeAllCareers() {
+    try(Connection con = DB.sql2o.open()) {
+      String deleteJoin = "DELETE FROM languages_careers WHERE language_id=:id;";
+      con.createQuery(deleteJoin)
+        .addParameter("id", id)
+        .executeUpdate();
+    }
+  }
+
+  public void addCareer(Career career) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "INSERT INTO languages_careers (language_id, career_id) VALUES (:language_id, :career_id)";
+      con.createQuery(sql)
+      .addParameter("career_id", career.getId())
+      .addParameter("language_id", this.getId())
+      .executeUpdate();
+    }
+  }
+
+  public List<Career> getCareers() {
+    try(Connection con = DB.sql2o.open()){
+      String joinQuery = "SELECT career_id FROM languages_careers WHERE language_id = :language_id";
+      List<Integer> career_ids = con.createQuery(joinQuery)
+      .addParameter("language_id", this.getId())
+      .executeAndFetch(Integer.class);
+
+      List<Career> careers = new ArrayList<Career>();
+
+      for (Integer career_id : career_ids) {
+        String venueQuery = "SELECT * FROM careers WHERE id = :career_id";
+        Career career = con.createQuery(venueQuery)
+        .addParameter("career_id", career_id)
+        .executeAndFetchFirst(Career.class);
+        careers.add(career);
+      }
+      return careers;
     }
   }
 

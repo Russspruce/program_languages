@@ -1,0 +1,61 @@
+<h1>$language.getName()</h1>
+<br>
+#if ($new)
+  <h4 class="success animated flash">Language successfully added</h4>
+#end
+
+#if ($update)
+  <h4 class="success animated flash">Language successfully updated</h4>
+#end
+
+<h2>$language.getDescription()</h2>
+<br>
+<h2>$language.getExample()</h2>
+<br>
+<h2>$language.getDate()</h2>
+<br>
+<h2>$language.getWebpage()</h2>
+<br>
+
+<h2>Careers:</h2>
+<ul>
+  #foreach ($career in $language.getCareers())
+    <li><a href="/career/$career.getId()">$career.getTitle()</a></li>
+  #end
+</ul>
+
+<h2>Types:</h2>
+<ul>
+  #foreach ($type in $language.getTypes())
+    <li><a href="/type/$type.getId()">$type.getName()</a></li>
+  #end
+</ul>
+
+<h2>Programs:</h2>
+<ul>
+  #foreach ($program in $language.getPrograms())
+    <li><a href="/program/$program.getId()">$program.getName()</a></li>
+  #end
+</ul>
+
+
+<hr>
+<a class="edit" href="/associate/language/careers/$language.getId()">Edit Careers for $language.getName()</a>
+<br>
+
+<a class="edit" href="/associate/language/programs/$language.getId()">Edit Programs for $language.getName()</a>
+<br>
+
+<a class="edit" href="/associate/language/types/$language.getId()">Edit Types for $language.getName()</a>
+<br>
+
+<a class="edit" href="/language/$language.getId()/edit">Edit or Delete $Language.getName()</a>
+<br>
+
+<hr>
+
+<!-- <form action="/languages/$language.getId()/delete">
+  <button type="submit" class="btn btn-danger">Remove Language</button>
+</form> -->
+
+<a href="/">Home</a>

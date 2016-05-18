@@ -1,0 +1,14 @@
+<h1>Languages</h1>
+
+#if ($deleted)
+<h3 class="animated flash success">Language successfully deleted</h3>
+#end
+
+<br>
+<ul>
+  #foreach ($language in $languages)
+    <li><a href="/language/$language.getId()">$language.getName()</a></li>
+  #end
+</ul>
+
+<a href="/">Home</a>

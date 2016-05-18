@@ -29,7 +29,7 @@ public class AppTest extends FluentTest{
   @Test
   public void rootTest() {
    goTo("http://localhost:4567/");
-   assertThat(pageSource()).contains("");
+   assertThat(pageSource()).contains("Program Language");
   }
 
   @Test
@@ -168,6 +168,14 @@ public class AppTest extends FluentTest{
     assertThat(pageSource()).doesNotContain("Title 1");
   }
 
+  @Test
+  public void deleteLanguage() {
+    Language testLanguage = new Language ("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
+    testLanguage.save();
+    goTo("http://localhost:4567/language/" + testLanguage.getId() + "/edit");
+    click(".btn-danger");
+    assertThat(pageSource()).doesNotContain("Java");
+  }
 
   @Test
   public void careerAddPageLoads() {
@@ -189,4 +197,73 @@ public class AppTest extends FluentTest{
     assertThat(pageSource()).contains("All Careers");
   }
 
+  @Test
+  public void allLanguagesPageIsDisplayed() {
+    goTo("http://localhost:4567/");
+    click("a", withText("Add Language"));
+    assertThat(pageSource().contains("Add Language"));
+  }
+
+  @Test
+  public void individualLanguagePageIsDisplayed() {
+    Language testLanguage = new Language("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
+    testLanguage.save();
+    String url = String.format("http://localhost:4567/language/%d", testLanguage.getId());
+    goTo(url);
+    assertThat(pageSource()).contains("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
+  }
+
+  @Test
+  public void editLanguage() {
+    Language testLanguage = new Language("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
+    testLanguage.save();
+    goTo("http://localhost:4567/language/" + testLanguage.getId() + "/edit");
+    fill("#name").with("Name 2");
+    fill("#description").with("Description 2");
+    fill("#webpage").with("url2");
+    submit(".btn-success");
+    assertThat(pageSource()).contains("Name 2");
+  }
+
+  @Test
+  public void associateCareerWithLanguage() {
+    Career testCareer = new Career ("Name 1", "Description");
+    testCareer.save();
+    Career testCareer2 = new Career ("Name 2", "Description 2");
+    testCareer2.save();
+    Language testLanguage = new Language("Name 3", "x", "y", "date", "http://java.com");
+    testLanguage.save();
+    goTo("http://localhost:4567/associate/language/careers/" + testLanguage.getId());
+    click("#careers");
+    submit(".btn");
+    assertThat(pageSource()).contains("Name 2");
+  }
+
+  @Test
+  public void associateTypeWithLanguage() {
+    Type testType = new Type ("Name 1", "Description");
+    testType.save();
+    Type testType2 = new Type ("Name 2", "Description 2");
+    testType2.save();
+    Language testLanguage = new Language("Name 3", "x", "y", "date", "http://java.com");
+    testLanguage.save();
+    goTo("http://localhost:4567/associate/language/types/" + testLanguage.getId());
+    click("#types");
+    submit(".btn");
+    assertThat(pageSource()).contains("Name 2");
+  }
+
+  @Test
+  public void associateProgramWithLanguage() {
+    Program testProgram = new Program ("Name 1", "Description", "url");
+    testProgram.save();
+    Program testProgram2 = new Program ("Name 2", "Description 2", "url 2");
+    testProgram2.save();
+    Language testLanguage = new Language("Name 3", "x", "y", "date", "http://java.com");
+    testLanguage.save();
+    goTo("http://localhost:4567/associate/language/programs/" + testLanguage.getId());
+    click("#programs");
+    submit(".btn");
+    assertThat(pageSource()).contains("Name 2");
+  }
 }
