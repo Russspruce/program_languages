@@ -2,6 +2,7 @@ import org.sql2o.*;
 import org.junit.*;
 import static org.junit.Assert.*;
 import java.util.Arrays;
+import java.util.List;
 
 public class LanguageTest {
 
@@ -68,7 +69,7 @@ public class LanguageTest {
     testLanguage.delete();
     assertEquals(null, Language.find(testLanguageId));
   }
-  
+
   @Test
   public void addProgram_joinsLanguageAndProgram_true() {
     Language testLanguage = new Language("Name 1", "x", "y", "date", "http://java.com");
@@ -121,4 +122,18 @@ public class LanguageTest {
       assertEquals(0, testLanguage.getPrograms().size());
   }
 
+  @Test
+  public void search_findSetOfLanguagesByKeyword_list() {
+    Language testLanguage = new Language("Name 1", "x", "y", "date", "http://java.com");
+    testLanguage.save();
+    Language testLanguage2 = new Language("Name 2", "x", "y", "date", "http://java.com");
+    testLanguage2.save();
+    Language testLanguage3 = new Language("Name 3vwX", "x", "y", "date", "http://java.com");
+    testLanguage3.save();
+    Language testLanguage4 = new Language("Name 4Vwx", "x", "y", "date", "http://java.com");
+    testLanguage4.save();
+    List<Language> testSearch = Language.search("vWx");
+    assertTrue(testSearch.get(0).equals(testLanguage3));
+    assertEquals(testSearch.size(), 2);
+  }
 }
