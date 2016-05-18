@@ -2,7 +2,7 @@
 
 #### _A database of programming languages, their uses, and the careers they allow. 15/18/2016_
 
-#### By _**Andrew, Kyle, Ian, John**_
+#### By _**Andrew, Kevin, Ian, John**_
 
 ## Description
 
@@ -34,7 +34,7 @@ _{Are there issues that have not yet been resolved that you want to let users kn
 
 John -
 Ian Lesikar - ilesikar@gmail.com
-Kyle -
+Kevin -
 Andrew -
 
 _Contact any of us if you have and questions_
