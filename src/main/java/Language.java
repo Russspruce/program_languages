@@ -136,7 +136,7 @@ public class Language {
 
   public static List<Language> search(String searchQuery) {
     try(Connection con = DB.sql2o.open()) {
-      String search = "SELECT * FROM languagess WHERE lower(name) LIKE :searchQuery;";
+      String search = "SELECT * FROM languages WHERE lower(name) LIKE :searchQuery;";
       return con.createQuery(search)
         .addParameter("searchQuery", "%" + searchQuery.toLowerCase() + "%")
         .executeAndFetch(Language.class);
