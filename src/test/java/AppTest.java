@@ -75,7 +75,7 @@ public class AppTest extends FluentTest{
     testLanguage2.save();
     goTo("http://localhost:4567/associate/types/" + testType.getId());
     click("#languages");
-    submit(".btn");
+    submit(".btn-success");
     assertThat(pageSource()).contains("Name 3");
   }
 
@@ -89,7 +89,7 @@ public class AppTest extends FluentTest{
     testLanguage2.save();
     goTo("http://localhost:4567/associate/programs/" + testProgram.getId());
     click("#languages");
-    submit(".btn");
+    submit(".btn-success");
     assertThat(pageSource()).contains("Name 3");
   }
 
@@ -103,7 +103,7 @@ public class AppTest extends FluentTest{
     testLanguage2.save();
     goTo("http://localhost:4567/associate/careers/" + testCareer.getId());
     click("#languages");
-    submit(".btn");
+    submit(".btn-success");
     assertThat(pageSource()).contains("Name 3");
   }
 
@@ -187,7 +187,7 @@ public class AppTest extends FluentTest{
   public void careerAddPageSavesInput() {
     goTo("http://localhost:4567/career/add");
     fill("#title").with("title 1");
-    submit(".btn");
+    submit(".btn-success");
     assertThat(pageSource()).contains("title 1");
   }
 
@@ -235,7 +235,7 @@ public class AppTest extends FluentTest{
     testLanguage.save();
     goTo("http://localhost:4567/associate/language/careers/" + testLanguage.getId());
     click("#careers");
-    submit(".btn");
+    submit(".btn-success");
     assertThat(pageSource()).contains("Name 2");
   }
 
@@ -249,7 +249,7 @@ public class AppTest extends FluentTest{
     testLanguage.save();
     goTo("http://localhost:4567/associate/language/types/" + testLanguage.getId());
     click("#types");
-    submit(".btn");
+    submit(".btn-success");
     assertThat(pageSource()).contains("Name 2");
   }
 
@@ -263,7 +263,23 @@ public class AppTest extends FluentTest{
     testLanguage.save();
     goTo("http://localhost:4567/associate/language/programs/" + testLanguage.getId());
     click("#programs");
-    submit(".btn");
+    submit(".btn-success");
     assertThat(pageSource()).contains("Name 2");
+  }
+
+  @Test public void search() {
+    Language testLanguage = new Language("Name 3", "x", "y", "date", "http://java.com");
+    testLanguage.save();
+    Program testProgram = new Program ("Name 2", "Description", "url");
+    testProgram.save();
+    Type testType = new Type ("Name 1", "Description");
+    testType.save();
+    Career testCareer = new Career ("Name 1", "Description");
+    testCareer.save();
+    goTo("http://localhost:4567/");
+    fill("#search").with("e 1");
+    submit(".btn-info");
+    assertThat(pageSource()).doesNotContain("Name 2");
+    assertThat(pageSource()).contains("Name 1");
   }
 }

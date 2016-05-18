@@ -554,5 +554,19 @@ public class App {
       response.redirect("/language/" + languageId);
       return null;
     });
+
+    post("/search", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      String query = request.queryParams("search");
+
+      model.put("query", query);
+      model.put("languages", Language.search(query));
+      model.put("careers", Career.search(query));
+      model.put("types", Type.search(query));
+      model.put("programs", Program.search(query));
+      model.put("template", "templates/search-results.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
   }
 }

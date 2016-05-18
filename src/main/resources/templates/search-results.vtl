@@ -1,0 +1,43 @@
+<h1>Search Results: "$query"</h1>
+
+#if(!($languages.size() > 0 || $careers.size() > 0 || $types.size() > 0 || $programs.size() > 0))
+  <h3 class="animated flash error">No matching results</h3>
+#end
+
+#if($languages.size() > 0)
+  <h4>Languages:</h4>
+  #foreach($language in $languages)
+    <a href="/language/$language.getId()">$language.getName()</a>
+    <br>
+  #end
+#end
+
+#if($careers.size() > 0)
+  <h4>Careers:</h4>
+  #foreach($career in $careers)
+    <a href="/career/$career.getId()">$career.getTitle()</a>
+    <br>
+  #end
+#end
+
+#if($types.size() > 0)
+  <h4>Types:</h4>
+  #foreach($type in $types)
+    <a href="/type/$type.getId()">$type.getName()</a>
+    <br>
+  #end
+#end
+
+#if($programs.size() > 0)
+  <h4>Programs:</h4>
+  #foreach($program in $programs)
+    <a href="/program/$program.getId()">$program.getName()</a>
+    <br>
+  #end
+#end
+
+
+<br>
+
+<hr>
+<a href="/">Home</a>
