@@ -94,6 +94,20 @@ public class AppTest extends FluentTest{
   }
 
   @Test
+  public void associateLanguageWithCareer() {
+    Career testCareer = new Career ("Name 1", "Description");
+    testCareer.save();
+    Language testLanguage = new Language("Name 2", "x", "y", "date", "http://java.com");
+    testLanguage.save();
+    Language testLanguage2 = new Language("Name 3", "x", "y", "date", "http://java.com");
+    testLanguage2.save();
+    goTo("http://localhost:4567/associate/careers/" + testCareer.getId());
+    click("#languages");
+    submit(".btn");
+    assertThat(pageSource()).contains("Name 3");
+  }
+
+  @Test
   public void editType() {
     Type testType = new Type ("Name 1", "Description");
     testType.save();
@@ -102,6 +116,17 @@ public class AppTest extends FluentTest{
     fill("#description").with("Description 2");
     submit(".btn-success");
     assertThat(pageSource()).contains("Name 2");
+  }
+
+  @Test
+  public void editCareer() {
+    Career testCareer = new Career ("Name 1", "Description");
+    testCareer.save();
+    goTo("http://localhost:4567/career/" + testCareer.getId() + "/edit");
+    fill("#title").with("Title 2");
+    fill("#description").with("Description 2");
+    submit(".btn-success");
+    assertThat(pageSource()).contains("Title 2");
   }
 
   @Test
@@ -135,23 +160,33 @@ public class AppTest extends FluentTest{
   }
 
   @Test
+  public void deleteCareer() {
+    Career testCareer = new Career ("Title 1", "Description");
+    testCareer.save();
+    goTo("http://localhost:4567/career/" + testCareer.getId() + "/edit");
+    click(".btn-danger");
+    assertThat(pageSource()).doesNotContain("Title 1");
+  }
+
+
+  @Test
   public void careerAddPageLoads() {
-    goTo("career/add");
+    goTo("http://localhost:4567/career/add");
     assertThat(pageSource()).contains("Add");
   }
 
   @Test
   public void careerAddPageSavesInput() {
-    goTo("career/add");
-    fill("title").with("description");
+    goTo("http://localhost:4567/career/add");
+    fill("#title").with("title 1");
     submit(".btn");
-    assertThat(pageSource()).contains("");
+    assertThat(pageSource()).contains("title 1");
   }
 
   @Test
   public void careersPageLoadsAndShowsCareers() {
-    goTo("/careers");
-    assertThat(pageSource()).contains()
+    goTo("http://localhost:4567/careers");
+    assertThat(pageSource()).contains("All Careers");
   }
 
 }

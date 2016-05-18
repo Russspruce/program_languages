@@ -92,4 +92,42 @@ public class Career {
       .executeAndFetch(Career.class);
     }
   }
+
+  public List<Language> getLanguages() {
+    try(Connection con = DB.sql2o.open()) {
+      String joinQuery = "SELECT languages.* FROM careers JOIN languages_careers ON (careers.id = languages_careers.career_id) JOIN languages ON (languages_careers.language_id = languages.id) WHERE careers.id = :id;";
+      return con.createQuery(joinQuery)
+        .addParameter("id" , this.id)
+        .executeAndFetch(Language.class);
+    }
+  }
+
+  public void addLanguage(Language newLanguage) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "INSERT INTO languages_careers (language_id, career_id) VALUES (:language_id, :career_id);";
+      con.createQuery(sql)
+        .addParameter("career_id", this.id)
+        .addParameter("language_id", newLanguage.getId())
+        .executeUpdate();
+    }
+  }
+
+  public void removeLanguage(int languageId) {
+    try(Connection con = DB.sql2o.open()) {
+      String removeQuery = "DELETE FROM languages_careers WHERE career_id=:career_id AND language_id=:language_id;";
+      con.createQuery(removeQuery)
+      .addParameter("career_id", this.id)
+      .addParameter("language_id", languageId)
+      .executeUpdate();
+    }
+  }
+
+  public void removeAllLanguages() {
+    try(Connection con = DB.sql2o.open()) {
+      String deleteJoin = "DELETE FROM languages_careers WHERE career_id=:id;";
+      con.createQuery(deleteJoin)
+      .addParameter("id", id)
+      .executeUpdate();
+    }
+  }
 }

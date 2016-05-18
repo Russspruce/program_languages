@@ -11,15 +11,25 @@ public class DatabaseRule extends ExternalResource {
   @Override
   protected void after() {
     try(Connection con = DB.sql2o.open()) {
-      // String deleteProgramsQuery = "DELETE FROM programs *;";
+      String deleteProgramsQuery = "DELETE FROM programs *;";
       String deleteCareersQuery = "DELETE FROM careers *;";
-      // String deleteLanguagesQuery = "DELETE FROM languages *;";
-      // String deleteTypesQuery = "DELETE FROM types *;";
+      String deleteLanguagesQuery = "DELETE FROM languages *;";
+      String deleteTypesQuery = "DELETE FROM types *;";
 
-      // con.createQuery(deleteProgramsQuery).executeUpdate();
+      con.createQuery(deleteProgramsQuery).executeUpdate();
       con.createQuery(deleteCareersQuery).executeUpdate();
-      // con.createQuery(deleteLanguagesQuery).executeUpdate();
-      // con.createQuery(deleteTypesQuery).executeUpdate();
+      con.createQuery(deleteLanguagesQuery).executeUpdate();
+      con.createQuery(deleteTypesQuery).executeUpdate();
+
+      String deleteLanguagesTypesJoin = "DELETE FROM languages_types *;";
+      String deleteLanguagesProgramsJoin = "DELETE FROM languages_programs *;";
+      String deleteLanguagesCareersJoin = "DELETE FROM languages_careers *;";
+
+      con.createQuery(deleteLanguagesTypesJoin).executeUpdate();
+      con.createQuery(deleteLanguagesProgramsJoin).executeUpdate();
+      con.createQuery(deleteLanguagesCareersJoin).executeUpdate();
+
+
 
     }
   }

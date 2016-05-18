@@ -11,21 +11,39 @@ public class App {
     staticFileLocation("/public");
     String layout = "templates/layout.vtl";
 
+    get("/", (request, response) -> {
+    Map<String, Object> model = new HashMap<String, Object>();
+    model.put("template", "templates/index.vtl");
+    return new ModelAndView(model, layout);
+  }, new VelocityTemplateEngine());
+
     get("/career/add", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("career", request.session().attribute("career"));
+      model.put("description", "");
       model.put("template", "templates/career-add.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
     post("/career/add", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      String title = request.queryParams("title");
+      String title = request.queryParams("title").trim();
       String description = request.queryParams("description");
-      Career newCareer = new Career(title, description);
-      newCareer.save();
-      model.put("career", newCareer);
-      model.put("Template", "templates/career");
+
+      if(title.equals("")) {
+        model.put("formError", true);
+        model.put("description", description);
+        model.put("template", "templates/career-add.vtl");
+      } else {
+        Career newCareer = new Career(title, description);
+        newCareer.save();
+
+        model.put("career", newCareer);
+        model.put("languages", newCareer.getLanguages());
+        model.put("new", true);
+        model.put("template", "templates/career.vtl");
+      }
+
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
@@ -41,9 +59,83 @@ public class App {
       int careerId = Integer.parseInt(request.params(":id"));
       Career career = Career.find(careerId);
       model.put("career", career);
+      model.put("languages", career.getLanguages());
       model.put("template", "templates/career.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    get("/career/:id/edit", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      int careerId = Integer.parseInt(request.params(":id"));
+      Career career = Career.find(careerId);
+      model.put("career", career);
+      model.put("description", career.getDescription());
+      model.put("template", "templates/career-edit.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/career/:id/edit", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      int careerId = Integer.parseInt(request.params(":id"));
+      Career career = Career.find(careerId);
+      String title = request.queryParams("title").trim();
+      String description = request.queryParams("description");
+
+      if(title.equals("")) {
+        model.put("formError", true);
+        model.put("description", description);
+        model.put("template", "templates/career-edit.vtl");
+      } else {
+        career.update(title, description);
+        career = Career.find(careerId);
+
+        model.put("career", career);
+        model.put("languages", career.getLanguages());
+        model.put("update", true);
+        model.put("template", "templates/career.vtl");
+      }
+
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/career/:id/delete", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+
+      int careerId = Integer.parseInt(request.params(":id"));
+      Career career = Career.find(careerId);
+
+      career.delete();
+
+      model.put("careers", Career.all());
+      model.put("deleted", true);
+      model.put("template", "templates/careers.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/associate/careers/:id", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Career career = Career.find(Integer.parseInt(request.params(":id")));
+
+      model.put("career", career);
+      model.put("languages", Language.all());
+      model.put("template", "templates/associate-careers.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/associate/careers/:id", (request, response) -> {
+      int careerId = Integer.parseInt(request.params(":id"));
+      Career career = Career.find(careerId);
+
+      career.removeAllLanguages();
+      String[] languageIds = request.queryParamsValues("languages");
+      if (languageIds != null){
+        for (String languageId : languageIds) {
+          career.addLanguage(Language.find(Integer.parseInt(languageId)));
+        }
+      }
+      response.redirect("/career/" + careerId);
+      return null;
+    });
 
     get("/type/add", (request, response) -> {
     Map<String, Object> model = new HashMap<String, Object>();
@@ -75,11 +167,11 @@ public class App {
     }, new VelocityTemplateEngine());
 
     get("/program/add", (request, response) -> {
-    Map<String, Object> model = new HashMap<String, Object>();
-    model.put("description", "");
-    model.put("url", "");
-    model.put("template", "templates/program-add.vtl");
-    return new ModelAndView(model, layout);
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("description", "");
+      model.put("url", "");
+      model.put("template", "templates/program-add.vtl");
+      return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
     post("/program/add", (request, response) -> {

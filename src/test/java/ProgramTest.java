@@ -6,10 +6,9 @@ import org.sql2o.*;
 
 public class ProgramTest {
 
-  // @Rule
-  // public DatabaseRule database = new DatabaseRule();
+  @Rule
+  public DatabaseRule database = new DatabaseRule();
 
-<<<<<<< HEAD
   @Test
    public void Program_initializesCorrectly_true() {
      Program testProgram = new Program("Name 1", "Description", "http://www.google.com");

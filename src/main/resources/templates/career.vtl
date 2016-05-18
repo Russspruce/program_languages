@@ -1,16 +1,22 @@
 <h1>$career.getTitle()</h1>
 
 #if ($new)
-  <h4 class="success animated flash">Type successfully added</h4>
+  <h4 class="success animated flash">Career successfully added</h4>
 #end
 
 #if ($update)
-  <h4 class="success animated flash">Type successfully updated</h4>
+  <h4 class="success animated flash">Career successfully updated</h4>
 #end
 
 <h3>Description:</h3>
 <p>$career.getDescription()</p>
 <br>
+
+<h3>Languages:</h3>
+#foreach ($language in $languages)
+  <a href="/language/$language.getId()">$language.getName()</a>
+  <br>
+#end
 
 <hr>
 <a class="edit" href="/associate/careers/$career.getId()">Edit Languages for $career.getTitle()</a>
