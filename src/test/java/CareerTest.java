@@ -71,4 +71,19 @@ public class CareerTest {
     myCareer.delete();
     assertEquals(null, Career.find(myCareerId));
   }
+
+  @Test
+  public void search_findsListOfSimilarTitlesToKeyword_list() {
+    Career testCareer = new Career("network", "Description");
+    testCareer.save();
+    Career testCareer2 = new Career("software", "Description");
+    testCareer2.save();
+    Career testCareer3 = new Career("website", "Description");
+    testCareer3.save();
+    Career testCareer4 = new Career("server", "Description");
+    testCareer4.save();
+    List<Career> testSearch = Career.search("software");
+    assertTrue(testSearch.get(0).equals(testCareer2));
+    assertEquals(testSearch.size(), 1);
+  }
 }

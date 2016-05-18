@@ -26,11 +26,11 @@ public class AppTest extends FluentTest{
   @Rule
   public DatabaseRule database = new DatabaseRule();
 
-  // @Test
-  // public void rootTest() {
-  //  goTo("http://localhost:4567/");
-  //  assertThat(pageSource()).contains("");
-  // }
+  @Test
+  public void rootTest() {
+   goTo("http://localhost:4567/");
+   assertThat(pageSource()).contains("");
+  }
 
   @Test
   public void typeAddForm() {
@@ -132,6 +132,26 @@ public class AppTest extends FluentTest{
     goTo("http://localhost:4567/type/" + testType.getId() + "/edit");
     click(".btn-danger");
     assertThat(pageSource()).doesNotContain("Name 1");
+  }
+
+  @Test
+  public void careerAddPageLoads() {
+    goTo("career/add");
+    assertThat(pageSource()).contains("Add");
+  }
+
+  @Test
+  public void careerAddPageSavesInput() {
+    goTo("career/add");
+    fill("title").with("description");
+    submit(".btn");
+    assertThat(pageSource()).contains("");
+  }
+
+  @Test
+  public void careersPageLoadsAndShowsCareers() {
+    goTo("/careers");
+    assertThat(pageSource()).contains()
   }
 
 }

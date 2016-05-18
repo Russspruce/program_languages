@@ -68,7 +68,7 @@ public class LanguageTest {
     testLanguage.delete();
     assertEquals(null, Language.find(testLanguageId));
   }
-
+  
   @Test
   public void addProgram_joinsLanguageAndProgram_true() {
     Language testLanguage = new Language("Name 1", "x", "y", "date", "http://java.com");

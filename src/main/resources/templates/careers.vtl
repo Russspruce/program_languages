@@ -1,0 +1,15 @@
+<h1>All Careers</h1>
+
+#if ($deleted)
+<h3 class="animated flash success">Type successfully deleted</h3>
+#end
+
+#foreach ($career in $careers)
+  <a href="/career/$career.getId()">$career.getTitle()</a>
+  <br>
+#end
+<br>
+
+<hr>
+
+<a class="bottomNav" href="/">Home</a>

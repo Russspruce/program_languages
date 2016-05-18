@@ -1,0 +1,23 @@
+<h1>$career.getTitle()</h1>
+
+#if ($new)
+  <h4 class="success animated flash">Type successfully added</h4>
+#end
+
+#if ($update)
+  <h4 class="success animated flash">Type successfully updated</h4>
+#end
+
+<h3>Description:</h3>
+<p>$career.getDescription()</p>
+<br>
+
+<hr>
+<a class="edit" href="/associate/careers/$career.getId()">Edit Languages for $career.getTitle()</a>
+<br>
+
+<a class="edit" href="/career/$career.getId()/edit">Edit or Delete $career.getTitle()</a>
+<br>
+
+<hr>
+<a class="bottomNav" href="/">Home</a>

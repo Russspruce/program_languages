@@ -1,0 +1,20 @@
+<h1>Add a Career</h1>
+
+#if ($formError)
+<h3 class="animated flash error">Please be sure to enter a Career</h3>
+#end
+
+<form action="/career/add" method="post">
+  <label for="title">Career</label>
+  <input type="text" id="title" name="title">
+
+  <label for="description">Description</label>
+ <textarea rows="4" name="description" id="description">$description</textarea>
+
+  <button id="submitCareer" type="submit" class="btn btn-success">Submit</button>
+</form>
+<br>
+
+<hr>
+
+<a class="bottomNav" href="/">Home</a>
