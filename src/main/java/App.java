@@ -302,6 +302,7 @@ public class App {
 
       if(name.equals("")) {
         model.put("formError", true);
+        model.put("type", type);
         model.put("description", description);
         model.put("template", "templates/type-edit.vtl");
       } else {
@@ -337,6 +338,7 @@ public class App {
 
       if(name.equals("")) {
         model.put("formError", true);
+        model.put("program", program);
         model.put("description", description);
         model.put("template", "templates/program-edit.vtl");
       } else {
@@ -454,6 +456,7 @@ public class App {
 
       if(name.equals("")) {
         model.put("formError", true);
+        model.put("language", language);
         model.put("template", "templates/language-edit.vtl");
       } else {
         language.update(name, description, example, date, webpage);
