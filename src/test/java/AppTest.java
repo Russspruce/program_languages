@@ -27,20 +27,25 @@ public class AppTest extends FluentTest{
   public DatabaseRule database = new DatabaseRule();
 
   @Test
-  public void rootTest() {
-    goTo("http://localhost:4567/");
+  public void careerAddPageLoads() {
+    goTo("career/add");
+    assertThat(pageSource()).contains("Add");
+  }
+
+  @Test
+  public void careerAddPageSavesInput() {
+    goTo("career/add");
+    fill("title").with("description");
+    submit(".btn");
     assertThat(pageSource()).contains("");
   }
 
   @Test
-  public void careerFormLoads() {
-    goTo("http://localhost:4567/career-form");
-    assertThat(pageSource()).contains("Career Form");
+  public void careersPageLoadsAndShowsCareers() {
+    goTo("/careers");
+    assertThat(pageSource()).contains()
   }
 
   @Test
-  public void careerForm() {
-    goTo("http://localhost:4567/career-form");
-    assertThat(pageSource()).contains("Career Form");
-  }
+  public void career
 }

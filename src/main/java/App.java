@@ -22,6 +22,7 @@ public class App {
       String description = request.queryParams("description");
       Career newCareer = new Career(title, description);
       newCareer.save();
+      model.put("career", newCareer);
       model.put("Template", "templates/career");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
