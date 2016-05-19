@@ -5,3 +5,11 @@
 .success {
   color: green;
 }
+
+.btn {
+  margin: 10px;
+}
+
+#main_menu {
+  list-style-type: none;
+}

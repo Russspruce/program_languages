@@ -1,9 +1,10 @@
-<h1>language.getName()</h1>
+<h1>$language.getName()</h1>
 <br>
 #if ($formError)
 <h3 class="animated flash error">Please be sure to enter a Language Name</h3>
 #end
 <form action="/language/$language.getId()/edit" method="post">
+  <label for="Name">Update Name:</label>
   <input id="name" name="name" class="form-control" type="name">$language.getName()</input>
   <br>
   <label for="description">Update Description:</label>
