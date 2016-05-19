@@ -1350,7 +1350,6 @@ COPY languages_types (id, language_id, type_id) FROM stdin;
 74	78	12
 75	78	13
 76	78	27
-77	78	32
 78	78	19
 79	78	30
 80	83	17
@@ -2173,47 +2172,46 @@ SELECT pg_catalog.setval('programs_id_seq', 3, true);
 --
 
 COPY types (id, name, description) FROM stdin;
-6	Array language	\N
-7	Fourth-generation languages	\N
-8	Off-side rule languages	\N
-9	Functional languages	\N
-10	Object-oriented prototype-based languages	\N
-11	Numerical analysis	\N
-12	Concurrent languages	\N
-13	Curly-bracket languages	\N
-14	Logic-based languages	\N
-15	Multiparadigm languages	\N
-16	Wirth languages	\N
-17	Compiled languages	\N
-18	Educational languages	\N
-19	Procedural languages	\N
-20	Interactive mode languages	\N
-21	Interpreted languages	\N
-22	Scripting languages	\N
-23	List-based languages – LISPs	\N
-24	Synchronous languages	\N
-25	Extension languages	\N
-26	Command line interface languages	\N
-27	Imperative languages	\N
-28	Object-oriented class-based languages	\N
-29	Authoring languages	\N
-30	Reflective languages	\N
-31	Visual languages	\N
-32	Little languages	\N
-33	Metaprogramming languages	\N
-34	Embeddable languages	\N
-35	Macro languages	\N
-36	Data-oriented languages	\N
-37	Iterative languages	\N
-38	Rule-based languages	\N
-39	Declarative languages	\N
-40	Stack-based languages	\N
-41	Non-English-based languages	\N
-42	Syntax handling languages	\N
-43	Dataflow languages	\N
-44	Hardware description languages	\N
-45	XML-based languages	\N
-46	Esoteric languages	\N
+6	Array language	Array programming (also known as vector or multidimensional languages) generalize operations on scalars to apply transparently to vectors, matrices, and higher-dimensional arrays.
+29	Authoring languages	An authoring language is a programming language used to create tutorials, computer-based training courseware, websites, CD-ROMs and other interactive computer programs. Authoring systems (packages) generally provide high-level visual tools that enable a complete system to be designed without writing any programming code, although the authoring language is there for more in-depth usage.
+26	Command line interface languages	Command-line interface (CLI) languages are also called batch languages, or job control languages.
+17	Compiled languages	A compiled language is a programming language whose implementations are typically compilers (translators that generate machine code from source code), and not interpreters (step-by-step executors of source code, where no pre-runtime translation takes place).\r\n\r\nThe term is somewhat vague; in principle any language can be implemented with a compiler or with an interpreter. A combination of both solutions is also common: a compiler can translate the source code into some intermediate form (often called bytecode), which is then passed to an interpreter which executes it.\r\n
+12	Concurrent languages	Message passing languages provide language constructs for concurrency. The predominant paradigm for concurrency in mainstream languages such as Java is shared memory concurrency based on monitors. Concurrent languages that make use of message passing have generally been inspired by CSP or the π-calculus, but have had little commercial success, except for Ada and Erlang. Ada is a multipurpose language and concurrent programming is only one option available.
+13	Curly-bracket languages	The curly-bracket or curly-brace programming languages have a syntax that defines statement blocks using the curly bracket or brace characters { and }. This syntax originated with BCPL (1966), and was popularized by C (1972). Many curly-bracket languages descend from or are strongly influenced by C. Examples of curly-bracket languages include:
+36	Data-oriented languages	Data-oriented languages provide powerful ways of searching and manipulating the relations that have been described as entity relationship tables which map one set of things into other sets.
+43	Dataflow languages	Dataflow programming languages rely on a (usually visual) representation of the flow of data to specify the program. Frequently used for reacting to discrete events or for processing streams of data.
+39	Declarative languages	Declarative languages describe a problem rather than defining a solution. Declarative programming stands in contrast to imperative programming via imperative programming languages, where serial orders (imperatives) are given to a computer. In addition to the examples given just below, all (pure) functional and logic-based programming languages are also declarative. In fact, "functional" and "logical" constitute the usual subcategories of the declarative category.
+18	Educational languages	Languages developed primarily for the purpose of teaching and learning of programming.
+34	Embeddable languages	Source embeddable languages embed small pieces of executable code inside a piece of free-form text, often a web page.\r\n\r\nClient-side embedded languages are limited by the abilities of the browser or intended client. They aim to provide dynamism to web pages without the need to recontact the server.\r\n\r\nServer-side embedded languages are much more flexible, since almost any language can be built into a server. The aim of having fragments of server-side code embedded in a web page is to generate additional markup dynamically; the code itself disappears when the page is served, to be replaced by its output.
+46	Esoteric languages	An esoteric programming language (sometimes shortened to esolang) is a programming language designed to test the boundaries of computer programming language design, as a proof of concept, as software art, as a hacking interface to another language (particularly functional programming or procedural programming languages), or as a joke. The use of esoteric distinguishes these languages from programming languages that working developers use to write software. Usually, an esolang's creators do not intend the language to be used for mainstream programming, although some esoteric features, such as visuospatial syntax,[1] have inspired practical applications in the arts. Such languages are often popular among hackers and hobbyists.\r\n\r\nUsability is rarely a goal for esoteric programming language designers—often it is quite the opposite. Their usual aim is to remove or replace conventional language features while still maintaining a language that is Turing-complete, or even one for which the computational class is unknown.
+25	Extension languages	Extension programming languages are languages embedded into another program and used to harness its features in extension scripts.
+9	Functional languages	Functional programming languages define programs and subroutines as mathematical functions. Many so-called functional languages are "impure", containing imperative features. Many functional languages are tied to mathematical calculation tools. 
+44	Hardware description languages	In electronics, a Hardware description language or HDL is a specialized computer language used to describe the structure, design and operation of electronic circuits, and most commonly, digital logic circuits. The two most widely used and well-supported HDL varieties used in industry are Verilog and VHDL.
+20	Interactive mode languages	Interactive mode languages act as a kind of shell: expressions or statements can be entered one at a time, and the result of their evaluation is seen immediately. The interactive mode is also known as a REPL (read–eval–print loop).
+37	Iterative languages	Iterative languages are built around or offering generators.
+23	List-based languages – LISPs	List-based languages are a type of data-structured language that are based upon the list data structure.
+41	Non-English-based languages	Non-English-based programming languages are computer programming languages that, unlike better-known programming languages, do not use keywords taken from, or inspired by, the English vocabulary.
+11	Numerical analysis	
+8	Off-side rule languages	Off-side rule languages are those where blocks are formed, indicated, by their indentation.
+38	Rule-based languages	Rule-based languages instantiate rules when activated by conditions in a set of data. Of all possible activations, some set is selected and the statements belonging to those rules execute.
+42	Syntax handling languages	These languages assist with generating lexical analyzers and parsers for Context-free grammars.
+16	Wirth languages	Computer scientist Niklaus Wirth designed and implemented several influential languages.
+45	XML-based languages	These are languages based on or that operate on XML.
+7	Fourth-generation languages	A fourth-generation programming language (4GL) is a computer programming language envisioned as a refinement of the style of languages classified as third-generation programming language (3GL). Each of the programming language generations aims to provide a higher level of abstraction of the internal computer hardware details, making the language more programmer-friendly, powerful and versatile. While the definition of 4GL has changed over time, it can be typified by operating more with large collections of information at once rather than focusing on just bits and bytes. Languages claimed to be 4GL may include support for database management, report generation, mathematical optimization, GUI development, or web development. Fourth-generation languages have often been compared to domain-specific languages (DSLs). Some researchers state that 4GLs are a subset of DSLs.[1][2]\r\n\r\nThe concept of 4GL was developed from the 1970s through the 1990s, overlapping most of the development of 3GL. While 3GLs like C, C++, C#, Java, and JavaScript remain popular for a wide variety of uses, 4GLs as originally defined found narrower uses.[citation needed] Some advanced 3GLs like Python, Ruby, and Perl combine some 4GL abilities within a general-purpose 3GL environment. Also, libraries with 4GL-like features have been developed as add-ons for most popular 3GLs. This has blurred the distinction of 4GL and 3GL.
+27	Imperative languages	Imperative programming is a programming paradigm that uses statements that change a program's state. In much the same way that the imperative mood in natural languages expresses commands, an imperative program consists of commands for the computer to perform. Imperative programming focuses on describing how a program operates.\r\n\r\nThe term is often used in contrast to declarative programming, which focuses on what the program should accomplish without specifying how the program should achieve the result.\r\n\r\nImperative programming languages may be multi-paradigm and appear in other classifications.
+21	Interpreted languages	Interpreted languages are programming languages in which programs may be executed from source code form, by an interpreter. Theoretically, any language can be compiled or interpreted, so the term *interpreted language* generally refers to languages that are commonly interpreted rather than compiled.
+14	Logic-based languages	\r\nLogic-based languages specify a set of attributes that a solution must have, rather than a set of steps to obtain a solution. 
+35	Macro languages	Macro languages transform one source code file into another. A "macro" is essentially a short piece of text that expands into a longer one (not too be confused with hygienic macros), possibly with parameter substitution. They are often used to preprocess source code. Preprocessors can also supply facilities like file inclusion.\r\n\r\nMacro languages may be restricted to acting on specially labeled code regions (pre-fixed with a # in the case of the C preprocessor. Alternatively, they may not, but in this case it is still often undesirable to (for instance) expand a macro embedded in a string literal, so they still need a rudimentary awareness of syntax. That being the case, they are often still applicable to more than one language. Contrast with source-embeddable languages like PHP, which are fully featured.
+33	Metaprogramming languages	Metaprogramming is writing of programs that write or manipulate other programs (or themselves) as their data or that do part of the work that is otherwise done at run time during compile time. In many cases, this allows programmers to get more done in the same amount of time as they would take to write all the code manually.
+15	Multiparadigm languages	Multiparadigm languages support more than one programming paradigm. They allow a program to use more than one programming style. The goal is to allow programmers to use the best tool for a job, admitting that no one paradigm solves all problems in the easiest or most efficient way.
+28	Object-oriented class-based languages	Class-based Object-oriented programming languages support objects defined by their class. Class definitions include member data. Message passing is a key concept (if not the key concept) in Object-oriented languages.\r\n\r\nPolymorphic functions parameterized by the class of some of their arguments are typically called methods. In languages with single dispatch, classes typically also include method definitions. In languages with multiple dispatch, methods are defined by generic functions. There are exceptions where single dispatch methods are generic functions (e.g. Bigloo's object system).\r\n
+10	Object-oriented prototype-based languages	Prototype-based languages are object-oriented languages where the distinction between classes and instances has been removed.
+19	Procedural languages	Procedural programming languages are based on the concept of the unit and scope (the data viewing range of an executable code statement). A procedural program is composed of one or more units or modules, either user coded or provided in a code library; each module is composed of one or more procedures, also called a function, routine, subroutine, or method, depending on the language. 
+30	Reflective languages	Reflective languages let programs examine and possibly modify their high level structure at runtime. This is most common in high-level virtual machine programming languages like Smalltalk, and less common in lower-level programming languages like C. Languages and platforms supporting reflection:
+22	Scripting languages	"Scripting language" has two apparently different, but in fact similar meanings. In a traditional sense, scripting languages are designed to automate frequently used tasks that usually involve calling or passing commands to external programs. Many complex application programs provide built-in languages that let users automate tasks. Those that are interpretive are often called scripting languages.\r\n\r\nRecently, many applications have built-in traditional scripting languages, such as Perl or Visual Basic, but there are quite a few native scripting languages still in use. Many scripting languages are compiled to bytecode and then this (usually) platform-independent bytecode is run through a virtual machine (compare to Java virtual machine).
+40	Stack-based languages	Stack-based languages are a type of data-structured language that are based upon the stack data structure.
+24	Synchronous languages	Synchronous programming languages are optimized for programming reactive systems, systems that are often interrupted and must respond quickly. Many such systems are also called realtime systems, and are used often in embedded systems.
+31	Visual languages	Visual programming languages let users specify programs in a two-(or more)-dimensional way, instead of as one-dimensional text strings, via graphic layouts of various types.
 \.
 
 
