@@ -35,6 +35,11 @@ public class App {
         model.put("formError", true);
         model.put("description", description);
         model.put("template", "templates/career-add.vtl");
+      } else if (Career.checkForDuplicates(title)) {
+        model.put("duplicateError", true);
+        model.put("title", title);
+        model.put("description", description);
+        model.put("template", "templates/career-add.vtl");
       } else {
         Career newCareer = new Career(title, description);
         newCareer.save();

@@ -282,4 +282,14 @@ public class AppTest extends FluentTest{
     assertThat(pageSource()).doesNotContain("Name 2");
     assertThat(pageSource()).contains("Name 1");
   }
+
+  @Test
+  public void duplicateErrorCatchesAndDisplays() {
+    Career testCareer = new Career ("Name 1", "Description");
+    testCareer.save();
+    goTo("http://localhost:4567/career/add");
+    fill("#title").with("Name 1");
+    submit(".btn-success");
+    assertThat(pageSource()).contains("Career already listed");
+  }
 }
