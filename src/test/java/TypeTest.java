@@ -81,7 +81,7 @@ public class TypeTest {
 
   @Test
   public void addLanguage_joinsTypeAndLanguage_true() {
-    Language testLanguage = new Language("Name 1", "x", "y", "date", "http://java.com");
+    Language testLanguage = new Language("Name 1", "x", "y", "date", "release", "http://java.com");
     testLanguage.save();
     Type testType = new Type("Name 1", "Description");
     testType.save();
@@ -94,10 +94,10 @@ public class TypeTest {
   public void getLanguages_returnsAllAssociatedLanguages_int() {
     Type testType = new Type("Name 1", "Description");
     testType.save();
-    Language testLanguage = new Language("Name 2", "x", "y", "date", "http://java.com");
+    Language testLanguage = new Language("Name 2", "x", "y", "date", "release", "http://java.com");
     testLanguage.save();
     testType.addLanguage(testLanguage);
-    Language testLanguage2 = new Language("Name 3", "x", "y", "date", "http://java.com");
+    Language testLanguage2 = new Language("Name 3", "x", "y", "date", "release", "http://java.com");
     testLanguage2.save();
     testType.addLanguage(testLanguage2);
     Language joinedLanguage = testType.getLanguages().get(0);
@@ -109,7 +109,7 @@ public class TypeTest {
   public void removeLanguage_removesLanguageAssociation_true() {
     Type testType = new Type("Name 1", "Description");
     testType.save();
-    Language testLanguage = new Language("Name 2", "x", "y", "date", "http://java.com");
+    Language testLanguage = new Language("Name 2", "x", "y", "date", "release", "http://java.com");
     testLanguage.save();
     testType.addLanguage(testLanguage);
     testType.removeLanguage(testLanguage.getId());

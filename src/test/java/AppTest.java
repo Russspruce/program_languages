@@ -69,9 +69,9 @@ public class AppTest extends FluentTest{
   public void associateLanguageWithType() {
     Type testType = new Type ("Name 1", "Description");
     testType.save();
-    Language testLanguage = new Language("Name 2", "x", "y", "date", "http://java.com");
+    Language testLanguage = new Language("Name 2", "x", "y", "date", "release", "http://java.com");
     testLanguage.save();
-    Language testLanguage2 = new Language("Name 3", "x", "y", "date", "http://java.com");
+    Language testLanguage2 = new Language("Name 3", "x", "y", "date", "release", "http://java.com");
     testLanguage2.save();
     goTo("http://localhost:4567/associate/types/" + testType.getId());
     click("#languages");
@@ -83,9 +83,9 @@ public class AppTest extends FluentTest{
   public void associateLanguageWithProgram() {
     Program testProgram = new Program ("Name 1", "Description", "url");
     testProgram.save();
-    Language testLanguage = new Language("Name 2", "x", "y", "date", "http://java.com");
+    Language testLanguage = new Language("Name 2", "x", "y", "date", "release", "http://java.com");
     testLanguage.save();
-    Language testLanguage2 = new Language("Name 3", "x", "y", "date", "http://java.com");
+    Language testLanguage2 = new Language("Name 3", "x", "y", "date", "release", "http://java.com");
     testLanguage2.save();
     goTo("http://localhost:4567/associate/programs/" + testProgram.getId());
     click("#languages");
@@ -97,9 +97,9 @@ public class AppTest extends FluentTest{
   public void associateLanguageWithCareer() {
     Career testCareer = new Career ("Name 1", "Description");
     testCareer.save();
-    Language testLanguage = new Language("Name 2", "x", "y", "date", "http://java.com");
+    Language testLanguage = new Language("Name 2", "x", "y", "date", "release", "http://java.com");
     testLanguage.save();
-    Language testLanguage2 = new Language("Name 3", "x", "y", "date", "http://java.com");
+    Language testLanguage2 = new Language("Name 3", "x", "y", "date", "release", "http://java.com");
     testLanguage2.save();
     goTo("http://localhost:4567/associate/careers/" + testCareer.getId());
     click("#languages");
@@ -170,7 +170,7 @@ public class AppTest extends FluentTest{
 
   @Test
   public void deleteLanguage() {
-    Language testLanguage = new Language ("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
+    Language testLanguage = new Language ("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "release", "http://java.com");
     testLanguage.save();
     goTo("http://localhost:4567/language/" + testLanguage.getId() + "/edit");
     click(".btn-danger");
@@ -206,16 +206,16 @@ public class AppTest extends FluentTest{
 
   @Test
   public void individualLanguagePageIsDisplayed() {
-    Language testLanguage = new Language("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
+    Language testLanguage = new Language("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "release", "http://java.com");
     testLanguage.save();
     String url = String.format("http://localhost:4567/language/%d", testLanguage.getId());
     goTo(url);
-    assertThat(pageSource()).contains("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
+    assertThat(pageSource()).contains("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "release", "http://java.com");
   }
 
   @Test
   public void editLanguage() {
-    Language testLanguage = new Language("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "http://java.com");
+    Language testLanguage = new Language("Java", "Example text goes here for now", "More example text for now.", "May 23rd, 1995", "release", "http://java.com");
     testLanguage.save();
     goTo("http://localhost:4567/language/" + testLanguage.getId() + "/edit");
     fill("#name").with("Name 2");
@@ -231,7 +231,7 @@ public class AppTest extends FluentTest{
     testCareer.save();
     Career testCareer2 = new Career ("Name 2", "Description 2");
     testCareer2.save();
-    Language testLanguage = new Language("Name 3", "x", "y", "date", "http://java.com");
+    Language testLanguage = new Language("Name 3", "x", "y", "date", "release", "http://java.com");
     testLanguage.save();
     goTo("http://localhost:4567/associate/language/careers/" + testLanguage.getId());
     click("#careers");
@@ -245,7 +245,7 @@ public class AppTest extends FluentTest{
     testType.save();
     Type testType2 = new Type ("Name 2", "Description 2");
     testType2.save();
-    Language testLanguage = new Language("Name 3", "x", "y", "date", "http://java.com");
+    Language testLanguage = new Language("Name 3", "x", "y", "date", "release", "http://java.com");
     testLanguage.save();
     goTo("http://localhost:4567/associate/language/types/" + testLanguage.getId());
     click("#types");
@@ -259,7 +259,7 @@ public class AppTest extends FluentTest{
     testProgram.save();
     Program testProgram2 = new Program ("Name 2", "Description 2", "url 2");
     testProgram2.save();
-    Language testLanguage = new Language("Name 3", "x", "y", "date", "http://java.com");
+    Language testLanguage = new Language("Name 3", "x", "y", "date", "release", "http://java.com");
     testLanguage.save();
     goTo("http://localhost:4567/associate/language/programs/" + testLanguage.getId());
     click("#programs");
@@ -268,7 +268,7 @@ public class AppTest extends FluentTest{
   }
 
   @Test public void search() {
-    Language testLanguage = new Language("Name 3", "x", "y", "date", "http://java.com");
+    Language testLanguage = new Language("Name 3", "x", "y", "date", "release", "http://java.com");
     testLanguage.save();
     Program testProgram = new Program ("Name 2", "Description", "url");
     testProgram.save();

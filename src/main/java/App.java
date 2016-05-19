@@ -399,6 +399,7 @@ public class App {
       String description = request.queryParams("description");
       String example = request.queryParams("example");
       String date = request.queryParams("date");
+      String release = request.queryParams("release");
       String webpage = request.queryParams("webpage");
 
       if(name.equals("")) {
@@ -406,10 +407,11 @@ public class App {
         model.put("description", description);
         model.put("example", example);
         model.put("date", date);
+        model.put("release", release);
         model.put("webpage", webpage);
         model.put("template", "templates/language-add.vtl");
       } else {
-        Language newLanguage = new Language(name, description, example, date, webpage);
+        Language newLanguage = new Language(name, description, example, date, release, webpage);
         newLanguage.save();
 
         model.put("language", newLanguage);
@@ -452,6 +454,7 @@ public class App {
       String description = request.queryParams("description");
       String example = request.queryParams("example");
       String date = request.queryParams("date");
+      String release = request.queryParams("release");
       String webpage = request.queryParams("webpage");
 
       if(name.equals("")) {
@@ -459,7 +462,7 @@ public class App {
         model.put("language", language);
         model.put("template", "templates/language-edit.vtl");
       } else {
-        language.update(name, description, example, date, webpage);
+        language.update(name, description, example, date, release, webpage);
         language = Language.find(languageId);
 
         model.put("language", language);
