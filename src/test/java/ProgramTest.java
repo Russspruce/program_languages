@@ -81,7 +81,7 @@ public class ProgramTest {
 
   @Test
   public void addLanguage_joinsProgramAndLanguage_true() {
-    Language testLanguage = new Language("Name 1", "x", "y", "date", "http://java.com");
+    Language testLanguage = new Language("Name 1", "x", "y", "date", "release",  "http://java.com");
     testLanguage.save();
     Program testProgram = new Program("Name 1", "Description", "http://www.google.com");
     testProgram.save();
@@ -94,10 +94,10 @@ public class ProgramTest {
   public void getLanguages_returnsAllAssociatedLanguages_int() {
     Program testProgram = new Program("Name 1", "Description", "http://www.google.com");
     testProgram.save();
-    Language testLanguage = new Language("Name 2", "x", "y", "date", "http://java.com");
+    Language testLanguage = new Language("Name 2", "x", "y", "date", "release",  "http://java.com");
     testLanguage.save();
     testProgram.addLanguage(testLanguage);
-    Language testLanguage2 = new Language("Name 3", "x", "y", "date", "http://java.com");
+    Language testLanguage2 = new Language("Name 3", "x", "y", "date", "release",  "http://java.com");
     testLanguage2.save();
     testProgram.addLanguage(testLanguage2);
     Language joinedLanguage = testProgram.getLanguages().get(0);
@@ -109,7 +109,7 @@ public class ProgramTest {
   public void removeLanguage_removesLanguageAssociation_true() {
     Program testProgram = new Program("Name 1", "Description", "http://www.google.com");
     testProgram.save();
-    Language testLanguage = new Language("Name 2", "x", "y", "date", "http://java.com");
+    Language testLanguage = new Language("Name 2", "x", "y", "date", "release",  "http://java.com");
     testLanguage.save();
     testProgram.addLanguage(testLanguage);
     testProgram.removeLanguage(testLanguage.getId());

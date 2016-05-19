@@ -9,13 +9,15 @@ public class Language {
   private String description;
   private String example;
   private String date;
+  private String most_recent_release_date;
   private String webpage;
 
-  public Language(String name, String description, String example, String date, String webpage) {
+  public Language(String name, String description, String example, String date, String most_recent_release_date, String webpage) {
     this.name = name;
     this.description = description;
     this.example = example;
     this.date = date;
+    this.most_recent_release_date = most_recent_release_date;
     this.webpage = webpage;
   }
 
@@ -39,12 +41,16 @@ public class Language {
     return date;
   }
 
+  public String getRelease() {
+    return most_recent_release_date;
+  }
+
   public String getWebpage() {
     return webpage;
   }
 
   public static List<Language> all() {
-    String sql = "SELECT id, name, description, example, date, webpage FROM languages";
+    String sql = "SELECT * FROM languages";
     try(Connection con = DB.sql2o.open()) {
       return con.createQuery(sql).executeAndFetch(Language.class);
     }
@@ -68,12 +74,13 @@ public class Language {
   public void save() {
     try(Connection con = DB.sql2o.open()) {
 
-      String sql = "INSERT INTO languages(name, description, example, date, webpage) VALUES (:name, :description, :example, :date, :webpage)";
+      String sql = "INSERT INTO languages(name, description, example, date, most_recent_release_date, webpage) VALUES (:name, :description, :example, :date, :release, :webpage)";
       this.id = (int) con.createQuery(sql, true)
       .addParameter("name", this.name)
       .addParameter("description", this.description)
       .addParameter("example", this.example)
       .addParameter("date", this.date)
+      .addParameter("release", this.most_recent_release_date)
       .addParameter("webpage", this.webpage)
       .executeUpdate()
       .getKey();
@@ -143,14 +150,15 @@ public class Language {
     }
   }
 
-  public void update(String name, String description, String example, String date, String webpage) {
+  public void update(String name, String description, String example, String date, String most_recent_release_date, String webpage) {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "UPDATE languages SET name = :name, description = :description, example = :example, date = :date, webpage = :webpage WHERE id = :id;";
+      String sql = "UPDATE languages SET name = :name, description = :description, example = :example, date = :date, most_recent_release_date = :release, webpage = :webpage WHERE id = :id;";
       con.createQuery(sql)
         .addParameter("name", name)
         .addParameter("description", description)
         .addParameter("example", example)
         .addParameter("date", date)
+        .addParameter("release", most_recent_release_date)
         .addParameter("webpage", webpage)
         .addParameter("id", id)
         .executeUpdate();

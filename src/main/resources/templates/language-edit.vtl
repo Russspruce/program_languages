@@ -5,7 +5,7 @@
 #end
 <form action="/language/$language.getId()/edit" method="post">
   <label for="Name">Update Name:</label>
-  <input id="name" name="name" class="form-control" type="name">$language.getName()</input>
+  <input id="name" name="name" class="form-control" type="name" value="$language.getName()">
   <br>
   <label for="description">Update Description:</label>
   <textarea rows="6" cols="50" type="text" id="description" name="description">$language.getDescription()</textarea>
@@ -14,9 +14,13 @@
   <label for="example">Update Example:</label>
   <textarea rows="6" cols="50" type="text" id="example" name="example">$language.getExample()</textarea>
   <br>
-  <input id="date" name="date" class="form-control" type="date">$language.getDate()</input>
+  <label for="example">Update First Release Date:</label>
+  <input id="date" name="date" class="form-control" type="text" value="$language.getDate()">
   <br>
-  <input id="webpage" name="webpage" class="form-control" type="text">$language.getWebpage()</input>
+  <label for="release">Update Most Recent Release Date:</label>
+  <input id="release" name="release" class="form-control" type="text" value="$language.getRelease()">
+  <br>
+  <input id="webpage" name="webpage" class="form-control" type="text" value="$language.getWebpage()">
   <br>
   <button type="submit" class="btn btn-success">Update $language.getName()</button>
 </form>
