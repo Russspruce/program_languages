@@ -301,23 +301,23 @@ public class AppTest extends FluentTest{
     fill("#name").with("Language1");
     fill("#description").with("Description");
     fill("#example").with("Example");
-    submit("#language-btn");
+    submit("#submitLanguage");
     assertThat(pageSource()).contains("Language already listed");
   }
 
-  // @Test
-  // public void programDuplicateErrorCatchesAndDisplays() {
-  //   Career testProgram = new Program ("Name 1", "Description");
-  //   testProgram.save();
-  //   goTo("http://localhost:4567/program/add");
-  //   fill("#name").with("Name 1");
-  //   submit(".btn-success");
-  //   assertThat(pageSource()).contains("Program already listed");
-  // }
+  @Test
+  public void programDuplicateErrorCatchesAndDisplays() {
+    Program testProgram = new Program ("Name 1", "Description", "http://google.com");
+    testProgram.save();
+    goTo("http://localhost:4567/program/add");
+    fill("#name").with("Name 1");
+    submit("submitProgram");
+    assertThat(pageSource()).contains("Program already listed");
+  }
   //
   // @Test
   // public void typeDuplicateErrorCatchesAndDisplays() {
-  //   Career testType = new Type ("Name 1", "Description");
+  //   Type testType = new Type ("Name 1", "Description");
   //   testType.save();
   //   goTo("http://localhost:4567/type/add");
   //   fill("#name").with("Name 1");

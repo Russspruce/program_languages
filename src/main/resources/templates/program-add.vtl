@@ -4,6 +4,10 @@
 <h3 class="animated flash error">Please be sure to enter a Program Name</h3>
 #end
 
+#if ($duplicateError)
+<h3 class="animated flash error">Program already listed</h3>
+#end
+
 <form action="/program/add" method="post">
   <label for="name">Program</label>
   <input type="text" id="name" name="name">
