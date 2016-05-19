@@ -1,0 +1,26 @@
+1,Backend Web Developer,"The backend of a web application is an enabler for a frontend experience. An application’s frontend may be the most beautifully crafted web page, but if the application itself doesn’t work, the application will be a failure. The backend of an application is responsible for things like calculations, business logic, database interactions, and performance. Most of the code that is required to make an application work will be done on the backend. Backend code is run on the server, as opposed to the client. This means that backend developers not only need to understand programming languages and databases, but they must have an understanding of server architecture as well. If an application is slow, crashes often, or constantly throws errors at users, it’s likely because of backend problems."
+2,Data Analyst,"Gathers, sorts, and displays data in more usable fashions."
+3,Database Engineer,"Database engineers, who may work as either applications or systems software developers, are generally employed by computer systems companies to design and monitor complex databases. They must make sure that a database is operational and provides valid and relevant data. An in-depth understanding of computer software, database technologies and programming is required to work as a database engineer."
+4,Firmware Engineer,"Firmware engineers create software used in electronic devices. Job requirements differ, but in most cases require at least a bachelor's degree or a master's degree in computer science, mathematics or engineering."
+5,Front End Web Designer,"Front-end web development, also known as client-side development is the practice of producing HTML, CSS and JavaScript for a website or web application so that a user can see and interact with them directly.[1] The challenge associated with front end development is that the tools and techniques used to create the front end of a website change constantly and so the developer needs to constantly be aware of how the field is developing."
+6,Game Developer,Designs and builds video game programs.
+7,GUI Developer,A GUI Developer is someone who creates Graphical User Interfaces for programs so that they are easy to use.  Similar to what a Front-End Web Designer does.
+8,GUI Developer,Designs and builds Graphical User-Interfaces so programs are easier to use.
+9,Hardware Engineer,Computer hardware engineers modify the hardware components for computers. They evaluate existing computer systems and use complex problem-solving skills to improve models.
+10,Information Systems Technologist,"Information systems technicians operate and maintain information systems, facilitating system utilization. In many companies, these technicians assemble data sets and other details needed to build databases. This includes data management, procedure writing, writing job setup instructions, and performing program librarian functions."
+11,Interactive Media Programmer,Builds interactive media things.
+12,Linux OS Developer,Builds tools and applications for Linux operating systems.
+13,Mainframe Systems Engineer,And engineer that builds and maintains mainframe systems.
+14,Mobile Developer - Android,Develops apps and services for Android devices.
+15,Mobile Developer - IOS,Developes apps and services for IOS devices.
+16,Multimedia Programmer,"Multimedia programmers are specialist software engineers who use their creative flair and technical ability to produce innovative digital products, such as Flash-based websites, mobile apps and interactive animated films."
+17,Network Engineer,"A network engineer maintains computer infrastructures with emphasis on networking. Responsibilities may vary between organizations, but on-site servers, software-network interactions as well as network integrity/resilience are the key areas of focus."
+18,OS X Developer,Builds tools and applications for OS X operating systems.
+19,Robotics Programming,Designs programs to handle the operation of robotics.
+20,Security Analyst,"Builds, examines, and maintains network security systems."
+21,Server Architect,A computer network architect  that designs and builds server architecture.
+22,Software Engineer,Designs and builds software applications.
+23,System Administrator,"a person who manages the operation of a computer system, such as a message board."
+24,Systems Programmer,Produce software which provides services to computers.
+25,Visual Effects Programmer,Creates visual effects for a multitude of difference applications
+26,Windows OS Developer,Builds tools and applications for Windows operating systems.

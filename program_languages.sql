@@ -330,6 +330,31 @@ ALTER TABLE ONLY types ALTER COLUMN id SET DEFAULT nextval('types_id_seq'::regcl
 --
 
 COPY careers (id, title, description) FROM stdin;
+1	Backend Web Developer	The backend of a web application is an enabler for a frontend experience. An application’s frontend may be the most beautifully crafted web page, but if the application itself doesn’t work, the application will be a failure. The backend of an application is responsible for things like calculations, business logic, database interactions, and performance. Most of the code that is required to make an application work will be done on the backend. Backend code is run on the server, as opposed to the client. This means that backend developers not only need to understand programming languages and databases, but they must have an understanding of server architecture as well. If an application is slow, crashes often, or constantly throws errors at users, it’s likely because of backend problems.
+2	Data Analyst	Gathers, sorts, and displays data in more usable fashions.
+3	Database Engineer	Database engineers, who may work as either applications or systems software developers, are generally employed by computer systems companies to design and monitor complex databases. They must make sure that a database is operational and provides valid and relevant data. An in-depth understanding of computer software, database technologies and programming is required to work as a database engineer.
+4	Firmware Engineer	Firmware engineers create software used in electronic devices. Job requirements differ, but in most cases require at least a bachelor's degree or a master's degree in computer science, mathematics or engineering.
+5	Front End Web Designer	Front-end web development, also known as client-side development is the practice of producing HTML, CSS and JavaScript for a website or web application so that a user can see and interact with them directly.[1] The challenge associated with front end development is that the tools and techniques used to create the front end of a website change constantly and so the developer needs to constantly be aware of how the field is developing.
+6	Game Developer	Designs and builds video game programs.
+7	GUI Developer	A GUI Developer is someone who creates Graphical User Interfaces for programs so that they are easy to use.  Similar to what a Front-End Web Designer does.
+9	Hardware Engineer	Computer hardware engineers modify the hardware components for computers. They evaluate existing computer systems and use complex problem-solving skills to improve models.
+10	Information Systems Technologist	Information systems technicians operate and maintain information systems, facilitating system utilization. In many companies, these technicians assemble data sets and other details needed to build databases. This includes data management, procedure writing, writing job setup instructions, and performing program librarian functions.
+11	Interactive Media Programmer	Builds interactive media things.
+12	Linux OS Developer	Builds tools and applications for Linux operating systems.
+13	Mainframe Systems Engineer	And engineer that builds and maintains mainframe systems.
+14	Mobile Developer - Android	Develops apps and services for Android devices.
+15	Mobile Developer - IOS	Developes apps and services for IOS devices.
+16	Multimedia Programmer	Multimedia programmers are specialist software engineers who use their creative flair and technical ability to produce innovative digital products, such as Flash-based websites, mobile apps and interactive animated films.
+17	Network Engineer	A network engineer maintains computer infrastructures with emphasis on networking. Responsibilities may vary between organizations, but on-site servers, software-network interactions as well as network integrity/resilience are the key areas of focus.
+18	OS X Developer	Builds tools and applications for OS X operating systems.
+19	Robotics Programming	Designs programs to handle the operation of robotics.
+20	Security Analyst	Builds, examines, and maintains network security systems.
+21	Server Architect	A computer network architect  that designs and builds server architecture.
+22	Software Engineer	Designs and builds software applications.
+23	System Administrator	a person who manages the operation of a computer system, such as a message board.
+24	Systems Programmer	Produce software which provides services to computers.
+25	Visual Effects Programmer	Creates visual effects for a multitude of difference applications
+26	Windows OS Developer	Builds tools and applications for Windows operating systems.
 \.
 
 
@@ -432,6 +457,7 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 97	Chapel	Chapel, the Cascade High Productivity Language, is a parallel programming language developed by Cray.[2] It is being developed as part of the Cray Cascade project, a participant in DARPA's High Productivity Computing Systems (HPCS) program, which had the goal of increasing supercomputer productivity by the year 2010. It is being developed as an open source project, under version 2 of the Apache license.[3]	2009 (2009)	1.12 / October 1, 2015; 6 months ago (2015-10-01)	http://chapel.cray.com/	No code example (yet).
 98	Charity	Charity is an experimental purely functional programming language, developed at the University of Calgary under the supervision of Robin Cockett. Based on ideas by Hagino Tatsuya, it is completely grounded in category theory.	1992[1]	null	http://pll.cpsc.ucalgary.ca/charity1/www/home.html	No code example (yet).
 99	Charm	Charm is a computer programming language devised in the early 1990s with similarities to the RTL/2, Pascal and C languages in addition to containing some unique features of its own. The Charm language is defined by a context-free grammar amenable to being processed by recursive descent parser as described in seminal books on compiler design.[1][2]	1996	null	http://charm.qu-bit.co.uk/	No code example (yet).
+174	Edinburgh IMP	Edinburgh IMP is a development of ATLAS Autocode, initially developed around 1966-1969 at Edinburgh University, Scotland. IMP was a general-purpose programming language which was used heavily for systems programming.	null	null	\N	No code example (yet).
 101	CHILL	In computing, CHILL (an acronym for CCITT High Level Language) is a procedural programming language designed for use in telecommunication switches (the hardware used inside telephone exchanges). The language is still used for legacy systems in some telecommunication companies and for signal box programming.	1980	3.0? / 2003; 13 years ago (2003)	\N	No code example (yet).
 102	CHIP-8	CHIP-8 is an interpreted programming language, developed by Joseph Weisbecker. It was initially used on the COSMAC VIP and Telmac 1800 8-bit microcomputers in the mid-1970s. CHIP-8 programs are run on a CHIP-8 virtual machine. It was made to allow video games to be more easily programmed for said computers.	null	null	\N	No code example (yet).
 173	ECMAScript	ECMAScript (or ES)[1] is a trademarked[2] scripting-language specification standardized by Ecma International in ECMA-262 and ISO/IEC 16262. It was based on JavaScript, which now tracks ECMAScript. It is commonly used for client-side scripting on the World Wide Web. Other implementations include JScript and ActionScript.	1997; 19 years ago (1997)	null	http://www.ecmascript.org/	No code example (yet).
@@ -448,7 +474,6 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 115	CLU	CLU is a pioneering programming language created at the Massachusetts Institute of Technology (MIT) by Barbara Liskov and her students between 1974 and 1975. While it did not find extensive use, it introduced many features that are used widely now, and is seen as a step in the development of object-oriented programming (OOP). However, it is not object-oriented, instead being considered an object-based language, as it lacked many features of OOP.	1975; 41 years ago (1975)	1.5 / May 26, 1989; 26 years ago (1989-05-26)	http://www.pmg.lcs.mit.edu/CLU.html	No code example (yet).
 116	CMS EXEC	CMS EXEC, or EXEC, is an interpreted, command procedure control, computer scripting language used by the CMS EXEC Processor supplied with the IBM Virtual Machine/Conversational Monitor System (VM/CMS) operating system.	null	null	\N	No code example (yet).
 117	CMS-2	CMS-2 is an embedded systems programming language used by the United States Navy.[2]It was an early attempt to develop a standardized high-level computer programming language intended to improve code portability and reusability. CMS-2 was developed primarily for the US Navy’s tactical data systems (NTDS).[1]	1968	null	\N	No code example (yet).
-174	Edinburgh IMP	Edinburgh IMP is a development of ATLAS Autocode, initially developed around 1966-1969 at Edinburgh University, Scotland. IMP was a general-purpose programming language which was used heavily for systems programming.	null	null	\N	No code example (yet).
 119	Cobra	Cobra is a general-purpose, object-oriented programming language.[1] Cobra is designed by Charles Esterbrook, and runs on the Microsoft .NET and Mono platforms.[2] It is strongly influenced by Python, C#, Eiffel, Objective-C, and other programming languages.[3] It supports both static and dynamic typing.[4][5] It has support for unit tests and contracts.[4] It has lambda expressions, closures, list comprehensions, and generators.[6]	2006; 10 years ago (2006)	0.9.6 / December 23, 2013; 2 years ago (2013-12-23)	http://cobra-language.com/	"""Hello world in Cobra"""\n\nclass Hello\n\n    def main\n        print 'Hello, world.'
 120	CODE	CODE (computationally oriented display environment[1]) is a visual programming language and system for parallel programming, which lets users compose sequential programs into parallel programs.	null	null	http://www.cs.utexas.edu/users/code/	No code example (yet).
 121	CoffeeScript	CoffeeScript is a programming language that transcompiles to JavaScript. It adds syntactic sugar inspired by Ruby, Python and Haskell in an effort to enhance JavaScript's brevity and readability.[3] Specific additional features include list comprehension and pattern matching.	December 13, 2009; 6 years ago (2009-12-13)	1.10.0 / September 3, 2015; 8 months ago (2015-09-03)	http://coffeescript.org/	No code example (yet).
@@ -502,6 +527,7 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 179	Elm	Elm is a functional programming language for declaratively creating web browser-based graphical user interfaces. Elm uses the functional reactive programming style and purely functional graphical layout to build user interface without any destructive updates.	2012	0.17 / May 10, 2016; 5 days ago (2016-05-10)	\N	-- Hello world in Elm\n\nimport Text\n\nmain = Text.plainText "Hello, world!"
 181	Emerald	Emerald is a distributed, object-oriented programming language developed in the 1980s by Andrew P. Black, Norman C. Hutchinson, Eric B. Jul, and Henry M. Levy, in the Department of Computer Science at the University of Washington.[1]	1980s	null	http://www.emeraldprogramminglanguage.org/	No code example (yet).
 182	Epigram	Epigram is a functional programming language with dependent types. Epigram also refers to the IDE usually packaged with the language. Epigram's type system is strong enough to express program specifications. The goal is to support a smooth transition from ordinary programming to integrated programs and proofs whose correctness can be checked and certified by the compiler. Epigram exploits the propositions as types principle, and is based on intuitionistic type theory.	2004	1 / October 11, 2006 (2006-10-11)	\N	No code example (yet).
+275	Ioke	Ioke is a dynamic, strongly typed, prototype-based programming language targeting the Java Virtual Machine and the Common Language Runtime. It was designed by Ola Bini, a developer of JRuby. It has a very simple homoiconic syntax, somewhat similar to Io.	November 6, 2008; 7 years ago (2008-11-06)[1]	P (ikj-0.4.0, ikc-0.4.0)	http://ioke.org/	No code example (yet).
 183	Erlang	Erlang (/ˈɜːrlæŋ/ ER-lang) is a general-purpose, concurrent, functional programming language. It is also a garbage-collected runtime system. The sequential subset of Erlang supports eager evaluation, single assignment, and dynamic typing. Erlang is known for its designs that are well suited for systems with the following characteristics:	1986; 30 years ago (1986)	18.3[1] / March 16, 2016; 61 days ago (2016-03-16)	http://www.erlang.org/	%% Hello World in Erlang\n\n-module(hello).\n\n-export([hello/0]).\n\nhello() ->\n   io:format("Hello World!~n", []).
 184	es	rc is the command line interpreter for Version 10 Unix and Plan 9 from Bell Labs operating systems. It resembles the Bourne shell, but its syntax is somewhat simpler. It was created by Tom Duff, who is better known for an unusual C programming language construct ("Duff's device").	1989; 27 years ago (1989)	null	\N	No code example (yet).
 185	Escher	Escher is a declarative programming language that supports both functional programming and logic programming models, developed by J.W. Lloyd in the mid-1990s. It was designed mostly as a research and teaching vehicle. The basic view of programming exhibited by Escher and related languages is that a program is a representation of a theory in some logic framework, and the program's execution (computation) is a deduction from the theory. The logic framework for Escher is Alonzo Church's simple theory of types.	mid-1990s	null	\N	No code example (yet).
@@ -540,6 +566,7 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 225	GAMS	The General Algebraic Modeling System (GAMS) is a high-level modeling system for mathematical optimization. GAMS is designed for modeling and solving linear, nonlinear, and mixed-integer optimization problems. The system is tailored for complex, large-scale modeling applications and allows the user to build large maintainable models that can be adapted to new situations. The system is available for use on various computer platforms. Models are portable from one platform to another.	null	24.7.1 / March 15, 2016	\N	No code example (yet).
 226	GAP	GAP (Groups, Algorithms and Programming) is a computer algebra system for computational discrete algebra with particular emphasis on computational group theory.	null	4.8.2 / February 20, 2016; 2 months ago (2016-02-20)[1]	http://www.gap-system.org/	No code example (yet).
 227	GDL	In computer-aided design, Geometric Description Language (GDL) is the programming language of ArchiCAD library parts. GSM is the file format of these CAD objects.	null	null	\N	No code example (yet).
+252	Hartmann pipelines	CMS Pipelines implements the pipeline concept under the VM/CMS operating system. The programs in a pipeline operate on a sequential stream of records. A program writes records that are read by the next program in the pipeline. Any program can be combined with any other because reading and writing is done through a device independent interface.	1986	1.1.12/000C / 2015-07-30	\N	No code example (yet).
 228	Genie	Genie is a modern, general-purpose high-level programming language in active development since 2008.[1] It was designed as an alternative, simpler and cleaner dialect for the Vala compiler, while preserving the same functionality of the Vala language. Genie uses the same compiler and libraries as Vala; the two can indeed be used alongside each other.[2] The differences are only syntactical.	2008; 8 years ago (2008)	0.11.0 / October 4, 2010; 5 years ago (2010-10-04)	https://wiki.gnome.org/Projects/Genie	No code example (yet).
 229	GEORGE	GEORGE is a programming language invented by Charles Leonard Hamblin in 1957.[1][2]	null	null	\N	No code example (yet).
 230	GJ	Generic Java (GJ) is a programming language that is a superset of Java which adds support for generic programming. It was designed by Gilad Bracha, Martin Odersky, David Stoutamire, and Philip Wadler to offer developers a smoother transition and better Java compatibility than the Pizza programming language, previously created by Odersky and Wadler.	null	null	http://homepages.inf.ed.ac.uk/wadler/pizza/gj/	No code example (yet).
@@ -558,7 +585,6 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 248	Hack	Hack is a programming language for the HipHop Virtual Machine (HHVM), created by Facebook as a dialect of PHP. The language implementation is open-source, licensed under the BSD License.[2][3][4]	2014	null	http://hacklang.org/	No code example (yet).
 249	HAL/S	HAL/S (High-order Assembly Language/Shuttle)[1] is a real-time aerospace programming language, best known for its use in the Space Shuttle program.[2] It was designed by Intermetrics in the 1970s for NASA. HAL/S is written in XPL, a dialect of PL/I.	null	null	\N	No code example (yet).
 251	Harbour	Harbour is a modern computer programming language, primarily used to create database/business programs. It is a modernized, open sourced and cross-platform version of the older and largely DOS-only Clipper system, which in turn developed from the dBase database market of the 1980s and 90s.	1999	3.0.0 / 17 July 2011; 4 years ago (2011-07-17)	\N	No code example (yet).
-252	Hartmann pipelines	CMS Pipelines implements the pipeline concept under the VM/CMS operating system. The programs in a pipeline operate on a sequential stream of records. A program writes records that are read by the next program in the pipeline. Any program can be combined with any other because reading and writing is done through a device independent interface.	1986	1.1.12/000C / 2015-07-30	\N	No code example (yet).
 253	Haskell	Haskell /ˈhæskəl/[26] is a standardized, general-purpose purely functional programming language, with non-strict semantics and strong static typing.[27] It is named after logician Haskell Curry.[1] The latest standard of Haskell is Haskell 2010. As of May 2016[update], a group is working on the next version, Haskell 2020.[28]	1990; 26 years ago (1990)[1]	Haskell 2010[2] / July 2010; 5 years ago (2010-07)	http://haskell.org/	-- Hello World in Haskell\n \nmain = putStrLn "Hello World"
 254	Haxe	Haxe is an open source high-level multi-platform programming language and compiler that can produce applications and source code for many different platforms from a single code-base.[1][2][3][4]	2005	3.2.1 / October 11, 2015; 6 months ago (2015-10-11)	http://haxe.org/	// Hello world in Haxe\n\nclass Hello {\n    static public function main() {\n        trace("Hello world!");\n    }\n}
 256	HLSL	The High-Level Shader Language[1] or High-Level Shading Language[2] (HLSL) is a proprietary shading language developed by Microsoft for the Direct3D 9 API to augment the shader assembly language, and went on to become the required shading language for the unified shader model of Direct3D 10 and higher.	null	null	\N	No code example (yet).
@@ -575,7 +601,6 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 271	Idris	Idris is a general-purpose purely functional programming language with dependent types. The type system is similar to the one used by Agda.	null	0.10[1] / January 20, 2016 (2016-01-20)	\N	Hello world in Idris\n\n> main : IO ()\n> main = putStrLn "Hello, World!"
 272	IMP	IMP was a systems programming language developed by E. T. Irons in the late 1960s through early 1970s. Unlike most other systems programming languages, IMP was an extensible syntax programming language.	null	null	\N	No code example (yet).
 274	Io	Io is a pure object-oriented programming language inspired by Smalltalk, Self, Lua, Lisp, Act1, and NewtonScript.[1] Io has a prototype-based object model similar to the ones in Self and NewtonScript, eliminating the distinction between instance and class. Like Smalltalk, everything is an object and it uses dynamic typing. Like Lisp, programs are just data trees. Io uses actors for concurrency.	2002; 14 years ago (2002)	null	\N	// Hello World in io programming language\n"Hello world!" print
-275	Ioke	Ioke is a dynamic, strongly typed, prototype-based programming language targeting the Java Virtual Machine and the Common Language Runtime. It was designed by Ola Bini, a developer of JRuby. It has a very simple homoiconic syntax, somewhat similar to Io.	November 6, 2008; 7 years ago (2008-11-06)[1]	P (ikj-0.4.0, ikc-0.4.0)	http://ioke.org/	No code example (yet).
 276	IPL	Information Processing Language (IPL) is a programming language created by Allen Newell, Cliff Shaw, and Herbert A. Simon at RAND Corporation and the Carnegie Institute of Technology at about 1956. Newell had the job of language specifier-application programmer, Shaw was the system programmer, and Simon took the job of application programmer-user.	1956	IPL-VI	\N	No code example (yet).
 277	IPTSCRAE	Iptscrae is a stack-oriented scripting language used to give additional functionality to The Palace software and servers. Its name comes from the pronunciation of "script" in Pig Latin. [1]	null	null	\N	No code example (yet).
 278	ISLISP	ISLISP (also capitalized as ISLisp) is a programming language in the LISP family standardized by ISO working group ISO/IEC JTC 1/SC 22/WG 16[1] (commonly referred to simply as SC22/WG16 or WG16). The primary output of this working group was an International Standard, ISO/IEC 13816:1997(E), published by ISO. The standard was updated in 2007 and republished as ISO/IEC 13816:2007(E).[2] Although official publication was through ISO, versions of the ISLISP language specification are available that are believed to be in the public domain.[3]	null	null	\N	No code example (yet).
@@ -612,6 +637,7 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 311	Klerer-May System	The Klerer-May System is a programming language developed in the mid-1960s, oriented to numerical scientific programming, whose most notable feature is its two-dimensional syntax based on traditional mathematical notation.	null	null	\N	No code example (yet).
 312	Kojo	Kojo is a programming and learning environment - with many different features that enable play, exploration, creation, and learning in the areas of computer programming, mental skills, (interactive) math, graphics, art, music, science, animation, games, and electronics. Kojo draws ideas from Logo and Processing.[1][2]	2010	2.4.08 / 14 November 2015; 5 months ago (2015-11-14)	\N	No code example (yet).
 313	Kotlin	Kotlin is a statically-typed programming language that runs on the Java Virtual Machine and also can be compiled to JavaScript source code. Its primary development is from a team of JetBrains programmers based in Saint Petersburg, Russia (the name comes from the Kotlin Island, near St. Petersburg).[2] Kotlin was named Language of the Month in the January 2012 issue of Dr. Dobb's Journal.[3] While not syntax compatible with Java, Kotlin is designed to interoperate with Java code and is reliant on Java code from the existing Java Class Library, such as the collections framework.	null	Kotlin 1.0.1 / March 16, 2016; 2 months ago (2016-03-16)	http://kotlinlang.org/	No code example (yet).
+359	M4	m4 is a general-purpose macro processor designed by Brian Kernighan and Dennis Ritchie. m4 is an extension of an earlier macro processor m3, written by Ritchie for the AP-3 minicomputer.[1]	1977	null	\N	No code example (yet).
 314	KRC	KRC (Kent Recursive Calculator) is a lazy functional language developed by David Turner from November 1979 to October 1981[1] based on SASL, with pattern matching, guards and ZF expressions[2] (now more usually called list comprehensions). Two implementations of KRC were written: David Turner's original one in BCPL running on EMAS, and Simon J. Croft's later one in C under Unix, and KRC was the main language used for teaching functional programming at the University of Kent at Canterbury (UK) from 1982 to 1985.	1981	null	\N	No code example (yet).
 315	KRL	KRL is a knowledge representation language, developed by Daniel G. Bobrow and Terry Winograd while at Xerox PARC and Stanford University, respectively. It is a frame-based language.	1976	null	\N	No code example (yet).
 316	KRYPTON	Krypton (styled KRYPTON) is a frame-based computer programming language.	null	null	http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.73.7373	No code example (yet).
@@ -632,6 +658,7 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 335	LINC	LINC ("Logic and Information Network Compiler") is a fourth-generation programming language, used mostly on Unisys computer systems.	null	null	\N	No code example (yet).
 337	LIS	LIS (Language d'Implementation de Systèmes) was a system implementation programming language designed by Jean Ichbiah, who later designed Ada.	null	null	\N	No code example (yet).
 338	LISA	LISA (Language for Instruction Set Architectures) is a language to describe the instruction set architecture of a processor. LISA captures the information required to generate software tools (compiler, assembler, instruction set simulator, ...) and implementation hardware (in VHDL or Verilog) of a given processor.	1997, last revised 2007	null	\N	No code example (yet).
+418	Nial	Nial (from "Nested Interactive Array Language") is a high-level array programming language developed from about 1981 by Mike Jenkins of Queen's University, Kingston, Ontario, Canada.	1981	6.3 / August 2006	\N	No code example (yet).
 339	Lisaac	Lisaac is a statically typed prototype-based language conceived by Benoît Sonntag, in which the Isaac operating system is being written.	2003; 13 years ago (2003)	0.13.1 (Specification) / February 17, 2008; 8 years ago (2008-02-17)	\N	// Hello World in Lisaac\nSection Header\n\n  + name        := HELLO_WORLD;\n\nSection Inherit\n\n  - parent_object:OBJECT := OBJECT;\n\nSection Public\n\n  - main <-\n  (\n    "Hello world !\\n".print;\n  );
 341	Lite-C	Lite-C is a programming language for multimedia applications and personal computer games, using a syntax subset of the C language with some elements of the C++ language. Its main difference to C is the native implementation of multimedia and computer game related objects like sounds, images, movies, GUI elements, 2D and 3D models, collision detection and rigid body physics. Lite-C executables are compiled instead of interpreted. Lite-C runs on 32-bit and 64-bit Windows XP or Vista operating systems.	2007	8.45 / February 9, 2014; 2 years ago (2014-02-09)	http://www.3dgamestudio.com/	No code example (yet).
 342	Lithe	Lithe is an experimental programming language created in 1982 by David Sandberg at the University of Washington which allows the programmer to freely choose his own syntax. Lithe combines the ideas of syntax-directed translation and classes in a novel manner that results in a remarkably simple yet powerful language.	null	null	\N	No code example (yet).
@@ -650,7 +677,6 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 356	Lynx	Lynx is a programming language for large distributed networks, using remote procedure calls. It was developed by the University of Wisconsin–Madison in 1984 for the Charlotte multicomputer operating system.	null	null	\N	No code example (yet).
 357	M#	\N	2012	null	http://www.msharp.co.uk/Home.html	No code example (yet).
 358	M2001	M2001 is a modular educational mathematical programming language for developing and presenting mathematical algorithms, from the modern discrete to the classical continuous mathematics. M2001 is built on a semantic framework that is based in category theory and has a syntax similar to that of Pascal or Modula-2.	null	null	\N	No code example (yet).
-359	M4	m4 is a general-purpose macro processor designed by Brian Kernighan and Dennis Ritchie. m4 is an extension of an earlier macro processor m3, written by Ritchie for the AP-3 minicomputer.[1]	1977	null	\N	No code example (yet).
 360	Machine code	Machine code or machine language is a set of instructions executed directly by a computer's central processing unit (CPU). Each instruction performs a very specific task, such as a load, a jump, or an ALU operation on a unit of data in a CPU register or memory. Every program directly executed by a CPU is made up of a series of such instructions.	null	null	\N	No code example (yet).
 361	Magik	Magik is an object-oriented programming language that supports multiple inheritance, polymorphism and is dynamically typed. It was designed implemented in 1989 by Arthur Chance, of Smallworld Systems Ltd, as part of Smallworld Geographical Information System (GIS). Following Smallworld's acquisition in 2000, Magik is now is provided by GE Energy, still as part of its Smallworld technology platform.	null	null	\N	No code example (yet).
 362	Magma	Magma is a computer algebra system designed to solve problems in algebra, number theory, geometry and combinatorics. It is named after the algebraic structure magma. It runs on Unix-like operating systems, as well as Windows.	null	2.21-6 / September 10, 2015	http://magma.maths.usyd.edu.au/	No code example (yet).
@@ -669,7 +695,6 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 377	Mercury	Mercury is a functional logic programming language geared towards real-world applications. It was initially developed at the University of Melbourne Computer Science department under the supervision of Zoltan Somogyi. The first version was developed by Fergus Henderson, Thomas Conway and Zoltan Somogyi and was released on April 8, 1995.	1995	14.01.1 / September 8, 2014 (2014-09-08)	http://www.mercurylang.org/	No code example (yet).
 378	Mesa	Mesa[1] is an innovative programming language (superseded by the Cedar language) developed in the late 1970s at the Xerox Palo Alto Research Center in Palo Alto, California, United States. The language name was a pun based upon the programming language catchphrases of the time, because Mesa is a "high level" programming language.	1976; 40 years ago (1976)[2]	Mesa 6.0(Version 41) / July 1981; 34 years ago (1981-07)	http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.105.3163	No code example (yet).
 379	Metacard	MetaCard was a cross-platform, commercial GUI toolkit. MetaCard included an IDE and had its own language, MetaTalk. From the MetaCard Corporation website: "The MetaTalk language has all the features common to third-generation languages like C/C++/Java but has a much simpler syntax."	null	null	\N	No code example (yet).
-418	Nial	Nial (from "Nested Interactive Array Language") is a high-level array programming language developed from about 1981 by Mike Jenkins of Queen's University, Kingston, Ontario, Canada.	1981	6.3 / August 2006	\N	No code example (yet).
 382	MicroScript	TRON (acronym for The Real-time Operating system Nucleus) is an open real-time operating system kernel design. The project was started by Prof. Dr. Ken Sakamura of the University of Tokyo in 1984. The project's goal is to create an ideal computer architecture and network, to provide for all of society's needs.[1]	null	null	\N	No code example (yet).
 383	MIIS	MIIS (Meditech Interpretive Information System) is a MUMPS-like programming language that was created by A.Neil Pappalardo and Curt W. Marble, on a DEC PDP at Mass General Hospital from 1964 to 1968. MUMPS evolution took two major directions: MUMPS proper and MIIS. MUMPS became an ANSI and ISO-standard language. When many MUMPS implementations standardized to be compatible, MIIS did not standardize, but became a proprietary system instead.	null	null	\N	No code example (yet).
 384	MillScript	MillScript is a computer programming language for the batch production of templated Web sites. The language is a Java-based, early implementation of Spice, an experimental language developed by the OpenSpice group.	null	null	\N	No code example (yet).
@@ -724,6 +749,7 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 445	Onyx	Onyx is a stack-oriented programming language.	null	null	\N	No code example (yet).
 446	Opa	Opa is an open source programming language for developing scalable web applications.	2011	1.1.0 (stable) / February 13, 2013; 3 years ago (2013-02-13)[1]	http://opalang.org/	No code example (yet).
 447	Opal	OPAL (OPtimized Applicative Language) is a functional programming language first developed at the Technical University of Berlin.	null	null	\N	No code example (yet).
+572	SiMPLE	SiMPLE (a recursive acronym for SiMPLE Modular Programming Language & Environment) is a programming development system that was created to provide easy programming capabilities for everybody, especially non-professionals.	null	null	\N	No code example (yet).
 448	OpenCL	Open Computing Language (OpenCL) is a framework for writing programs that execute across heterogeneous platforms consisting of central processing units (CPUs), graphics processing units (GPUs), digital signal processors (DSPs), field-programmable gate arrays (FPGAs) and other processors or hardware accelerators. OpenCL specifies a programming language (based on C99) for programming these devices and application programming interfaces (APIs) to control the platform and execute programs on the compute devices. OpenCL provides a standard interface for parallel computing using task-based and data-based parallelism.	null	2.1 revision 23[1] / November 11, 2015; 6 months ago (2015-11-11)	https://www.khronos.org/opencl	No code example (yet).
 449	OpenEdge ABL	OpenEdge Advanced Business Language, or OpenEdge ABL for short, is a business application development language created and maintained by Progress Software Corporation (PSC). The language, typically classified as a fourth-generation programming language, uses an English-like syntax to simplify software development.[1] The language was called PROGRESS or Progress 4GL up until version 9, but in 2006 PSC changed the name to OpenEdge Advanced Business Language (OpenEdge ABL) in order to overcome a presumed industry perception that 4GLs were less capable than other languages.[2] A subset of the language, called SpeedScript, is used in the development of web applications.[3]	null	OpenEdge 11.6 / October 26, 2015; 6 months ago (2015-10-26)	\N	No code example (yet).
 450	OPL	Open Programming Language (OPL) is an embedded programming language for portable devices that run the Symbian Operating System.	1984	1.56 / June 17, 2006 (2006-06-17) / June 17, 2006 (2006-06-17)	http://opl-dev.sourceforge.net/	No code example (yet).
@@ -741,6 +767,7 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 464	PCASTL	The PCASTL (an acronym for by Parent and Childset Accessible Syntax Tree Language) is an interpreted high-level programming language. It was created in 2008 by Philippe Choquette.[1] The PCASTL is designed to ease the writing of self-modifying code. The language has reserved words parent and childset to access the nodes of the syntax tree of the currently written code.[2]	2008	3.4 / April 9, 2016 (2016-04-09)	\N	No code example (yet).
 465	PCF	In computer science, Programming Computable Functions,[note 1] or PCF, is a typed functional language introduced in an unpublished 1969 manuscript by Dana Scott. It can be considered to be an extended version of the typed lambda calculus or a simplified version of modern typed functional languages such as ML.	null	null	\N	No code example (yet).
 467	PEARL	PEARL, or Process and experiment automation realtime language, is a computer programming language designed for multitasking and real-time programming. Being a high-level language, it is fairly cross-platform. Since 1977, the language has been going under several standardization steps by the Deutsches Institut für Normung. The current version is PEARL-90, which was standardized in 1998 as DIN 66253-2.	null	null	\N	MODULE (HELLO);\n/* Hello World in PEARL (Process and Experiment Automation Realtime Language) */\n  SYSTEM;\n   TERMINAL:DIS<->SDVLS(2);\n  PROBLEM;\n   SPC TERMINAL DATION INOUT\n         ALPHIC DIM(,) TFU MAX\n         FORWARD CONTROL (ALL);\n   MAIN:TASK;\n     DCL TEXT INV CHAR(30)\n          INIT('HELLO WORLD!');\n    OPEN TERMINAL;\n    PUT TEXT TO TERMINAL;\n    CLOSE TERMINAL;\n   END;\nMODEND;
+508	PROMAL	PROMAL (PROgrammer's Microapplication Language) is a structured programming language from Systems Management Associates for MS-DOS, Commodore 64, and Apple II. PROMAL features simple syntax, no line numbers, long variable names, functions and procedures with argument passing, real number type, arrays, strings, pointer, and a built-in I/O library. Like ABC and Python, indentation is part of the language syntax.	8/16/1984	2.1e / 1986-10-14	\N	No code example (yet).
 468	PeopleCode	PeopleCode is an object-oriented, proprietary language used to express business logic for PeopleSoft applications. In its fundamentals, PeopleCode syntax resembles other programming languages. Some aspects of the PeopleCode language, however, are specifically related to the PeopleTools environment. However, the fundamentals of objects and classes are the same as in Java language. Definition name references, for example, enable you to refer to PeopleTools definitions, such as record definitions or pages, without using hard-coded string literals.[1] Other language features, such as PeopleCode data types and metastrings, reflect the close interaction of PeopleTools and Structured Query Language (SQL). Dot notation, classes and methods in PeopleCode are similar to other object oriented languages, like Java. Object syntax was an important feature of PeopleTools 8.[2]	null	null	\N	/* Hello World in PeopleCode 8.45\n\n&MsgText = MsgGetText(66666666, 999999999, "Hello World!");
 469	Perl	Perl is a family of high-level, general-purpose, interpreted, dynamic programming languages. The languages in this family include Perl 5 and Perl 6.[4]	December 18, 1987; 28 years ago (1987-12-18)	5.24.0[1] / May 10, 2016; 7 days ago (2016-05-10)	https://www.perl.org/	# Hello world in perl\n\nprint "Hello World!\\n";
 470	Perl6	Perl 6 is a member of the Perl family of programming languages.[5]	2000; 16 years ago (2000)	Rakudo Star / April 25, 2016 (2016-04-25)[2]	http://perl6.org/	No code example (yet).
@@ -759,6 +786,7 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 487	PL/SQL	PL/SQL (Procedural Language/Structured Query Language) is Oracle Corporation's procedural extension for SQL and the Oracle relational database. PL/SQL is available in Oracle Database (since version 7), TimesTen in-memory database (since version 11.2.1), and IBM DB2 (since version 9.7).[1] Oracle Corporation usually extends PL/SQL functionality with each successive release of the Oracle Database.	null	null	\N	No code example (yet).
 488	PL360	PL360 (or PL/360) is a programming language designed by Niklaus Wirth and written by Niklaus Wirth, Joseph W. Wells, Jr., and Edwin Satterthwaite, Jr. for the IBM System/360 computer at Stanford University. A description of PL360 was published in early 1968, although the implementation was probably completed before Wirth left Stanford in 1967.[1]	null	null	\N	No code example (yet).
 489	PLANC	PLANC (pronounced as "plank") is a high level computer programming language. The acronym stands for Programming LAnguage for Nd Computers.	null	null	\N	No code example (yet).
+509	Promela	PROMELA (Process or Protocol Meta Language) is a verification modeling language introduced by Gerard J. Holzmann. The language allows for the dynamic creation of concurrent processes to model, for example, distributed systems. In PROMELA models, communication via message channels can be defined to be synchronous (i.e., rendezvous), or asynchronous (i.e., buffered). PROMELA models can be analyzed with the SPIN model checker, to verify that the modeled system produces the desired behavior. An implementation verified with Isabelle/HOL is also available, as part of the Computer Aided Verification of Automata project.[1]	null	null	\N	No code example (yet).
 490	Plankalkül	Plankalkül (German pronunciation: [ˈplaːnkalkyːl], "Plan Calculus") is a programming language designed for engineering purposes by Konrad Zuse between 1943 and 1945. It was the first high-level (non-von Neumann) programming language to be designed for a computer. Also, notes survive with scribblings about such a plan calculation dating back to 1941. Plankalkül was not published at that time owing to a combination of factors such as conditions in wartime and postwar Germany and his efforts to commercialise the Z3 computer and its successors. In 1944 Zuse met with the German logician and philosopher Heinrich Scholz and they discussed Zuse's Plankalkül. In March 1945 Scholz personally expressed his deep appreciation for Zuse's utilization of the logical calculus.[2]	1948; 68 years ago (1948) – concept first published	null	\N	R1.1(V0[:sig]) => R0\nR1.2(V0[:m x sig]) => R0\n0 => i | m + 1 => j\n[W [ i < j -> [ R1.1(V0[i: m x sig]) => R0 | i + 1 => i ] ] ]\nEND\nR1.3() => R0\n'H';'e';'l';'l';'o';',';' ';'w';'o';'r';'l';'d';'!' => Z0[: m x sig] R1.2(Z0) => R0\nEND
 491	Planner	Planner (often seen in publications as "PLANNER" although it is not an acronym) is a programming language designed by Carl Hewitt at MIT, and first published in 1969. First, subsets such as Micro-Planner and Pico-Planner were implemented, and then essentially the whole language was implemented as Popler by Julian Davies at the University of Edinburgh in the POP-2 programming language.[1] Derivations such as QA4, Conniver, QLISP and Ether (see Scientific Community Metaphor) were important tools in Artificial Intelligence research in the 1970s, which influenced commercial developments such as KEE and ART.	1969 (1969)	null	http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.80.756	No code example (yet).
 492	PLEX	PLEX (Programming Language for EXchanges) is a special-purpose, pseudo-parallel and event-driven real-time programming language. Dedicated for AXE telephone exchanges, it was developed by Göran Hemdahl at Ericsson.[1] Originally designed in the 1970s, it has been continuously evolving since then.[2] The language has two variants: Plex-C used for the AXE Central Processor (CP) and Plex-M used for Extension Module Regional Processors (EMRP).[3] PLEX was described in 2008 as "a cross between Fortran and a macro assembler."[4]	1970s	null	\N	No code example (yet).
@@ -774,8 +802,7 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 505	Prograph	Prograph is a visual, object-oriented, dataflow, multiparadigm programming language that uses iconic symbols to represent actions to be taken on data. Commercial Prograph software development environments such as Prograph Classic and Prograph CPX were available for the Apple Macintosh and Windows platforms for many years but were eventually withdrawn from the market in the late 1990s. Support for the Prograph language on Mac OS X has recently reappeared with the release of the Marten software development environment.	1983	null	\N	/* Hello World in Progress */\n\nmessage "Hello World" view-as alert-box.
 506	PROIV	PROIV is a fourth-generation programming language (4GL), developed and sold by NorthgateArinso, part of the Northgate Information Solutions Group. It has an active community of around 2500 developers and end-users worldwide, ranging from consultants to large multinationals, finance institutions, tax authorities, retailers, engineering companies, media operators and software houses.	null	null	\N	No code example (yet).
 507	Prolog	Prolog is a general-purpose logic programming language associated with artificial intelligence and computational linguistics.[1][2][3]	1972	null	\N	% Hello World in Prolog\n\nhello :- display('Hello World!') , nl .
-508	PROMAL	PROMAL (PROgrammer's Microapplication Language) is a structured programming language from Systems Management Associates for MS-DOS, Commodore 64, and Apple II. PROMAL features simple syntax, no line numbers, long variable names, functions and procedures with argument passing, real number type, arrays, strings, pointer, and a built-in I/O library. Like ABC and Python, indentation is part of the language syntax.	8/16/1984	2.1e / 1986-10-14	\N	No code example (yet).
-509	Promela	PROMELA (Process or Protocol Meta Language) is a verification modeling language introduced by Gerard J. Holzmann. The language allows for the dynamic creation of concurrent processes to model, for example, distributed systems. In PROMELA models, communication via message channels can be defined to be synchronous (i.e., rendezvous), or asynchronous (i.e., buffered). PROMELA models can be analyzed with the SPIN model checker, to verify that the modeled system produces the desired behavior. An implementation verified with Isabelle/HOL is also available, as part of the Computer Aided Verification of Automata project.[1]	null	null	\N	No code example (yet).
+552	SAIL	SAIL, the Stanford Artificial Intelligence Language, was developed by Dan Swinehart and Bob Sproull of the Stanford AI Lab in 1970. It was originally a large ALGOL 60-like language for the PDP-10 and DECSYSTEM-20.	null	null	\N	No code example (yet).
 510	PROSE modeling language	PROSE[1][2][3][4] was the mathematical 4GL virtual machine which established the holistic modeling paradigm known as Synthetic Calculus[5][6][7] (AKA MetaCalculus). A successor to the SLANG[8]/CUE[9] simulation and optimization language developed at TRW Systems, it was introduced in 1974 on Control Data supercomputers. It was the first commercial language[10][11][12][13] to employ automatic differentiation (AD), which was optimized to loop in the instruction-stack of the CDC 6600 CPU.	null	null	\N	No code example (yet).
 512	ProvideX	ProvideX is a computer language and development environment derived from Business Basic (a business oriented derivative of BASIC) in the mid-1980s.	1992; 24 years ago (1992)	9.10 / July 15, 2010; 5 years ago (2010-07-15)	http://www.pvxplus.com/	No code example (yet).
 514	Python	Python is a widely used high-level, general-purpose, interpreted, dynamic programming language.[23][24] Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java.[25][26] The language provides constructs intended to enable clear programs on both a small and large scale.[27]	20 February 1991; 25 years ago (1991-02-20)[1]	3.5.1 / 7 December 2015; 5 months ago (2015-12-07)[2]\n\n2.7.11 / 5 December 2015; 5 months ago (2015-12-05)[3]	https://www.python.org/	No code example (yet).
@@ -793,6 +820,7 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 527	Ratfor	Ratfor (short for Rational Fortran) is a programming language implemented as a preprocessor for Fortran 66. It provided modern control structures, unavailable in Fortran 66, to replace GOTOs and statement numbers.	1976 (1976)	null	\N	No code example (yet).
 528	rc	rc is the command line interpreter for Version 10 Unix and Plan 9 from Bell Labs operating systems. It resembles the Bourne shell, but its syntax is somewhat simpler. It was created by Tom Duff, who is better known for an unusual C programming language construct ("Duff's device").	1989; 27 years ago (1989)	null	\N	No code example (yet).
 548	S2	S2 (Style System 2) is an object-oriented programming language developed in the late 1990s by Brad Fitzpatrick, Martin "Mart" Atkins, and others for the online journaling service LiveJournal in order to allow users full control over the appearance of their pages. S2 source code is compiled into Perl, which the webserver can then execute directly for individual web page requests.	1999 (1999)	null	http://www.livejournal.com/doc/s2	No code example (yet).
+571	SIGNAL	SIGNAL is a programming language based on synchronized data-flow (flows + synchronization): a process is a set of equations on elementary flows describing both data and control.[1]	null	null	\N	No code example (yet).
 530	Red	Red is a computer programming language. Red were made to overcoming limitations of the computer language Rebol. Red is both an imperative and functional programming language introduced in 2011 by Nenad Rakocevic. Its syntax and general usage directly overlaps with that of the interpreted Rebol language (which was introduced in 1997). The implementation choices of Red were geared specifically to create what Rakocevic calls a "full stack programming language". Red can be used for extremely high-level programming (DSLs and GUIs) as well as low-level programming (operating systems and device drivers).	2011	0.6.0 (Alpha) / March, 2016	http://www.red-lang.org/	No code example (yet).
 532	REFAL	Refal (Recursive functions algorithmic language) "is a functional programming language oriented toward symbol manipulation", including "string processing, translation, [and] artificial intelligence".[1] It is one of the oldest members of this family, first conceived in 1966 as a theoretical tool with the first implementation appearing in 1968. Refal was intended to combine mathematical simplicity with practicality for writing large and sophisticated programs.	1968 (1968)	null	\N	No code example (yet).
 533	Reia	Reia was a general-purpose concurrent object-oriented programming language for the Erlang virtual machine. As of August 10, 2011, Reia has been declared defunct in favor of Elixir.[1]	2008	null	http://reia-lang.org/	No code example (yet).
@@ -811,7 +839,6 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 547	S/SL	The Syntax/Semantic Language (S/SL) is an executable high level specification language for recursive descent parsers, semantic analyzers and code generators developed by James Cordy, Ric Holt and David Wortman at the University of Toronto in 1980.[1]	null	null	\N	No code example (yet).
 550	SA-C	Single Assignment C (SA-C) (pronounced "sassy") is a member of the C programming language family designed to be directly and intuitively translatable into circuits, including FPGAs. To ease translation, SA-C does not include pointers and arithmetics thereon. To retain most of the expressiveness of C, SA-C instead features true n-dimensional arrays as first-class objects of the language.	null	null	\N	No code example (yet).
 551	SabreTalk	SabreTalk was a dialect of PL/I for the S/360 IBM mainframes running the TPF platform. SabreTalk was developed jointly by American Airlines, Eastern Air Lines and IBM. SabreTalk is known as PL/TPF (Programming Language for TPF).[1]	null	null	\N	No code example (yet).
-552	SAIL	SAIL, the Stanford Artificial Intelligence Language, was developed by Dan Swinehart and Bob Sproull of the Stanford AI Lab in 1970. It was originally a large ALGOL 60-like language for the PDP-10 and DECSYSTEM-20.	null	null	\N	No code example (yet).
 553	SALSA	The SALSA programming language (Simple Actor Language System and Architecture) is an actor-oriented programming language that uses concurrency primitives beyond asynchronous message passing, including token-passing, join, and first-class continuations. It also supports distributed computing over the Internet with universal naming, remote communication, and migration linguistic abstractions and associated middleware. For portability, it produces Java code.	2001 (2001)	1.1.5 / July 18, 2011; 4 years ago (2011-07-18)	\N	No code example (yet).
 554	SAM76	SAM76 is a macro programming language used from the late 1970s to the present 2007 initially ran on CP/M.	null	null	\N	No code example (yet).
 555	SAS	SAS (Statistical Analysis System)[1] is a software suite developed by SAS Institute for advanced analytics, multivariate analyses, business intelligence, data management, and predictive analytics.	null	9.4 / July 10, 2013; 2 years ago (2013-07-10)	\N	/* Hello world in SAS */\n* Writes as output title;\nTITLE "Hello World!";\n* writes to the log;\nPUT Hello world!;
@@ -827,8 +854,6 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 568	SenseTalk	SenseTalk is an English-like scripting language derived from the HyperTalk language used in HyperCard. SenseTalk was originally developed as the scripting language within the HyperSense multimedia authoring application on the NeXTStep and OpenStep platforms. SenseTalk resurfaced in 2002 as the scripting language in eggPlant, the first commercial Mac OS X and cross-platform GUI testing application.	null	1.25 / January 18, 2007; 9 years ago (2007-01-18)	\N	Hello World in SenseTalk.\n\non run put "Hello World!" end run 
 569	SequenceL	SequenceL is computer software, a type of programming language. It is a general purpose functional programming language and auto-parallelizing (concurrency) tool set, which primary design objectives are performance on multi-core processor hardware, ease of programming, and code clarity and readability. Its main advantage is that it can be used to write straightforward code that automatically takes full advantage of all the processing power available, without programmers needing to be concerned with identifying parallelisms, specifying vectorization, avoiding race conditions, and other challenges of manual directive-based programming approaches such as OpenMP.	1989; 27 years ago (1989)	null	http://www.texasmulticore.com/	No code example (yet).
 570	SETL	SETL (SET Language) is a very high-level programming language based on the mathematical theory of sets. It was originally developed by Jack Schwartz at the NYU Courant Institute of Mathematical Sciences in the late 1960s.	1969	null	http://setl.org/	No code example (yet).
-571	SIGNAL	SIGNAL is a programming language based on synchronized data-flow (flows + synchronization): a process is a set of equations on elementary flows describing both data and control.[1]	null	null	\N	No code example (yet).
-572	SiMPLE	SiMPLE (a recursive acronym for SiMPLE Modular Programming Language & Environment) is a programming development system that was created to provide easy programming capabilities for everybody, especially non-professionals.	null	null	\N	No code example (yet).
 573	SIMPOL	Superbase is an end-user desktop database program that started on the Commodore 64 and was ported from that to various operating systems over the course of more than 20 years. It also has generally included a programming language to automate database-oriented tasks, and with later versions included WYSIWYG form and report designers as well as more sophisticated programming capabilities.	null	null	http://www.superbase.com/	No code example (yet).
 574	SIMSCRIPT	SIMSCRIPT is a free-form, English-like general-purpose simulation language conceived by Harry Markowitz and Bernard Hausner at the RAND Corporation in 1963. It was implemented as a Fortran preprocessor on the IBM 7090 and was designed for large discrete event simulations. It influenced Simula.	null	null	\N	No code example (yet).
 575	Simula	Simula is the name of two simulation programming languages, Simula I and Simula 67, developed in the 1960s at the Norwegian Computing Center in Oslo, by Ole-Johan Dahl and Kristen Nygaard. Syntactically, it is a fairly faithful superset of ALGOL 60.[1]:1.3.1	1965	null	\N	! Hello World in Simula;\n\nBEGIN\n    OutText("Hello World!");\n    OutImage;\nEND
@@ -944,6 +969,7 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 86	Cayenne	Haskell /ˈhæskəl/[26] is a standardized, general-purpose purely functional programming language, with non-strict semantics and strong static typing.[27] It is named after logician Haskell Curry.[1] The latest standard of Haskell is Haskell 2010. As of May 2016[update], a group is working on the next version, Haskell 2020.[28]	1990; 26 years ago (1990)[1]	Haskell 2010[2] / July 2010; 5 years ago (2010-07)	http://haskell.org/	No code example (yet).
 89	Cel	Cel is an object-oriented prototype-based programming language based on Self which was heavily influenced by Smalltalk. The goal was to create a version of Self that would run under a lot of operating systems without strong ties to the Self GUI for development. For example, one could create a simple command line application in Cel without the high-overhead of the Self-system.	1998	0.8.5 / February 24, 2002	\N	No code example (yet).
 100	Chef	An esoteric programming language (sometimes shortened to esolang) is a programming language designed to test the boundaries of computer programming language design, as a proof of concept, as software art, as a hacking interface to another language (particularly functional programming or procedural programming languages), or as a joke. The use of esoteric distinguishes these languages from programming languages that working developers use to write software. Usually, an esolang's creators do not intend the language to be used for mainstream programming, although some esoteric features, such as visuospatial syntax,[1] have inspired practical applications in the arts. Such languages are often popular among hackers and hobbyists.	null	null	\N	Hello World Souffle.\n\nThis recipe prints the immortal words "Hello world!", in a basically brute force\nway. It also makes a lot of food for one person.\n\nIngredients.\n72 g haricot beans\n101 eggs\n108 g lard\n111 cups oil\n32 zucchinis\n119 ml water\n114 g red salmon\n100 g dijon mustard\n33 potatoes\n\nMethod.\nPut potatoes into the mixing bowl. Put dijon mustard into the mixing bowl. Put\nlard into the mixing bowl. Put red salmon into the mixing bowl. Put oil into\nthe mixing bowl. Put water into the mixing bowl. Put zucchinis into the mixing\nbowl. Put oil into the mixing bowl. Put lard into the mixing bowl. Put lard\ninto the mixing bowl. Put eggs into the mixing bowl. Put haricot beans into\nthe mixing bowl. Liquefy contents of the mixing bowl. Pour contents of the\nmixing bowl into the baking dish.\n\nServes 1.
+513	Pure	Pure is a dynamically typed, functional programming language based on term rewriting. It has facilities for user-defined operator syntax, macros, multiple-precision numbers, and compilation to native code through the LLVM. It is the successor to the Q programming language.	2008 (2008)	null	http://purelang.bitbucket.org/	No code example (yet).
 103	chomski	chomski virtual machine (named after the noted linguist Noam Chomsky) and pp (the pattern parser) refer to both a command line computer language and utility (interpreter for that language) which can be used to parse and transform text patterns. The utility reads input files character by character (sequentially), applying the operation which has been specified via the command line or a pp script, and then outputs the line. It was developed from 2006 as a Unix and Windows utility, and is available today for Windows and Linux systems. Pp has derived a number of ideas and syntax elements from Sed, a command line text stream editor.	2007	null	\N	No code example (yet).
 104	ChucK	ChucK is a concurrent, strongly timed audio programming language for real-time synthesis, composition, and performance,[2] which runs on Linux, Mac OS X, Microsoft Windows, and iOS. It is designed to favor readability and flexibility for the programmer over other considerations such as raw performance. It natively supports deterministic concurrency and multiple, simultaneous, dynamic control rates. Another key feature is the ability to live code; adding, removing, and modifying code on the fly, while the program is running, without stopping or restarting. It has a highly precise timing/concurrency model, allowing for arbitrarily fine granularity. It offers composers and researchers a powerful and flexible programming tool for building and experimenting with complex audio synthesis programs, and real-time interactive control.[3]	2003[1]	1.3.5.2 / October 24, 2015 (2015-10-24)	\N	No code example (yet).
 118	COBOL	COBOL (/ˈkoʊbɒl/, an acronym for common business-oriented language) is a compiled English-like computer programming language designed for business use. It is imperative, procedural and, since 2002, object-oriented. COBOL is primarily used in business, finance, and administrative systems for companies and governments. COBOL is still widely used in legacy applications deployed on mainframe computers, such as large-scale batch and transaction processing jobs. But due to its declining popularity and the retirement of experienced COBOL programmers, programs are being migrated to new platforms, rewritten in modern languages or replaced with software packages.[6] Most programming in COBOL is now purely to maintain existing applications.[7]	1959; 57 years ago (1959)	ISO/IEC 1989:2014 / 2014	http://cobolstandard.info/	       * Hello World in COBOL\n\n*****************************\nIDENTIFICATION DIVISION.\nPROGRAM-ID. HELLO.\nENVIRONMENT DIVISION.\nDATA DIVISION.\nPROCEDURE DIVISION.\nMAIN SECTION.\nDISPLAY "Hello World!"\nSTOP RUN.\n****************************
@@ -998,6 +1024,7 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 586	SOL	The Secure Operations Language (SOL) was developed jointly by the United States Naval Research Laboratory and Utah State University in the USA. SOL is a domain-specific synchronous programming language for developing distributed applications and is based on software engineering principles developed in the Software Cost Reduction project at the Naval Research Laboratory in the late 1970s and early 1980s. SOL is intended to be a domain-specific language for developing service-based systems. Concurrently, a domain-specific extension of Java (SOLj) is being developed (FTDCS 2007) Application domains include sensor networks, defense and space systems, healthcare delivery, power control, etc.	null	null	\N	No code example (yet).
 428	NXT-G	LEGO Mindstorms NXT is a programmable robotics kit released by Lego in late July 2006.[1] It replaced the first-generation Lego Mindstorms kit, which was called the Robotics Invention System. The base kit ships in two versions: the Retail Version (set #8527)[2] and the Education Base Set (set #9797).[3] It comes with the NXT-G programming software, or optionally LabVIEW for Lego Mindstorms.[4] A variety of unofficial languages exist, such as NXC, NBC, leJOS NXJ, and RobotC. A new version of the set, the new Lego Mindstorms NXT 2.0, was released on August 1, 2009, featuring a color sensor and other upgraded capabilities. There is now a new Lego Mindstorms Robot, called the EV3.	null	null	http://mindstorms.lego.com/	No code example (yet).
 438	ObjectLOGO	ObjectLOGO is a variant of the programming language Logo with object-oriented programming extensions and lexical scoping. Version 2.7 is sold by Digitool, Inc.[1] It is no longer being developed or supported, and does not run on versions of the Mac operating system after version 7.5.[2]	null	null	\N	No code example (yet).
+517	Qalb	قلب (Levantine Arabic: [ʔalb]), transliterated Qalb, Qlb and Alb, is a functional programming language allowing a programmer to write programs completely in Arabic.[1] Its name means heart and is a recursive acronym in Arabic meaning Qlb: a programming language (قلب: لغة برمجة, Qlb: Lughat Barmijah). It was developed in 2012 by Ramsey Nasser, a computer scientist at the Eyebeam Art + Technology Center in New York City, as both an artistic endeavor and as a response to the Anglophone bias in the vast majority of programming languages, which express their fundamental concepts using English words.	2012	null	\N	No code example (yet).
 439	Obliq	Obliq is an interpreted, object-oriented programming language designed to make distributed, and locally multi-threaded, computation simple and easy for the programmer, while providing program safety and implicit type system. The interpreter is written in Modula-3, and provides Obliq with full access to Modula-3's network objects capabilities. A type inference algorithm for record concatenation, subtyping and recursive types has been developed for Obliq, more important it has been proved to be NP-complete [1] and its lowest complexity to be Ο(n3) or if under other modeling up to certain conditions down to Ο(n2) [2] and its best known implementation runs in Ο(n5).[3] Obliq's syntax is very similar to Modula-3, the biggest difference being that Obliq has no need of explicit typed variables (i.e., a variable can hold any data type allowed by the type checker and if does not accepts one, i.e., a given expression execution error will be thrown) although explicit type declarations are allowed and ignored by the interpreter. The basic data types in the language include booleans, integers, reals, characters, strings, and arrays. Obliq supports the usual set of sequential control structures (conditional, iteration, and exception handling forms), as well as special control forms for concurrency (mutexes and guarded statements). Besides that Obliq's objects are able to be cloned and safely copied remotely by any machine in a distributed network object and it can be done in a transparent way.[4]	null	null	\N	No code example (yet).
 456	Orwell	Orwell is a small, lazy-evaluation functional programming language implemented principally by Martin Raskovsky and first released in 1984 by Philip Wadler during his time as a Research Fellow in the Programming Research Group, part of the Oxford University Computing Laboratory. Developed as a free alternative to Miranda, it was a forerunner of Haskell and was one of the first programming languages to support list comprehensions and pattern matching.	1984	null	\N	No code example (yet).
 463	Pascal	Pascal is a historically influential imperative and procedural programming language, designed in 1968–69 and published in 1970 by Niklaus Wirth as a small and efficient language intended to encourage good programming practices using structured programming and data structuring.	1970; 46 years ago (1970)	null	\N	{Hello World in Pascal}\n\nprogram HelloWorld(output);\nbegin\n  WriteLn('Hello World!');\nend.
@@ -1009,8 +1036,6 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 495	POP-11	POP-11 is a reflective, incrementally compiled programming language with many of the features of an interpreted language. It is the core language of the Poplog programming environment developed originally by the University of Sussex, and recently in the School of Computer Science at the University of Birmingham which hosts the Poplog website.	null	null	\N	;;; Hello World in POP-11\n\n: vars outputtext;\n: "Hello World" -> outputtext;\n: outputtext =>\n\n** Hello World
 503	Processing	Processing is an open source programming language and integrated development environment (IDE) built for the electronic arts, new media art, and visual design communities with the purpose of teaching the fundamentals of computer programming in a visual context, and to serve as the foundation for electronic sketchbooks. The project was initiated in 2001 by Casey Reas and Benjamin Fry, both formerly of the Aesthetics and Computation Group at the MIT Media Lab. One of the stated aims of Processing is to act as a tool to get non-programmers started with programming through the instant gratification of visual feedback. The language builds on the Java language, but uses a simplified syntax and graphics programming model. In 2012, they started the Processing Foundation along with Daniel Shiffman, who formally joined as a third project lead.	2001; 15 years ago (2001)	3.0.2 / February 13, 2016; 3 months ago (2016-02-13)	https://processing.org/	// Hello world in Processing\n\nprintln( "Hello world!" );
 511	PROTEL	Protel stands for "Procedure Oriented Type Enforcing Language". It is a programming language created by Nortel Networks and used on telecommunications switching systems such as the DMS-100.[1][2] Protel-2 is the object-oriented version of Protel.[3][4]	null	null	\N	No code example (yet).
-513	Pure	Pure is a dynamically typed, functional programming language based on term rewriting. It has facilities for user-defined operator syntax, macros, multiple-precision numbers, and compilation to native code through the LLVM. It is the successor to the Q programming language.	2008 (2008)	null	http://purelang.bitbucket.org/	No code example (yet).
-517	Qalb	قلب (Levantine Arabic: [ʔalb]), transliterated Qalb, Qlb and Alb, is a functional programming language allowing a programmer to write programs completely in Arabic.[1] Its name means heart and is a recursive acronym in Arabic meaning Qlb: a programming language (قلب: لغة برمجة, Qlb: Lughat Barmijah). It was developed in 2012 by Ramsey Nasser, a computer scientist at the Eyebeam Art + Technology Center in New York City, as both an artistic endeavor and as a response to the Anglophone bias in the vast majority of programming languages, which express their fundamental concepts using English words.	2012	null	\N	No code example (yet).
 529	REBOL	Rebol (/ˈrɛbəl/ REB-əl; historically REBOL) is a cross-platform[6] data exchange language and a multi-paradigm dynamic programming language designed by Carl Sassenrath for network communications and distributed computing. It introduces the concept of dialecting: small, optimized, domain-specific languages for code and data,[6][7] which is also the most notable property of the language according to its designer Carl Sassenrath:	1997; 19 years ago (1997)	2.7.8 / January 2011; 5 years ago (2011-01)	http://www.rebol.com/	; Hello World in REBOL\n\nprint "Hello World!"
 531	Redcode	Core War is a programming game created by D. G. Jones and A. K. Dewdney in which two or more battle programs (called "warriors") compete for control of a virtual computer. These battle programs are written in an abstract assembly language called Redcode.	null	null	\N	; Hello World in Redcode\n; Should work with any MARS >= ICWS-86\n; (with 128x64 gfx core support, of course!)\n;\nStart   MOV     0,2455\n        MOV     0,2458\n        MOV     0,2459\n        MOV     0,2459\n        MOV     0,2459\n        MOV     0,2459\n        MOV     0,2459\n        MOV     0,2460\n        MOV     0,2465\n        MOV     0,2471\n        MOV     0,2471\n        MOV     0,2471\n        MOV     0,2479\n        MOV     0,2482\n        MOV     0,2484\n        MOV     0,2484\n        MOV     0,2484\n        MOV     0,2486\n        MOV     0,2486\n        MOV     0,2486\n        MOV     0,2486\n        MOV     0,2488\n        MOV     0,2493\n        MOV     0,2493\n        MOV     0,2493\n        MOV     0,2493\n        MOV     0,2497\n        MOV     0,2556\n        MOV     0,2559\n        MOV     0,2560\n        MOV     0,2565\n        MOV     0,2570\n        MOV     0,2575\n        MOV     0,2578\n        MOV     0,2585\n        MOV     0,2588\n        MOV     0,2589\n        MOV     0,2592\n        MOV     0,2593\n        MOV     0,2596\n        MOV     0,2597\n        MOV     0,2603\n        MOV     0,2605\n        MOV     0,2608\n        MOV     0,2667\n        MOV     0,2670\n        MOV     0,2671\n        MOV     0,2676\n        MOV     0,2681\n        MOV     0,2686\n        MOV     0,2689\n        MOV     0,2696\n        MOV     0,2699\n        MOV     0,2700\n        MOV     0,2703\n        MOV     0,2704\n        MOV     0,2707\n        MOV     0,2708\n        MOV     0,2714\n        MOV     0,2716\n        MOV     0,2719\n        MOV     0,2778\n        MOV     0,2778\n        MOV     0,2778\n        MOV     0,2778\n        MOV     0,2778\n        MOV     0,2779\n        MOV     0,2779\n        MOV     0,2779\n        MOV     0,2782\n        MOV     0,2787\n        MOV     0,2792\n        MOV     0,2795\n        MOV     0,2802\n        MOV     0,2805\n        MOV     0,2806\n        MOV     0,2809\n        MOV     0,2810\n        MOV     0,2810\n        MOV     0,2810\n        MOV     0,2810\n        MOV     0,2812\n        MOV     0,2818\n        MOV     0,2820\n        MOV     0,2823\n        MOV     0,2882\n        MOV     0,2885\n        MOV     0,2886\n        MOV     0,2891\n        MOV     0,2896\n        MOV     0,2901\n        MOV     0,2904\n        MOV     0,2911\n        MOV     0,2912\n        MOV     0,2913\n        MOV     0,2914\n        MOV     0,2917\n        MOV     0,2918\n        MOV     0,2919\n        MOV     0,2922\n        MOV     0,2928\n        MOV     0,2930\n        MOV     0,2933\n        MOV     0,2992\n        MOV     0,2995\n        MOV     0,2996\n        MOV     0,3001\n        MOV     0,3006\n        MOV     0,3011\n        MOV     0,3014\n        MOV     0,3021\n        MOV     0,3022\n        MOV     0,3023\n        MOV     0,3024\n        MOV     0,3027\n        MOV     0,3028\n        MOV     0,3030\n        MOV     0,3032\n        MOV     0,3038\n        MOV     0,3040\n        MOV     0,3103\n        MOV     0,3106\n        MOV     0,3107\n        MOV     0,3107\n        MOV     0,3107\n        MOV     0,3107\n        MOV     0,3107\n        MOV     0,3108\n        MOV     0,3108\n        MOV     0,3108\n        MOV     0,3108\n        MOV     0,3108\n        MOV     0,3109\n        MOV     0,3109\n        MOV     0,3109\n        MOV     0,3109\n        MOV     0,3109\n        MOV     0,3111\n        MOV     0,3111\n        MOV     0,3111\n        MOV     0,3120\n        MOV     0,3121\n        MOV     0,3124\n        MOV     0,3124\n        MOV     0,3124\n        MOV     0,3126\n        MOV     0,3129\n        MOV     0,3130\n        MOV     0,3130\n        MOV     0,3130\n        MOV     0,3130\n        MOV     0,3130\n        MOV     0,3131\n        MOV     0,3131\n        MOV     0,3131\n        MOV     0,3131\n        MOV     0,3135\n        JMP     0
 545	S-Lang	The S-Lang programming library is a software library for Unix, Windows, VMS, OS/2, and Mac OS X. It provides routines for embedding an interpreter for the S-Lang scripting language, and components to facilitate the creation of text-based applications.[1] The latter class of functions include routines for constructing and manipulating keymaps, an interactive line-editing facility, and both low and high-level screen/terminal management functions. It is distributed under the terms of the GNU General Public License.	null	null	\N	No code example (yet).
@@ -1040,6 +1065,196 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 --
 
 COPY languages_careers (id, language_id, career_id) FROM stdin;
+27	19	1
+28	78	1
+29	121	1
+30	183	1
+31	292	1
+32	469	1
+33	472	1
+34	514	1
+35	541	1
+36	647	1
+37	660	1
+38	290	2
+39	302	2
+40	371	2
+41	514	2
+42	521	2
+43	555	2
+44	556	2
+45	560	2
+46	82	3
+47	83	3
+48	84	3
+49	110	3
+50	112	3
+51	402	3
+52	660	3
+53	661	3
+54	665	3
+55	78	4
+56	83	4
+57	290	4
+58	436	4
+59	469	4
+60	514	4
+61	540	4
+62	541	4
+63	19	5
+64	173	5
+65	290	5
+66	292	5
+67	300	5
+68	352	5
+69	595	5
+70	647	5
+71	46	6
+72	78	6
+73	82	6
+74	83	6
+75	290	6
+76	292	6
+77	340	6
+78	352	6
+79	436	6
+80	463	6
+81	469	6
+82	514	6
+83	605	6
+84	616	6
+85	649	6
+86	82	7
+87	83	7
+88	290	7
+89	371	7
+90	541	7
+91	78	9
+92	82	9
+93	83	9
+94	469	9
+95	83	10
+96	290	10
+97	292	10
+98	472	10
+99	514	10
+100	541	10
+101	543	10
+102	82	11
+103	83	11
+104	290	11
+105	78	12
+106	82	12
+107	83	12
+108	118	12
+109	213	12
+110	290	12
+111	340	12
+112	463	12
+113	514	12
+114	46	13
+115	59	13
+116	78	13
+117	82	13
+118	83	13
+119	113	13
+120	118	13
+121	213	13
+122	290	13
+123	463	13
+124	535	13
+125	78	14
+126	83	14
+127	290	14
+128	292	14
+129	78	15
+130	82	15
+131	352	15
+132	436	15
+133	605	15
+134	292	16
+135	472	16
+136	541	16
+137	78	17
+138	82	17
+139	83	17
+140	290	17
+141	292	17
+142	436	17
+143	514	17
+144	541	17
+145	581	17
+146	616	17
+147	648	17
+148	290	18
+149	436	18
+150	514	18
+151	58	19
+152	78	19
+153	83	19
+154	290	19
+155	371	19
+156	443	19
+157	514	19
+158	576	19
+159	83	20
+160	290	20
+161	352	20
+162	514	20
+163	82	21
+164	183	21
+165	290	21
+166	292	21
+167	78	22
+168	82	22
+169	83	22
+170	213	22
+171	253	22
+172	290	22
+173	371	22
+174	436	22
+175	440	22
+176	469	22
+177	507	22
+178	514	22
+179	541	22
+180	560	22
+181	581	22
+182	54	23
+183	58	23
+184	78	23
+185	83	23
+186	100	23
+187	352	23
+188	469	23
+189	541	23
+190	20	24
+191	46	24
+192	69	24
+193	78	24
+194	83	24
+195	149	24
+196	186	24
+197	213	24
+198	234	24
+199	421	24
+200	488	24
+201	543	24
+202	605	24
+203	607	24
+204	78	25
+205	83	25
+206	375	25
+207	514	25
+208	46	26
+209	78	26
+210	82	26
+211	83	26
+212	197	26
+213	290	26
+214	292	26
+215	514	26
+216	649	26
 \.
 
 
@@ -1047,7 +1262,7 @@ COPY languages_careers (id, language_id, career_id) FROM stdin;
 -- Name: languages_careers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: john
 --
 
-SELECT pg_catalog.setval('languages_careers_id_seq', 4, true);
+SELECT pg_catalog.setval('languages_careers_id_seq', 216, true);
 
 
 --
@@ -1084,7 +1299,7 @@ COPY languages_types (id, language_id, type_id) FROM stdin;
 -- Name: languages_types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: john
 --
 
-SELECT pg_catalog.setval('languages_types_id_seq', 13, true);
+SELECT pg_catalog.setval('languages_types_id_seq', 18, true);
 
 
 --
@@ -1114,7 +1329,7 @@ COPY types (id, name, description) FROM stdin;
 -- Name: types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: john
 --
 
-SELECT pg_catalog.setval('types_id_seq', 4, true);
+SELECT pg_catalog.setval('types_id_seq', 5, true);
 
 
 --
