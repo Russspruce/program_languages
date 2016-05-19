@@ -295,10 +295,10 @@ public class AppTest extends FluentTest{
 
   @Test
   public void languageDuplicateErrorCatchesAndDisplays() {
-    Language testLanguage = new Language ("Language1", "Description", "example", "date", "webpate");
+    Language testLanguage = new Language ("Language1", "Description", "example", "date", "webpage");
     testLanguage.save();
     goTo("http://localhost:4567/language/add");
-    fill("#title").with("Name 1");
+    fill("#name").with("Name 1");
     submit(".btn-success");
     assertThat(pageSource()).contains("Language already listed");
   }
@@ -308,7 +308,7 @@ public class AppTest extends FluentTest{
   //   Career testProgram = new Program ("Name 1", "Description");
   //   testProgram.save();
   //   goTo("http://localhost:4567/program/add");
-  //   fill("#title").with("Name 1");
+  //   fill("#name").with("Name 1");
   //   submit(".btn-success");
   //   assertThat(pageSource()).contains("Program already listed");
   // }
@@ -318,7 +318,7 @@ public class AppTest extends FluentTest{
   //   Career testType = new Type ("Name 1", "Description");
   //   testType.save();
   //   goTo("http://localhost:4567/type/add");
-  //   fill("#title").with("Name 1");
+  //   fill("#name").with("Name 1");
   //   submit(".btn-success");
   //   assertThat(pageSource()).contains("Type already listed");
   // }
