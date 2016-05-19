@@ -63,11 +63,7 @@ public class Language {
     } else {
       Language newLanguage = (Language) otherLanguage;
 
-      return this.getId() == newLanguage.getId()  && this.getName().equals(newLanguage.getName()) &&
-      this.getDescription().equals(newLanguage.getDescription()) &&
-      this.getExample().equals(newLanguage.getExample()) &&
-      this.getDate().equals(newLanguage.getDate()) &&
-      this.getWebpage().equals(newLanguage.getWebpage());
+      return this.getId() == newLanguage.getId()  && this.getName().equals(newLanguage.getName());
   }
 }
 
@@ -260,4 +256,11 @@ public class Language {
     }
   }
 
+  public static List<Language> sortByAlpha() {
+    try(Connection con = DB.sql2o.open()) {
+      String sort = "SELECT * FROM languages ORDER BY lower(name) ASC;";
+      return con.createQuery(sort)
+        .executeAndFetch(Language.class);
+    }
+  }
 }

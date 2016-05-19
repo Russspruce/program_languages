@@ -130,4 +130,12 @@ public class Career {
       .executeUpdate();
     }
   }
+
+  public static List<Career> sortByAlpha() {
+    try(Connection con = DB.sql2o.open()) {
+      String sort = "SELECT * FROM careers ORDER BY lower(title) ASC;";
+      return con.createQuery(sort)
+        .executeAndFetch(Career.class);
+    }
+  }
 }

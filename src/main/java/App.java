@@ -50,7 +50,7 @@ public class App {
 
     get("/careers", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      model.put("careers", Career.all());
+      model.put("careers", Career.sortByAlpha());
       model.put("template", "templates/careers.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -107,7 +107,7 @@ public class App {
 
       career.delete();
 
-      model.put("careers", Career.all());
+      model.put("careers", Career.sortByAlpha());
       model.put("deleted", true);
       model.put("template", "templates/careers.vtl");
       return new ModelAndView(model, layout);
@@ -118,7 +118,7 @@ public class App {
       Career career = Career.find(Integer.parseInt(request.params(":id")));
 
       model.put("career", career);
-      model.put("languages", Language.all());
+      model.put("languages", Language.sortByAlpha());
       model.put("template", "templates/associate-careers.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -224,7 +224,7 @@ public class App {
       Type type = Type.find(Integer.parseInt(request.params(":id")));
 
       model.put("type", type);
-      model.put("languages", Language.all());
+      model.put("languages", Language.sortByAlpha());
       model.put("template", "templates/associate-types.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -249,7 +249,7 @@ public class App {
       Program program = Program.find(Integer.parseInt(request.params(":id")));
 
       model.put("program", program);
-      model.put("languages", Language.all());
+      model.put("languages", Language.sortByAlpha());
       model.put("template", "templates/associate-programs.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -271,14 +271,14 @@ public class App {
 
     get("/types", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      model.put("types", Type.all());
+      model.put("types", Type.sortByAlpha());
       model.put("template", "templates/types.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
     get("/programs", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      model.put("programs", Program.all());
+      model.put("programs", Program.sortByAlpha());
       model.put("template", "templates/programs.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -362,7 +362,7 @@ public class App {
 
       type.delete();
 
-      model.put("types", Type.all());
+      model.put("types", Type.sortByAlpha());
       model.put("deleted", true);
       model.put("template", "templates/types.vtl");
       return new ModelAndView(model, layout);
@@ -376,7 +376,7 @@ public class App {
 
       program.delete();
 
-      model.put("programs", Program.all());
+      model.put("programs", Program.sortByAlpha());
       model.put("deleted", true);
       model.put("template", "templates/programs.vtl");
       return new ModelAndView(model, layout);
@@ -433,7 +433,7 @@ public class App {
 
     get("/languages", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-      model.put("languages", Language.all());
+      model.put("languages", Language.sortByAlpha());
       model.put("template", "templates/languages.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -480,7 +480,7 @@ public class App {
 
       language.delete();
 
-      model.put("languages", Language.all());
+      model.put("languages", Language.sortByAlpha());
       model.put("deleted", true);
       model.put("template", "templates/languages.vtl");
       return new ModelAndView(model, layout);
@@ -491,7 +491,7 @@ public class App {
       Language language = Language.find(Integer.parseInt(request.params(":id")));
 
       model.put("language", language);
-      model.put("careers", Career.all());
+      model.put("careers", Career.sortByAlpha());
       model.put("template", "templates/associate-language-careers.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -516,7 +516,7 @@ public class App {
       Language language = Language.find(Integer.parseInt(request.params(":id")));
 
       model.put("language", language);
-      model.put("types", Type.all());
+      model.put("types", Type.sortByAlpha());
       model.put("template", "templates/associate-language-types.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -541,7 +541,7 @@ public class App {
       Language language = Language.find(Integer.parseInt(request.params(":id")));
 
       model.put("language", language);
-      model.put("programs", Program.all());
+      model.put("programs", Program.sortByAlpha());
       model.put("template", "templates/associate-language-programs.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());

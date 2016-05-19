@@ -135,4 +135,12 @@ public class Type {
       .executeUpdate();
     }
   }
+
+  public static List<Type> sortByAlpha() {
+    try(Connection con = DB.sql2o.open()) {
+      String sort = "SELECT * FROM types ORDER BY lower(name) ASC;";
+      return con.createQuery(sort)
+        .executeAndFetch(Type.class);
+    }
+  }
 }
