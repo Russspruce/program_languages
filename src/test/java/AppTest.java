@@ -311,17 +311,18 @@ public class AppTest extends FluentTest{
     testProgram.save();
     goTo("http://localhost:4567/program/add");
     fill("#name").with("Name 1");
-    submit("submitProgram");
+    submit("#submitProgram");
     assertThat(pageSource()).contains("Program already listed");
   }
-  //
-  // @Test
-  // public void typeDuplicateErrorCatchesAndDisplays() {
-  //   Type testType = new Type ("Name 1", "Description");
-  //   testType.save();
-  //   goTo("http://localhost:4567/type/add");
-  //   fill("#name").with("Name 1");
-  //   submit(".btn-success");
-  //   assertThat(pageSource()).contains("Type already listed");
-  // }
+
+  @Test
+  public void typeDuplicateErrorCatchesAndDisplays() {
+    Type testType = new Type ("Name 1", "Description");
+    testType.save();
+    goTo("http://localhost:4567/type/add");
+    fill("#name").with("Name 1");
+    fill("#description").with("description");
+    submit("#submitType");
+    assertThat(pageSource()).contains("Type already listed");
+  }
 }
