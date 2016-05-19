@@ -15,19 +15,22 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
 3. Install Git Bash, JDK, Gradle, PSQL
 4. Paste into your CLI:
 
-    `PSQL`
-    `CREATE DATABASE program_languages;`
-    `\c program_languages;`
-    `CREATE TABLE careers (id int PRIMARY KEY, title varchar, description varchar);`
-    `CREATE TABLE languages (id int PRIMARY KEY, name varchar, description varchar, example varchar, date varchar, webpage varchar);`
-    `CREATE TABLE programs (id int PRIMARY KEY, name varchar, description varchar, url varchar);`
-    `CREATE TABLE type (id int PRIMARY KEY, name varchar, description varchar);`
-    `CREATE DATABASE program_languages_test WITH TEMPLATE program_languages;`
+```sql
+    PSQL
+    CREATE DATABASE program_languages;
+    \c program_languages;
+    CREATE TABLE careers (id int PRIMARY KEY, title varchar, description varchar);
+    CREATE TABLE languages (id int PRIMARY KEY, name varchar, description varchar, example varchar, date varchar, webpage varchar);
+    CREATE TABLE programs (id int PRIMARY KEY, name varchar, description varchar, url varchar);
+    CREATE TABLE type (id int PRIMARY KEY, name varchar, description varchar);
+    CREATE DATABASE program_languages_test WITH TEMPLATE program_languages;
+```
 
 5. In Git Bash, navigate to the program_languages folder
 6. Type "gradle run"
 7. Go to localhost:4567 in your web browser
 
+_Numbered lists are currenly broken by code :(_
 ## Known Bugs
 
 
