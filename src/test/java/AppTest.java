@@ -295,11 +295,13 @@ public class AppTest extends FluentTest{
 
   @Test
   public void languageDuplicateErrorCatchesAndDisplays() {
-    Language testLanguage = new Language ("Language1", "Description", "example", "date", "webpage");
+    Language testLanguage = new Language ("Language1", "Description", "Example", "date", "webpage");
     testLanguage.save();
     goTo("http://localhost:4567/language/add");
-    fill("#name").with("Name 1");
-    submit(".btn-success");
+    fill("#name").with("Language1");
+    fill("#description").with("Description");
+    fill("#example").with("Example");
+    submit("#language-btn");
     assertThat(pageSource()).contains("Language already listed");
   }
 
