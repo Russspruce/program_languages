@@ -11,5 +11,15 @@
 }
 
 #main_menu {
+  font-size: 25px;
   list-style-type: none;
+  font-family: orbitron;
+}
+
+h1 {
+  font-family: ubuntu;
+}
+
+#search_bar {
+  margin-left: 40px;
 }

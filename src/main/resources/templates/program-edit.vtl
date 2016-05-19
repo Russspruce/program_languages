@@ -6,14 +6,14 @@
 
 <form action="/program/$program.getId()/edit" method="post">
   <label for="name">Program</label>
-  <input type="text" id="name" name="name" value="$program.getName()">
-
+  <input type="text" id="name" class="form-control" name="name" value="$program.getName()">
+<br>
   <label for="description">Description</label>
-  <textarea rows="4" name="description" id="description">$description</textarea>
-
+  <textarea rows="4" name="description" id="description" class="form-control">$description</textarea>
+<br>
   <label for="url">URL</label>
-  <input type="text" id="url" name="url" value="$program.getUrl()">
-
+  <input type="text" id="url" name="url" class="form-control" value="$program.getUrl()">
+<br>
   <button id="submitProgram" type="submit" class="btn btn-success">Submit</button>
 </form>
 <br>
