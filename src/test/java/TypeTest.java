@@ -116,4 +116,12 @@ public class TypeTest {
     assertEquals(0, testType.getLanguages().size());
   }
 
+  @Test
+  public void checkDuplicates_searchesDatabaseForDuplicates_boolean() {
+    Type testType = new Type("Type1", "Description");
+    testType.save();
+    boolean isDuplicate = Type.checkDuplicates("Type1");
+    assertEquals (true, isDuplicate);
+  }
+
 }

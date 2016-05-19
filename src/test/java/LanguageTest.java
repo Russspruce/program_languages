@@ -136,4 +136,12 @@ public class LanguageTest {
     assertTrue(testSearch.get(0).equals(testLanguage3));
     assertEquals(testSearch.size(), 2);
   }
+
+  @Test
+  public void checkDuplicates_searchesDatabaseForDuplicates_boolean() {
+    Language testLanguage = new Language("Language1", "Description", "example", "date", "webpate");
+    testLanguage.save();
+    boolean isDuplicate = Language.checkDuplicates("Language1");
+    assertEquals (true, isDuplicate);
+  }
 }

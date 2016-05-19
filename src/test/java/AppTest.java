@@ -295,7 +295,7 @@ public class AppTest extends FluentTest{
 
   @Test
   public void languageDuplicateErrorCatchesAndDisplays() {
-    Career testLanguage = new Language ("Name 1", "Description");
+    Language testLanguage = new Language ("Language1", "Description", "example", "date", "webpate");
     testLanguage.save();
     goTo("http://localhost:4567/language/add");
     fill("#title").with("Name 1");

@@ -252,4 +252,17 @@ public class Language {
     }
   }
 
+  public static boolean checkDuplicates(String name) {
+    try(Connection con = DB.sql2o.open()) {
+      String nameQuery = "SELECT name FROM languages;";
+      List<String> names = (con.createQuery(nameQuery)
+        .executeAndFetch(String.class));
+      if (names.contains(name)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+
 }
