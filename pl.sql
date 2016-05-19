@@ -1,3 +1,3 @@
-CREATE TABLE languages (id serial primary key, name varchar, description varchar, date varchar, most_recent_release_date varchar, website varchar);
+CREATE TABLE languages (id serial primary key, name varchar, description varchar, date varchar, most_recent_release_date varchar, webpage varchar);
 
-COPY languages FROM '/Users/Guest/Desktop/pl.csv' DELIMITERS ',' CSV;
+COPY languages FROM '/Users/Guest/Desktop/fixdb.csv' DELIMITERS ',' CSV;
