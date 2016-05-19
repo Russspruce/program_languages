@@ -131,7 +131,7 @@ public class Career {
     }
   }
 
-  public static boolean checkForDuplicates(String title) {
+  public static boolean checkDuplicates(String title) {
     try(Connection con = DB.sql2o.open()) {
       String titleQuery = "SELECT title FROM careers;";
       List<String> titles = (con.createQuery(titleQuery)

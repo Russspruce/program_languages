@@ -86,4 +86,11 @@ public class CareerTest {
     assertTrue(testSearch.get(0).equals(testCareer2));
     assertEquals(testSearch.size(), 1);
   }
+
+  @Test
+  public void checkDuplicates_searchesDatabaseForDuplicates_boolean() {
+    Career testCareer = new Career("Career1", "Description");
+    boolean isDuplicate = Career.checkDuplicates("Career1");
+    assertEquals (true, isDuplicate);
+  }
 }
