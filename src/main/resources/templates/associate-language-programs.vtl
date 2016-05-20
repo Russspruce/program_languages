@@ -1,6 +1,6 @@
 <h1>Edit Programs for $language.getName()</h1>
 
-<form action="/associate/language/programs/$language.getId()" method="post">
+<form action="/associate/language/programs/$language.getId()" method="post" class="border">
   #foreach ($program in $programs)
     #if ($language.getPrograms().contains($program))
       <input type="checkbox" id="programs" name="programs" value="$program.getId()" checked>$program.getName()<br>

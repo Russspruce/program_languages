@@ -1,3 +1,7 @@
+body {
+  background-color: #E8F3F8;
+}
+
 .error {
   color: red;
 }
@@ -18,8 +22,29 @@
 
 h1 {
   font-family: ubuntu;
+  text-align: center;
 }
 
 #search_bar {
   margin-left: 40px;
+}
+
+.border {
+  padding: 20px;
+  border-color: #003366;
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 25px;
+}
+
+label {
+  font-family: orbitron;
+}
+
+input {
+  font-family: catamaran;
+}
+
+textarea {
+  font-family: catamaran;
 }

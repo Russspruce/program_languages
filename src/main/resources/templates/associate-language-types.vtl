@@ -1,6 +1,6 @@
 <h1>Edit Types for $language.getName()</h1>
 
-<form action="/associate/language/types/$language.getId()" method="post">
+<form action="/associate/language/types/$language.getId()" method="post" class="border">
   #foreach ($type in $types)
     #if ($language.getTypes().contains($type))
       <input type="checkbox" id="types" name="types" value="$type.getId()" checked>$type.getName()<br>

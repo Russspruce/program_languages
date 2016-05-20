@@ -3,7 +3,7 @@
 #if ($formError)
 <h3 class="animated flash error">Please be sure to enter a Language Name</h3>
 #end
-<form action="/language/$language.getId()/edit" method="post">
+<form action="/language/$language.getId()/edit" method="post" class="border">
   <label for="Name">Update Name:</label>
   <input id="name" name="name" class="form-control" type="name" value="$language.getName()">
   <br>
