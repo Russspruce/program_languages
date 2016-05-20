@@ -2,6 +2,13 @@ body {
   background-color: #E8F3F8;
 }
 
+.bottomNav {
+  font-size: 30px;
+  margin-left: 50px;
+  border-radius: 10px;
+  color: black;
+}
+
 .error {
   color: red;
 }
@@ -21,6 +28,7 @@ body {
 }
 
 h1 {
+  font-size: 3em;
   font-family: ubuntu;
   text-align: center;
 }
@@ -47,4 +55,9 @@ input {
 
 textarea {
   font-family: catamaran;
+}
+
+li {
+  font-size: 20px;
+  font-family: ubuntu;
 }
