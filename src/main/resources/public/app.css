@@ -2,7 +2,20 @@ body {
   background-color: #E8F3F8;
 }
 
+h3 {
+  font-family: catamaran;
+}
+
+h4 {
+  font-family: catamaran;
+}
+
+.edit {
+  font-family: catamaran;
+}
+
 .bottomNav {
+  font-family: catamaran;
   font-size: 30px;
   margin-left: 50px;
   border-radius: 10px;

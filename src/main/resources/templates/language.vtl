@@ -7,54 +7,54 @@
 #if ($update)
   <h4 class="success animated flash">Language successfully updated</h4>
 #end
-<h2>Description:</h2>
+<h3>Description:</h3>
 <br>
-<h2>$language.getDescription()</h2>
+<h3>$language.getDescription()</h3>
 <br>
-<h2>Example Code:</h2>
+<h3>Example Code:</h3>
 <br>
-<h2><pre>$language.getExample()</pre></h2>
+<h3><pre>$language.getExample()</pre></h3>
 <br>
-<h2>Date First Released:</h2>
+<h3>Date First Released:</h3>
 <br>
 #if ($language.getDate() && $language.getDate() != "null")
-  <h2>$language.getDate()</h2>
+  <h3>$language.getDate()</h3>
 #else
-  <h2>Currently Unavailable<h2>
+  <h3>Currently Unavailable<h3>
 #end
 <br>
-<h2>Current Release:</h2>
+<h3>Current Release:</h3>
 <br>
 #if ($language.getRelease() && $language.getRelease() != "null")
-  <h2>$language.getRelease()</h2>
+  <h3>$language.getRelease()</h3>
 #else
-  <h2>To be added<h2>
+  <h3>To be added<h3>
 #end
 <br>
-<h2>Website:</h2>
+<h3>Website:</h3>
 <br>
 #if ($language.getWebpage() && $language.getWebpage() != "null")
-  <h2>$language.getWebpage()</h2>
+  <h3>$language.getWebpage()</h3>
 #else
-  <h2>To be added<h2>
+  <h3>To be added<h3>
 #end
 <br>
 
-<h2>Careers:</h2>
+<h3>Careers:</h3>
 <ul>
   #foreach ($career in $language.getCareers())
     <li><a href="/career/$career.getId()">$career.getTitle()</a></li>
   #end
 </ul>
 
-<h2>Types:</h2>
+<h3>Types:</h3>
 <ul>
   #foreach ($type in $language.getTypes())
     <li><a href="/type/$type.getId()">$type.getName()</a></li>
   #end
 </ul>
 
-<h2>Programs:</h2>
+<h3>Programs:</h3>
 <ul>
   #foreach ($program in $language.getPrograms())
     <li><a href="/program/$program.getId()">$program.getName()</a></li>
