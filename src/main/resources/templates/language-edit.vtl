@@ -3,16 +3,16 @@
 #if ($formError)
 <h3 class="animated flash error">Please be sure to enter a Language Name</h3>
 #end
-<form action="/language/$language.getId()/edit" method="post">
+<form action="/language/$language.getId()/edit" method="post" class="border">
   <label for="Name">Update Name:</label>
   <input id="name" name="name" class="form-control" type="name" value="$language.getName()">
   <br>
   <label for="description">Update Description:</label>
-  <textarea rows="6" cols="50" type="text" id="description" name="description">$language.getDescription()</textarea>
+  <textarea rows="6" type="text" id="description" name="description" class="form-control">$language.getDescription()</textarea>
   <br>
   <input id="example" name="example" type="hidden" value="$language.getId()">
   <label for="example">Update Example:</label>
-  <textarea rows="6" cols="50" type="text" id="example" name="example">$language.getExample()</textarea>
+  <textarea rows="6" type="text" id="example" name="example" class="form-control">$language.getExample()</textarea>
   <br>
   <label for="example">Update First Release Date:</label>
   <input id="date" name="date" class="form-control" type="text" value="$language.getDate()">

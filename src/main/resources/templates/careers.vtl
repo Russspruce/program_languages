@@ -4,10 +4,12 @@
 <h3 class="animated flash success">Career successfully deleted</h3>
 #end
 
+<ul>
 #foreach ($career in $careers)
-  <a href="/career/$career.getId()">$career.getTitle()</a>
+  <li><a href="/career/$career.getId()">$career.getTitle()</a></li>
   <br>
 #end
+</ul>
 <br>
 
 <hr>

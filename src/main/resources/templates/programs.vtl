@@ -4,10 +4,12 @@
 <h3 class="animated flash success">Program successfully deleted</h3>
 #end
 
+<ul>
 #foreach ($program in $programs)
-  <a href="/program/$program.getId()">$program.getName()</a>
+  <li><a href="/program/$program.getId()">$program.getName()</a></li>
   <br>
 #end
+</ul>
 <br>
 
 <hr>

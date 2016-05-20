@@ -4,10 +4,12 @@
 <h3 class="animated flash success">Type successfully deleted</h3>
 #end
 
+<ul>
 #foreach ($type in $types)
-  <a href="/type/$type.getId()">$type.getName()</a>
+  <li><a href="/type/$type.getId()">$type.getName()</a></li>
   <br>
 #end
+</ul>
 <br>
 
 <hr>

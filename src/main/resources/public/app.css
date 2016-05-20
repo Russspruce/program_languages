@@ -1,3 +1,14 @@
+body {
+  background-color: #E8F3F8;
+}
+
+.bottomNav {
+  font-size: 30px;
+  margin-left: 50px;
+  border-radius: 10px;
+  color: black;
+}
+
 .error {
   color: red;
 }
@@ -11,5 +22,42 @@
 }
 
 #main_menu {
+  font-size: 25px;
   list-style-type: none;
+  font-family: orbitron;
+}
+
+h1 {
+  font-size: 3em;
+  font-family: ubuntu;
+  text-align: center;
+}
+
+#search_bar {
+  margin-left: 40px;
+}
+
+.border {
+  padding: 20px;
+  border-color: #003366;
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 25px;
+}
+
+label {
+  font-family: orbitron;
+}
+
+input {
+  font-family: catamaran;
+}
+
+textarea {
+  font-family: catamaran;
+}
+
+li {
+  font-size: 20px;
+  font-family: ubuntu;
 }
