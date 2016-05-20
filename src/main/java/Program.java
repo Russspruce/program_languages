@@ -144,11 +144,25 @@ public class Program {
     }
   }
 
+
   public static List<Program> sortByAlpha() {
     try(Connection con = DB.sql2o.open()) {
       String sort = "SELECT * FROM programs ORDER BY lower(name) ASC;";
       return con.createQuery(sort)
         .executeAndFetch(Program.class);
+    }
+  }
+
+  public static boolean checkDuplicates(String name) {
+    try(Connection con = DB.sql2o.open()) {
+      String nameQuery = "SELECT name FROM programs;";
+      List<String> names = (con.createQuery(nameQuery)
+        .executeAndFetch(String.class));
+      if (names.contains(name)) {
+        return true;
+      } else {
+        return false;
+      }
     }
   }
 }

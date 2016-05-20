@@ -282,4 +282,47 @@ public class AppTest extends FluentTest{
     assertThat(pageSource()).doesNotContain("Name 2");
     assertThat(pageSource()).contains("Name 1");
   }
+
+  @Test
+  public void careerDuplicateErrorCatchesAndDisplays() {
+    Career testCareer = new Career ("Name 1", "Description");
+    testCareer.save();
+    goTo("http://localhost:4567/career/add");
+    fill("#title").with("Name 1");
+    submit(".btn-success");
+    assertThat(pageSource()).contains("Career already listed");
+  }
+
+  @Test
+  public void languageDuplicateErrorCatchesAndDisplays() {
+    Language testLanguage = new Language ("Language1", "Description", "Example", "date", "date2", "webpage");
+    testLanguage.save();
+    goTo("http://localhost:4567/language/add");
+    fill("#name").with("Language1");
+    fill("#description").with("Description");
+    fill("#example").with("Example");
+    submit("#submitLanguage");
+    assertThat(pageSource()).contains("Language already listed");
+  }
+
+  @Test
+  public void programDuplicateErrorCatchesAndDisplays() {
+    Program testProgram = new Program ("Name 1", "Description", "http://google.com");
+    testProgram.save();
+    goTo("http://localhost:4567/program/add");
+    fill("#name").with("Name 1");
+    submit("#submitProgram");
+    assertThat(pageSource()).contains("Program already listed");
+  }
+
+  @Test
+  public void typeDuplicateErrorCatchesAndDisplays() {
+    Type testType = new Type ("Name 1", "Description");
+    testType.save();
+    goTo("http://localhost:4567/type/add");
+    fill("#name").with("Name 1");
+    fill("#description").with("description");
+    submit("#submitType");
+    assertThat(pageSource()).contains("Type already listed");
+  }
 }

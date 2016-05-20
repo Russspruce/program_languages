@@ -4,6 +4,10 @@
 <h3 class="animated flash error">Please be sure to enter a Career Title</h3>
 #end
 
+#if ($duplicateError)
+<h3 class="animated flash error">Career already listed</h3>
+#end
+
 <form action="/career/add" method="post" class="border">
   <label for="title">Career</label>
   <br>

@@ -28,8 +28,24 @@ CREATE TABLE languages_programs (id serial PRIMARY KEY, language_id int, program
 CREATE TABLE languages_types (id serial PRIMARY KEY, language_id int, type_id int);
 CREATE DATABASE program_languages_test WITH TEMPLATE program_languages;
 ```
+<<<<<<< HEAD
 
 5. In Git Bash, navigate to the program_languages folder
+=======
+PSQL
+CREATE DATABASE program_languages;
+\c program_languages;
+CREATE TABLE languages (id serial PRIMARY KEY, name varchar, description varchar, example varchar, date varchar, most_recent_release_date varchar, webpage varchar);
+CREATE TABLE careers (id serial PRIMARY KEY, title varchar, description varchar);
+CREATE TABLE programs (id serial PRIMARY KEY, name varchar, description varchar, url varchar);
+CREATE TABLE types (id serial PRIMARY KEY, name varchar, description varchar);
+CREATE TABLE languages_careers (id serial PRIMARY KEY, language_id int, career_id int);
+CREATE TABLE languages_programs (id serial PRIMARY KEY, language_id int, program_id int);
+CREATE TABLE languages_types (id serial PRIMARY KEY, language_id int, type_id int);
+CREATE DATABASE program_languages_test WITH TEMPLATE program_languages;
+```
+5. In Git Bash, navigate to
+>>>>>>> duplicate_checker
 6. Type "gradle run"
 7. Go to localhost:4567 in your web browser
 

@@ -35,6 +35,10 @@ public class App {
         model.put("formError", true);
         model.put("description", description);
         model.put("template", "templates/career-add.vtl");
+      } else if (Career.checkDuplicates(title)) {
+        model.put("duplicateError", true);
+        model.put("description", description);
+        model.put("template", "templates/career-add.vtl");
       } else {
         Career newCareer = new Career(title, description);
         newCareer.save();
@@ -154,6 +158,10 @@ public class App {
         model.put("formError", true);
         model.put("description", description);
         model.put("template", "templates/type-add.vtl");
+      } else if (Type.checkDuplicates(name)) {
+        model.put("duplicateError", true);
+        model.put("description", description);
+        model.put("template", "templates/type-add.vtl");
       } else {
         Type newType = new Type(name, description);
         newType.save();
@@ -183,6 +191,11 @@ public class App {
 
       if(name.equals("")) {
         model.put("formError", true);
+        model.put("description", description);
+        model.put("url", url);
+        model.put("template", "templates/program-add.vtl");
+      } else if (Program.checkDuplicates(name)) {
+        model.put("duplicateError", true);
         model.put("description", description);
         model.put("url", url);
         model.put("template", "templates/program-add.vtl");
@@ -408,6 +421,13 @@ public class App {
         model.put("example", example);
         model.put("date", date);
         model.put("release", release);
+        model.put("webpage", webpage);
+        model.put("template", "templates/language-add.vtl");
+      } else if (Language.checkDuplicates(name)) {
+        model.put("duplicateError", true);
+        model.put("description", description);
+        model.put("example", example);
+        model.put("date", date);
         model.put("webpage", webpage);
         model.put("template", "templates/language-add.vtl");
       } else {

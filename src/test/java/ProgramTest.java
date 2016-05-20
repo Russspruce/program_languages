@@ -116,4 +116,12 @@ public class ProgramTest {
     assertEquals(0, testProgram.getLanguages().size());
   }
 
+  @Test
+  public void checkDuplicates_searchesDatabaseForDuplicates_boolean() {
+    Program testProgram = new Program("Program1", "Description", "http://www.google.com");
+    testProgram.save();
+    boolean isDuplicate = Program.checkDuplicates("Program1");
+    assertEquals (true, isDuplicate);
+  }
+
 }
