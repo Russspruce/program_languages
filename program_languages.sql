@@ -2,26 +2,22 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.5.3
--- Dumped by pg_dump version 9.5.3
-
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
-SET row_security = off;
 
 --
--- Name: plpgsql; Type: EXTENSION; Schema: -; Owner:
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
 --
 
 CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner:
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
 --
 
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
@@ -34,7 +30,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: careers; Type: TABLE; Schema: public; Owner: john
+-- Name: careers; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
 --
 
 CREATE TABLE careers (
@@ -44,10 +40,10 @@ CREATE TABLE careers (
 );
 
 
-ALTER TABLE careers OWNER TO john;
+ALTER TABLE careers OWNER TO "Guest";
 
 --
--- Name: careers_id_seq; Type: SEQUENCE; Schema: public; Owner: john
+-- Name: careers_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
 --
 
 CREATE SEQUENCE careers_id_seq
@@ -58,17 +54,17 @@ CREATE SEQUENCE careers_id_seq
     CACHE 1;
 
 
-ALTER TABLE careers_id_seq OWNER TO john;
+ALTER TABLE careers_id_seq OWNER TO "Guest";
 
 --
--- Name: careers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: john
+-- Name: careers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
 --
 
 ALTER SEQUENCE careers_id_seq OWNED BY careers.id;
 
 
 --
--- Name: languages; Type: TABLE; Schema: public; Owner: john
+-- Name: languages; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
 --
 
 CREATE TABLE languages (
@@ -82,10 +78,10 @@ CREATE TABLE languages (
 );
 
 
-ALTER TABLE languages OWNER TO john;
+ALTER TABLE languages OWNER TO "Guest";
 
 --
--- Name: languages_careers; Type: TABLE; Schema: public; Owner: john
+-- Name: languages_careers; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
 --
 
 CREATE TABLE languages_careers (
@@ -95,10 +91,10 @@ CREATE TABLE languages_careers (
 );
 
 
-ALTER TABLE languages_careers OWNER TO john;
+ALTER TABLE languages_careers OWNER TO "Guest";
 
 --
--- Name: languages_careers_id_seq; Type: SEQUENCE; Schema: public; Owner: john
+-- Name: languages_careers_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
 --
 
 CREATE SEQUENCE languages_careers_id_seq
@@ -109,17 +105,17 @@ CREATE SEQUENCE languages_careers_id_seq
     CACHE 1;
 
 
-ALTER TABLE languages_careers_id_seq OWNER TO john;
+ALTER TABLE languages_careers_id_seq OWNER TO "Guest";
 
 --
--- Name: languages_careers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: john
+-- Name: languages_careers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
 --
 
 ALTER SEQUENCE languages_careers_id_seq OWNED BY languages_careers.id;
 
 
 --
--- Name: languages_id_seq; Type: SEQUENCE; Schema: public; Owner: john
+-- Name: languages_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
 --
 
 CREATE SEQUENCE languages_id_seq
@@ -130,17 +126,17 @@ CREATE SEQUENCE languages_id_seq
     CACHE 1;
 
 
-ALTER TABLE languages_id_seq OWNER TO john;
+ALTER TABLE languages_id_seq OWNER TO "Guest";
 
 --
--- Name: languages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: john
+-- Name: languages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
 --
 
 ALTER SEQUENCE languages_id_seq OWNED BY languages.id;
 
 
 --
--- Name: languages_programs; Type: TABLE; Schema: public; Owner: john
+-- Name: languages_programs; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
 --
 
 CREATE TABLE languages_programs (
@@ -150,10 +146,10 @@ CREATE TABLE languages_programs (
 );
 
 
-ALTER TABLE languages_programs OWNER TO john;
+ALTER TABLE languages_programs OWNER TO "Guest";
 
 --
--- Name: languages_programs_id_seq; Type: SEQUENCE; Schema: public; Owner: john
+-- Name: languages_programs_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
 --
 
 CREATE SEQUENCE languages_programs_id_seq
@@ -164,17 +160,17 @@ CREATE SEQUENCE languages_programs_id_seq
     CACHE 1;
 
 
-ALTER TABLE languages_programs_id_seq OWNER TO john;
+ALTER TABLE languages_programs_id_seq OWNER TO "Guest";
 
 --
--- Name: languages_programs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: john
+-- Name: languages_programs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
 --
 
 ALTER SEQUENCE languages_programs_id_seq OWNED BY languages_programs.id;
 
 
 --
--- Name: languages_types; Type: TABLE; Schema: public; Owner: john
+-- Name: languages_types; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
 --
 
 CREATE TABLE languages_types (
@@ -184,10 +180,10 @@ CREATE TABLE languages_types (
 );
 
 
-ALTER TABLE languages_types OWNER TO john;
+ALTER TABLE languages_types OWNER TO "Guest";
 
 --
--- Name: languages_types_id_seq; Type: SEQUENCE; Schema: public; Owner: john
+-- Name: languages_types_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
 --
 
 CREATE SEQUENCE languages_types_id_seq
@@ -198,17 +194,17 @@ CREATE SEQUENCE languages_types_id_seq
     CACHE 1;
 
 
-ALTER TABLE languages_types_id_seq OWNER TO john;
+ALTER TABLE languages_types_id_seq OWNER TO "Guest";
 
 --
--- Name: languages_types_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: john
+-- Name: languages_types_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
 --
 
 ALTER SEQUENCE languages_types_id_seq OWNED BY languages_types.id;
 
 
 --
--- Name: programs; Type: TABLE; Schema: public; Owner: john
+-- Name: programs; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
 --
 
 CREATE TABLE programs (
@@ -219,10 +215,10 @@ CREATE TABLE programs (
 );
 
 
-ALTER TABLE programs OWNER TO john;
+ALTER TABLE programs OWNER TO "Guest";
 
 --
--- Name: programs_id_seq; Type: SEQUENCE; Schema: public; Owner: john
+-- Name: programs_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
 --
 
 CREATE SEQUENCE programs_id_seq
@@ -233,17 +229,17 @@ CREATE SEQUENCE programs_id_seq
     CACHE 1;
 
 
-ALTER TABLE programs_id_seq OWNER TO john;
+ALTER TABLE programs_id_seq OWNER TO "Guest";
 
 --
--- Name: programs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: john
+-- Name: programs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
 --
 
 ALTER SEQUENCE programs_id_seq OWNED BY programs.id;
 
 
 --
--- Name: types; Type: TABLE; Schema: public; Owner: john
+-- Name: types; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
 --
 
 CREATE TABLE types (
@@ -253,10 +249,10 @@ CREATE TABLE types (
 );
 
 
-ALTER TABLE types OWNER TO john;
+ALTER TABLE types OWNER TO "Guest";
 
 --
--- Name: types_id_seq; Type: SEQUENCE; Schema: public; Owner: john
+-- Name: types_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
 --
 
 CREATE SEQUENCE types_id_seq
@@ -267,66 +263,66 @@ CREATE SEQUENCE types_id_seq
     CACHE 1;
 
 
-ALTER TABLE types_id_seq OWNER TO john;
+ALTER TABLE types_id_seq OWNER TO "Guest";
 
 --
--- Name: types_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: john
+-- Name: types_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
 --
 
 ALTER SEQUENCE types_id_seq OWNED BY types.id;
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: john
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
 --
 
 ALTER TABLE ONLY careers ALTER COLUMN id SET DEFAULT nextval('careers_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: john
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
 --
 
 ALTER TABLE ONLY languages ALTER COLUMN id SET DEFAULT nextval('languages_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: john
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
 --
 
 ALTER TABLE ONLY languages_careers ALTER COLUMN id SET DEFAULT nextval('languages_careers_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: john
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
 --
 
 ALTER TABLE ONLY languages_programs ALTER COLUMN id SET DEFAULT nextval('languages_programs_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: john
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
 --
 
 ALTER TABLE ONLY languages_types ALTER COLUMN id SET DEFAULT nextval('languages_types_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: john
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
 --
 
 ALTER TABLE ONLY programs ALTER COLUMN id SET DEFAULT nextval('programs_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: john
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
 --
 
 ALTER TABLE ONLY types ALTER COLUMN id SET DEFAULT nextval('types_id_seq'::regclass);
 
 
 --
--- Data for Name: careers; Type: TABLE DATA; Schema: public; Owner: john
+-- Data for Name: careers; Type: TABLE DATA; Schema: public; Owner: Guest
 --
 
 COPY careers (id, title, description) FROM stdin;
@@ -359,14 +355,14 @@ COPY careers (id, title, description) FROM stdin;
 
 
 --
--- Name: careers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: john
+-- Name: careers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
 SELECT pg_catalog.setval('careers_id_seq', 30, true);
 
 
 --
--- Data for Name: languages; Type: TABLE DATA; Schema: public; Owner: john
+-- Data for Name: languages; Type: TABLE DATA; Schema: public; Owner: Guest
 --
 
 COPY languages (id, name, description, date, most_recent_release_date, webpage, example) FROM stdin;
@@ -1061,7 +1057,7 @@ COPY languages (id, name, description, date, most_recent_release_date, webpage, 
 
 
 --
--- Data for Name: languages_careers; Type: TABLE DATA; Schema: public; Owner: john
+-- Data for Name: languages_careers; Type: TABLE DATA; Schema: public; Owner: Guest
 --
 
 COPY languages_careers (id, language_id, career_id) FROM stdin;
@@ -1259,21 +1255,21 @@ COPY languages_careers (id, language_id, career_id) FROM stdin;
 
 
 --
--- Name: languages_careers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: john
+-- Name: languages_careers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
 SELECT pg_catalog.setval('languages_careers_id_seq', 216, true);
 
 
 --
--- Name: languages_id_seq; Type: SEQUENCE SET; Schema: public; Owner: john
+-- Name: languages_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
 SELECT pg_catalog.setval('languages_id_seq', 700, false);
 
 
 --
--- Data for Name: languages_programs; Type: TABLE DATA; Schema: public; Owner: john
+-- Data for Name: languages_programs; Type: TABLE DATA; Schema: public; Owner: Guest
 --
 
 COPY languages_programs (id, language_id, program_id) FROM stdin;
@@ -1281,14 +1277,14 @@ COPY languages_programs (id, language_id, program_id) FROM stdin;
 
 
 --
--- Name: languages_programs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: john
+-- Name: languages_programs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
 SELECT pg_catalog.setval('languages_programs_id_seq', 5, true);
 
 
 --
--- Data for Name: languages_types; Type: TABLE DATA; Schema: public; Owner: john
+-- Data for Name: languages_types; Type: TABLE DATA; Schema: public; Owner: Guest
 --
 
 COPY languages_types (id, language_id, type_id) FROM stdin;
@@ -2146,14 +2142,14 @@ COPY languages_types (id, language_id, type_id) FROM stdin;
 
 
 --
--- Name: languages_types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: john
+-- Name: languages_types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
 SELECT pg_catalog.setval('languages_types_id_seq', 869, true);
 
 
 --
--- Data for Name: programs; Type: TABLE DATA; Schema: public; Owner: john
+-- Data for Name: programs; Type: TABLE DATA; Schema: public; Owner: Guest
 --
 
 COPY programs (id, name, description, url) FROM stdin;
@@ -2161,14 +2157,14 @@ COPY programs (id, name, description, url) FROM stdin;
 
 
 --
--- Name: programs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: john
+-- Name: programs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
 SELECT pg_catalog.setval('programs_id_seq', 3, true);
 
 
 --
--- Data for Name: types; Type: TABLE DATA; Schema: public; Owner: john
+-- Data for Name: types; Type: TABLE DATA; Schema: public; Owner: Guest
 --
 
 COPY types (id, name, description) FROM stdin;
@@ -2191,7 +2187,7 @@ COPY types (id, name, description) FROM stdin;
 37	Iterative languages	Iterative languages are built around or offering generators.
 23	List-based languages – LISPs	List-based languages are a type of data-structured language that are based upon the list data structure.
 41	Non-English-based languages	Non-English-based programming languages are computer programming languages that, unlike better-known programming languages, do not use keywords taken from, or inspired by, the English vocabulary.
-11	Numerical analysis
+11	Numerical analysis	  
 8	Off-side rule languages	Off-side rule languages are those where blocks are formed, indicated, by their indentation.
 38	Rule-based languages	Rule-based languages instantiate rules when activated by conditions in a set of data. Of all possible activations, some set is selected and the statements belonging to those rules execute.
 42	Syntax handling languages	These languages assist with generating lexical analyzers and parsers for Context-free grammars.
@@ -2216,14 +2212,14 @@ COPY types (id, name, description) FROM stdin;
 
 
 --
--- Name: types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: john
+-- Name: types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
 SELECT pg_catalog.setval('types_id_seq', 46, true);
 
 
 --
--- Name: careers_pkey; Type: CONSTRAINT; Schema: public; Owner: john
+-- Name: careers_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
 --
 
 ALTER TABLE ONLY careers
@@ -2231,7 +2227,7 @@ ALTER TABLE ONLY careers
 
 
 --
--- Name: languages_careers_pkey; Type: CONSTRAINT; Schema: public; Owner: john
+-- Name: languages_careers_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
 --
 
 ALTER TABLE ONLY languages_careers
@@ -2239,7 +2235,7 @@ ALTER TABLE ONLY languages_careers
 
 
 --
--- Name: languages_pkey; Type: CONSTRAINT; Schema: public; Owner: john
+-- Name: languages_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
 --
 
 ALTER TABLE ONLY languages
@@ -2247,7 +2243,7 @@ ALTER TABLE ONLY languages
 
 
 --
--- Name: languages_programs_pkey; Type: CONSTRAINT; Schema: public; Owner: john
+-- Name: languages_programs_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
 --
 
 ALTER TABLE ONLY languages_programs
@@ -2255,7 +2251,7 @@ ALTER TABLE ONLY languages_programs
 
 
 --
--- Name: languages_types_pkey; Type: CONSTRAINT; Schema: public; Owner: john
+-- Name: languages_types_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
 --
 
 ALTER TABLE ONLY languages_types
@@ -2263,7 +2259,7 @@ ALTER TABLE ONLY languages_types
 
 
 --
--- Name: programs_pkey; Type: CONSTRAINT; Schema: public; Owner: john
+-- Name: programs_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
 --
 
 ALTER TABLE ONLY programs
@@ -2271,7 +2267,7 @@ ALTER TABLE ONLY programs
 
 
 --
--- Name: types_pkey; Type: CONSTRAINT; Schema: public; Owner: john
+-- Name: types_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
 --
 
 ALTER TABLE ONLY types
@@ -2279,15 +2275,16 @@ ALTER TABLE ONLY types
 
 
 --
--- Name: public; Type: ACL; Schema: -; Owner: john
+-- Name: public; Type: ACL; Schema: -; Owner: epicodus
 --
 
 REVOKE ALL ON SCHEMA public FROM PUBLIC;
-REVOKE ALL ON SCHEMA public FROM john;
-GRANT ALL ON SCHEMA public TO john;
+REVOKE ALL ON SCHEMA public FROM epicodus;
+GRANT ALL ON SCHEMA public TO epicodus;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
 --
 -- PostgreSQL database dump complete
 --
+
