@@ -19,7 +19,7 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
 PSQL
 CREATE DATABASE program_languages;
 \c program_languages;
-CREATE TABLE languages (id serial PRIMARY KEY, name varchar, description varchar, example varchar, date varchar, webpage varchar);
+CREATE TABLE languages (id serial PRIMARY KEY, name varchar, description varchar, example varchar, date varchar, most_recent_release_date varchar, webpage varchar);
 CREATE TABLE careers (id serial PRIMARY KEY, title varchar, description varchar);
 CREATE TABLE programs (id serial PRIMARY KEY, name varchar, description varchar, url varchar);
 CREATE TABLE types (id serial PRIMARY KEY, name varchar, description varchar);
